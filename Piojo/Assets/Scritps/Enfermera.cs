@@ -6,10 +6,29 @@ using UnityEngine.UI;
 public class Enfermera : MonoBehaviour
 {
     public Text contador;
+    public Text costeActual;
     public PiojoButtonHandler piojosGen;
     private int numPiojos;
     private int contEnfermeras;
-    private int coste = 100;
+    private int coste = 10;
+
+    private void Start()
+    {
+        costeActual.text = coste.ToString();
+        costeActual.color = Color.red;
+    }
+
+    private void Update()
+    {
+        if (piojosGen.getPiojos() >= coste)
+        {
+            costeActual.color = Color.green;
+        }
+        else
+        {
+            costeActual.color = Color.red;
+        }    
+    }
 
     public void añadeEnfermera()
     {
@@ -21,6 +40,7 @@ public class Enfermera : MonoBehaviour
             piojosGen.setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
             coste = Mathf.RoundToInt(coste * 1.2f);
+            costeActual.text = coste.ToString();
             StartCoroutine(Gen20Piojos());
         }
     }
@@ -28,6 +48,7 @@ public class Enfermera : MonoBehaviour
 
     IEnumerator Gen20Piojos()
     {
+        yield return new WaitForSeconds(20);
         while (true)
         {
             numPiojos = piojosGen.getPiojos();

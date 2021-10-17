@@ -7,11 +7,21 @@ public class PiojoButtonHandler : MonoBehaviour
 {
     public int numPiojos = 0;
     public Text contador;
+    public ManosMagicas manosMagicas;
 
     public void GeneradorPiojos()
     {
-        numPiojos++;
-        contador.text = numPiojos.ToString();
+        if (manosMagicas.contManosMagicas == 0)
+        {
+            numPiojos++;
+            contador.text = numPiojos.ToString();
+        }
+        else
+        {
+            numPiojos = numPiojos + (manosMagicas.contManosMagicas * 100);
+            contador.text = numPiojos.ToString();
+        }
+
     }
 
     public int getPiojos()

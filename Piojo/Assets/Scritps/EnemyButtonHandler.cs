@@ -7,7 +7,16 @@ public class EnemyButtonHandler : MonoBehaviour
 {
     public Text contador;
     public PiojoButtonHandler piojosGen;
+    public LifeBar barraVida;
     private int numPiojos;
+    public int maxVida = 100;
+    public int vidaActual = 100;
+
+    private void Start()
+    {
+        vidaActual = maxVida;
+        barraVida.setVidaMaxima(maxVida);
+    }
 
     public void DestructorPiojos()
     {
@@ -17,6 +26,8 @@ public class EnemyButtonHandler : MonoBehaviour
             numPiojos--;
             piojosGen.setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
+            vidaActual--;
+            barraVida.setVida(vidaActual);
         }
     }
 }

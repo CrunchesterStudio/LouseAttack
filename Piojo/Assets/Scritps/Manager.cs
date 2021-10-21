@@ -51,6 +51,20 @@ public class Manager : MonoBehaviour
     private int contPiojoMazao = 0;
     private int costePMazao = 10;
 
+    //Caza Titanes
+    public Text costeActualCazaTitanes;
+    private int contCazaTitanes = 0;
+    private int costeCTitanes = 10;
+
+    //Piojo Cañón
+    public Text costeActualPCanon;
+    private int contPCanon = 0;
+    private int costePCanon = 10;
+
+    //Piojo Man
+    public Text costeActualPMan;
+    private int contPiojoMan = 0;
+    private int costePMan = 10;
 
 
     // Start is called before the first frame update
@@ -88,6 +102,17 @@ public class Manager : MonoBehaviour
         costeActualPMazao.text = costePMazao.ToString();
         costeActualPMazao.color = Color.red;
 
+        //Caza Titanes
+        costeActualCazaTitanes.text = costeCTitanes.ToString();
+        costeActualCazaTitanes.color = Color.red;
+
+        //Piojo Cañón
+        costeActualPCanon.text = costePCanon.ToString();
+        costeActualPCanon.color = Color.red;
+
+        //Piojo Man
+        costeActualPMan.text = costePMan.ToString();
+        costeActualPMan.color = Color.red;
 
     }
 
@@ -135,6 +160,24 @@ public class Manager : MonoBehaviour
             costeActualPMazao.color = Color.green;
         else
             costeActualPMazao.color = Color.red;
+
+        //Caza Titanes
+        if (getPiojos() >= costeCTitanes)
+            costeActualCazaTitanes.color = Color.green;
+        else
+            costeActualCazaTitanes.color = Color.red;
+
+        //Piojo Cañón
+        if (getPiojos() >= costePCanon)
+            costeActualPCanon.color = Color.green;
+        else
+            costeActualPCanon.color = Color.red;
+
+        //Piojo Man
+        if (getPiojos() >= costePMan)
+            costeActualPMan.color = Color.green;
+        else
+            costeActualPMan.color = Color.red;
     }
 
     //Botón Piojo
@@ -350,6 +393,51 @@ public class Manager : MonoBehaviour
             contador.text = numPiojos.ToString();
             costePMazao = Mathf.RoundToInt(costePMazao * 1.2f);
             costeActualPMazao.text = costePMazao.ToString();
+        }
+    }
+
+    //Caza Titanes
+    public void añadeCazaTitanes()
+    {
+        if (getPiojos() >= costeCTitanes)
+        {
+            contCazaTitanes++;
+            numPiojos = getPiojos();
+            numPiojos -= costeCTitanes;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costeCTitanes = Mathf.RoundToInt(costeCTitanes * 1.2f);
+            costeActualCazaTitanes.text = costeCTitanes.ToString();
+        }
+    }
+
+    //Piojo Cañón
+    public void añadePiojoCanon()
+    {
+        if (getPiojos() >= costePCanon)
+        {
+            contPCanon++;
+            numPiojos = getPiojos();
+            numPiojos -= costePCanon;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costePCanon = Mathf.RoundToInt(costePCanon * 1.2f);
+            costeActualPCanon.text = costePCanon.ToString();
+        }
+    }
+
+    //Piojo Man
+    public void añadePiojoMan()
+    {
+        if (getPiojos() >= costePMan)
+        {
+            contPiojoMan++;
+            numPiojos = getPiojos();
+            numPiojos -= costePMan;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costePMan = Mathf.RoundToInt(costePMan * 1.2f);
+            costeActualPMan.text = costePMan.ToString();
         }
     }
 }

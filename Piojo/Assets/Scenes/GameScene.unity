@@ -359,7 +359,6 @@ GameObject:
   - component: {fileID: 319616460}
   - component: {fileID: 319616459}
   - component: {fileID: 319616458}
-  - component: {fileID: 319616461}
   m_Layer: 5
   m_Name: Jetpack
   m_TagString: Untagged
@@ -381,7 +380,7 @@ RectTransform:
   - {fileID: 299621351}
   - {fileID: 1487800311}
   m_Father: {fileID: 1900993138}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -432,8 +431,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 319616461}
-        m_TargetAssemblyTypeName: Jetpack, Assembly-CSharp
+      - m_Target: {fileID: 633980881}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: "a\xF1adeJetpack"
         m_Mode: 1
         m_Arguments:
@@ -482,21 +481,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319616456}
   m_CullTransparentMesh: 1
---- !u!114 &319616461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319616456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b788d5e9f9fb4894ea8a1b2e3a53a79f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contador: {fileID: 2081980898}
-  costeActual: {fileID: 1487800312}
-  piojosGen: {fileID: 379219479}
 --- !u!1 &379219477
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,7 +493,6 @@ GameObject:
   - component: {fileID: 379219482}
   - component: {fileID: 379219481}
   - component: {fileID: 379219480}
-  - component: {fileID: 379219479}
   m_Layer: 5
   m_Name: Generador_Piojos
   m_TagString: Untagged
@@ -537,21 +520,6 @@ RectTransform:
   m_AnchoredPosition: {x: 370, y: -197.62}
   m_SizeDelta: {x: 120.1429, y: 79.9947}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &379219479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379219477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 453f4994aa508164f857af909a2947af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numPiojos: 0
-  contador: {fileID: 2081980898}
-  manosMagicas: {fileID: 727735362}
 --- !u!114 &379219480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,8 +564,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 379219479}
-        m_TargetAssemblyTypeName: ButtonHandler, Assembly-CSharp
+      - m_Target: {fileID: 633980881}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: GeneradorPiojos
         m_Mode: 1
         m_Arguments:
@@ -812,7 +780,6 @@ GameObject:
   - component: {fileID: 497309059}
   - component: {fileID: 497309058}
   - component: {fileID: 497309057}
-  - component: {fileID: 497309060}
   m_Layer: 5
   m_Name: Enfermera
   m_TagString: Untagged
@@ -885,8 +852,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 497309060}
-        m_TargetAssemblyTypeName: Enfermera, Assembly-CSharp
+      - m_Target: {fileID: 633980881}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: "a\xF1adeEnfermera"
         m_Mode: 1
         m_Arguments:
@@ -935,21 +902,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497309055}
   m_CullTransparentMesh: 1
---- !u!114 &497309060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 497309055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b7f503cb9512d341a5197f01b3b99f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contador: {fileID: 2081980898}
-  costeActual: {fileID: 702161577}
-  piojosGen: {fileID: 379219479}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,6 +1064,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 541474232}
   m_CullTransparentMesh: 1
+--- !u!1 &633980880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 633980882}
+  - component: {fileID: 633980881}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &633980881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633980880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b947e10ed1c0a242bba1912beedf9c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contador: {fileID: 2081980898}
+  numPiojos: 0
+  barraVida: {fileID: 844063438}
+  maxVida: 100
+  vidaActual: 100
+  costeActualEnfermera: {fileID: 702161577}
+  costeActualPMadre: {fileID: 2055851069}
+  costeActualEscuela: {fileID: 1997860755}
+  costeActualHostal: {fileID: 390135540}
+  costeActualManosM: {fileID: 1794031800}
+  costeActualJetPack: {fileID: 1487800312}
+  costeActualPMazao: {fileID: 1004292216}
+--- !u!4 &633980882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633980880}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1007.6718, y: 567.15405, z: -105.92742}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &702161575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1210,6 @@ GameObject:
   - component: {fileID: 727735361}
   - component: {fileID: 727735360}
   - component: {fileID: 727735359}
-  - component: {fileID: 727735362}
   m_Layer: 5
   m_Name: "Manos_M\xE1gicas"
   m_TagString: Untagged
@@ -1225,7 +1231,7 @@ RectTransform:
   - {fileID: 1297104782}
   - {fileID: 1794031799}
   m_Father: {fileID: 1900993138}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1276,8 +1282,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 727735362}
-        m_TargetAssemblyTypeName: ManosMagicas, Assembly-CSharp
+      - m_Target: {fileID: 633980881}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: "a\xF1adeManosMagicas"
         m_Mode: 1
         m_Arguments:
@@ -1326,22 +1332,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727735357}
   m_CullTransparentMesh: 1
---- !u!114 &727735362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 727735357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4875979b9d2e5f468531d9731891897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contador: {fileID: 2081980898}
-  costeActual: {fileID: 1794031800}
-  piojosGen: {fileID: 379219479}
-  contManosMagicas: 0
 --- !u!1 &821230006
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,7 +1344,6 @@ GameObject:
   - component: {fileID: 821230010}
   - component: {fileID: 821230009}
   - component: {fileID: 821230008}
-  - component: {fileID: 821230011}
   m_Layer: 5
   m_Name: Hostal 1 Estrella
   m_TagString: Untagged
@@ -1427,8 +1416,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 821230011}
-        m_TargetAssemblyTypeName: Hotel1Estrella, Assembly-CSharp
+      - m_Target: {fileID: 633980881}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: "a\xF1adeHotel"
         m_Mode: 1
         m_Arguments:
@@ -1477,21 +1466,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821230006}
   m_CullTransparentMesh: 1
---- !u!114 &821230011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 821230006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1bbf244c357ead449a32d64649a2c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contador: {fileID: 2081980898}
-  costeActual: {fileID: 390135540}
-  piojosGen: {fileID: 379219479}
 --- !u!1 &833655694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,7 +1825,6 @@ GameObject:
   - component: {fileID: 853400137}
   - component: {fileID: 853400136}
   - component: {fileID: 853400135}
-  - component: {fileID: 853400138}
   m_Layer: 5
   m_Name: Piojo_Madre
   m_TagString: Untagged
@@ -1924,8 +1897,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 853400138}
-        m_TargetAssemblyTypeName: PiojoMadre, Assembly-CSharp
+      - m_Target: {fileID: 633980881}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: "a\xF1adePiojoMadre"
         m_Mode: 1
         m_Arguments:
@@ -1974,21 +1947,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853400133}
   m_CullTransparentMesh: 1
---- !u!114 &853400138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 853400133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e6eabaa9756c0744a59d192833ef0ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contador: {fileID: 2081980898}
-  costeActual: {fileID: 2055851069}
-  piojosGen: {fileID: 379219479}
 --- !u!1 &921822853
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,7 +2990,6 @@ GameObject:
   - component: {fileID: 1688981372}
   - component: {fileID: 1688981371}
   - component: {fileID: 1688981370}
-  - component: {fileID: 1688981373}
   m_Layer: 5
   m_Name: Escuela
   m_TagString: Untagged
@@ -3105,8 +3062,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1688981373}
-        m_TargetAssemblyTypeName: Escuela, Assembly-CSharp
+      - m_Target: {fileID: 633980881}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: "a\xF1adeEscuela"
         m_Mode: 1
         m_Arguments:
@@ -3155,21 +3112,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688981368}
   m_CullTransparentMesh: 1
---- !u!114 &1688981373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1688981368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87abcf3092ba06a4da44319e4fa42e49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contador: {fileID: 2081980898}
-  costeActual: {fileID: 1997860755}
-  piojosGen: {fileID: 379219479}
 --- !u!1 &1726552607
 GameObject:
   m_ObjectHideFlags: 0
@@ -3182,7 +3124,6 @@ GameObject:
   - component: {fileID: 1726552611}
   - component: {fileID: 1726552610}
   - component: {fileID: 1726552609}
-  - component: {fileID: 1726552612}
   m_Layer: 5
   m_Name: Piojo Mazao
   m_TagString: Untagged
@@ -3255,8 +3196,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1726552612}
-        m_TargetAssemblyTypeName: MejorasdeCombate, Assembly-CSharp
+      - m_Target: {fileID: 633980881}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: "a\xF1adePiojoMazao"
         m_Mode: 1
         m_Arguments:
@@ -3305,22 +3246,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726552607}
   m_CullTransparentMesh: 1
---- !u!114 &1726552612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726552607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abf13f1bd6ab0304884b5fa6ec8b0160, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contador: {fileID: 2081980898}
-  costeActual: {fileID: 1004292216}
-  piojosGen: {fileID: 379219479}
-  contPiojoMazao: 0
 --- !u!1 &1730614732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3510,8 +3435,8 @@ Transform:
   - {fileID: 853400134}
   - {fileID: 1688981369}
   - {fileID: 821230007}
-  - {fileID: 319616457}
   - {fileID: 727735358}
+  - {fileID: 319616457}
   m_Father: {fileID: 921822857}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4193,7 +4118,6 @@ GameObject:
   - component: {fileID: 2127728422}
   - component: {fileID: 2127728421}
   - component: {fileID: 2127728420}
-  - component: {fileID: 2127728423}
   m_Layer: 5
   m_Name: Enemigo
   m_TagString: Untagged
@@ -4265,8 +4189,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2127728423}
-        m_TargetAssemblyTypeName: EnemyButtonHandler, Assembly-CSharp
+      - m_Target: {fileID: 633980881}
+        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: DestructorPiojos
         m_Mode: 1
         m_Arguments:
@@ -4315,21 +4239,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127728418}
   m_CullTransparentMesh: 1
---- !u!114 &2127728423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2127728418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ce9edcc524559c4c8047c09a387e988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contador: {fileID: 2081980898}
-  piojosGen: {fileID: 379219479}
-  barraVida: {fileID: 844063438}
-  mejoras: {fileID: 1726552612}
-  maxVida: 100
-  vidaActual: 100

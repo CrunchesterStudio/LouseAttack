@@ -18,53 +18,72 @@ public class Manager : MonoBehaviour
 
     //Enfermera
     public Text costeActualEnfermera;
-    private int contEnfermeras = 0;
     private int costeEnfermera = 10;
+    public Text cantidadEnfermera;
+    private int contEnfermeras = 0;
 
     //Piojo Madre
     public Text costeActualPMadre;
-    private int contPiojoMadre = 0;
     private int costePMadre = 25;
+    public Text cantidadPmadre;
+    private int contPiojoMadre = 0;
+
 
     //Escuela
     public Text costeActualEscuela;
-    private int contEscuela = 0;
     private int costeEscuela = 10;
+    public Text cantidadEscuela;
+    private int contEscuela = 0;
+
 
     //Hostal
     public Text costeActualHostal;
-    private int contHostal = 0;
     private int costeHostal = 20;
+    public Text cantidadHostal;
+    private int contHostal = 0;
+
 
     //Manos Mágicas
     public Text costeActualManosM;
-    private int contManosMagicas = 0;
     private int costeManos = 50;
+    public Text cantidadManosM;
+    private int contManosMagicas = 0;
+
 
     //Jetpack
     public Text costeActualJetPack;
-    private int contJetpack = 0;
     private int costeJetpack = 10;
+    public Text cantidadJetpack;
+    private int contJetpack = 0;
+
 
     //Piojo Mazao
     public Text costeActualPMazao;
-    private int contPiojoMazao = 0;
     private int costePMazao = 10;
+    public Text cantidadPiojoMazao;
+    private int contPiojoMazao = 0;
+
 
     //Caza Titanes
     public Text costeActualCazaTitanes;
-    private int contCazaTitanes = 0;
     private int costeCTitanes = 10;
+    public Text cantidadCazaTitanes;
+    private int contCazaTitanes = 0;
+
 
     //Piojo Cañón
     public Text costeActualPCanon;
-    private int contPCanon = 0;
     private int costePCanon = 10;
+    public Text cantidadPCanon;
+    private int contPCanon = 0;
+
 
     //Piojo Man
     public Text costeActualPMan;
-    private int contPiojoMan = 0;
     private int costePMan = 10;
+    public Text cantidadPiojoMan;
+    private int contPiojoMan = 0;
+
 
 
     // Start is called before the first frame update
@@ -77,42 +96,52 @@ public class Manager : MonoBehaviour
         //Enfermera
         costeActualEnfermera.text = costeEnfermera.ToString();
         costeActualEnfermera.color = Color.red;
+        cantidadEnfermera.text = contEnfermeras.ToString();
 
         //Piojo Madre
         costeActualPMadre.text = costePMadre.ToString();
         costeActualPMadre.color = Color.red;
+        cantidadPmadre.text = contPiojoMadre.ToString();
 
         //Escuela
         costeActualEscuela.text = costeEscuela.ToString();
         costeActualEscuela.color = Color.red;
+        cantidadEscuela.text = contEscuela.ToString();
 
         //Hostal
         costeActualHostal.text = costeHostal.ToString();
         costeActualHostal.color = Color.red;
+        cantidadHostal.text = contHostal.ToString();
 
         //Manos Mágicas
         costeActualManosM.text = costeManos.ToString();
         costeActualManosM.color = Color.red;
+        cantidadManosM.text = contManosMagicas.ToString();
 
         //Jetpack
         costeActualJetPack.text = costeJetpack.ToString();
         costeActualJetPack.color = Color.red;
+        cantidadJetpack.text = contJetpack.ToString();
 
         //Piojo Mazao
         costeActualPMazao.text = costePMazao.ToString();
         costeActualPMazao.color = Color.red;
+        cantidadPiojoMazao.text = contPiojoMazao.ToString();
 
         //Caza Titanes
         costeActualCazaTitanes.text = costeCTitanes.ToString();
         costeActualCazaTitanes.color = Color.red;
+        cantidadCazaTitanes.text = contCazaTitanes.ToString();
 
         //Piojo Cañón
         costeActualPCanon.text = costePCanon.ToString();
         costeActualPCanon.color = Color.red;
+        cantidadPCanon.text = contPCanon.ToString();
 
         //Piojo Man
         costeActualPMan.text = costePMan.ToString();
         costeActualPMan.color = Color.red;
+        cantidadPiojoMan.text = contPiojoMan.ToString();
 
     }
 
@@ -231,6 +260,7 @@ public class Manager : MonoBehaviour
         if (getPiojos() >= costeEnfermera)
         {
             contEnfermeras++;
+            cantidadEnfermera.text = contEnfermeras.ToString();
             numPiojos = getPiojos();
             numPiojos -= costeEnfermera;
             setPiojos(numPiojos);
@@ -260,6 +290,7 @@ public class Manager : MonoBehaviour
         if (getPiojos() >= costePMadre)
         {
             contPiojoMadre++;
+            cantidadPmadre.text = contPiojoMadre.ToString();
             numPiojos = getPiojos();
             numPiojos -= costePMadre;
             setPiojos(numPiojos);
@@ -287,6 +318,7 @@ public class Manager : MonoBehaviour
         if (getPiojos() >= costeEscuela)
         {
             contEscuela++;
+            cantidadEscuela.text = contEscuela.ToString();
             numPiojos = getPiojos();
             numPiojos -= costeEscuela;
             setPiojos(numPiojos);
@@ -315,6 +347,7 @@ public class Manager : MonoBehaviour
         if (getPiojos() >= costeHostal)
         {
             contHostal++;
+            cantidadHostal.text = contHostal.ToString();
             numPiojos = getPiojos();
             numPiojos -= costeHostal;
             setPiojos(numPiojos);
@@ -343,6 +376,7 @@ public class Manager : MonoBehaviour
         if (getPiojos() >= costeManos)
         {
             contManosMagicas++;
+            cantidadManosM.text = contManosMagicas.ToString();
             numPiojos = getPiojos();
             numPiojos -= costeManos;
             setPiojos(numPiojos);
@@ -358,6 +392,7 @@ public class Manager : MonoBehaviour
         if (getPiojos() >= costeJetpack)
         {
             contJetpack++;
+            cantidadJetpack.text = contJetpack.ToString();
             numPiojos = getPiojos();
             numPiojos -= costeJetpack;
             setPiojos(numPiojos);
@@ -387,6 +422,7 @@ public class Manager : MonoBehaviour
         if (getPiojos() >= costePMazao)
         {
             contPiojoMazao++;
+            cantidadPiojoMazao.text = contPiojoMazao.ToString();
             numPiojos = getPiojos();
             numPiojos -= costePMazao;
             setPiojos(numPiojos);
@@ -402,6 +438,7 @@ public class Manager : MonoBehaviour
         if (getPiojos() >= costeCTitanes)
         {
             contCazaTitanes++;
+            cantidadCazaTitanes.text = contCazaTitanes.ToString();
             numPiojos = getPiojos();
             numPiojos -= costeCTitanes;
             setPiojos(numPiojos);
@@ -417,6 +454,7 @@ public class Manager : MonoBehaviour
         if (getPiojos() >= costePCanon)
         {
             contPCanon++;
+            cantidadPCanon.text = contPCanon.ToString();
             numPiojos = getPiojos();
             numPiojos -= costePCanon;
             setPiojos(numPiojos);
@@ -432,6 +470,7 @@ public class Manager : MonoBehaviour
         if (getPiojos() >= costePMan)
         {
             contPiojoMan++;
+            cantidadPiojoMan.text = contPiojoMan.ToString();
             numPiojos = getPiojos();
             numPiojos -= costePMan;
             setPiojos(numPiojos);

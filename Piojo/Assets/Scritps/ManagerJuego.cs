@@ -13,9 +13,9 @@ public class ManagerJuego : MonoBehaviour
 
     //Botón Enemigos
     public LifeBar barraVida;
-    public int maxVida = 100;
-    public int vidaActual = 100;
-
+    //public int maxVida = 100;
+    //public int vidaActual = 100;
+    public List<Enemigo> listaEnemigos;
     //Enfermera
     public Text costeActualEnfermera;
     private int costeEnfermera = 10;
@@ -81,9 +81,10 @@ public class ManagerJuego : MonoBehaviour
     void Start()
     {
         //Botón Enemigo
-        vidaActual = maxVida;
-        barraVida.setVidaMaxima(maxVida);
-
+        //vidaActual = maxVida;
+       // barraVida.setVidaMaxima(maxVida);
+        listaEnemigos = new List<Enemigo>();
+        inicializarEnemigos();
         //Enfermera
         costeActualEnfermera.text = costeEnfermera.ToString();
         costeActualEnfermera.color = Color.red;
@@ -230,16 +231,30 @@ public class ManagerJuego : MonoBehaviour
                 numPiojos--;
                 setPiojos(numPiojos);
                 contador.text = numPiojos.ToString();
-                vidaActual--;
-                barraVida.setVida(vidaActual);
+                listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - 1);
+                barraVida.setVida(listaEnemigos[0].GetVidaActual());
+                if(listaEnemigos[0].GetVidaActual()<=0)
+                {
+                    listaEnemigos.RemoveAt(0);
+                    barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
+                    barraVida.setVida(listaEnemigos[0].GetVidaActual());
+                }
+                
             }
             else
             {
                 numPiojos = numPiojos - (contPiojoMazao * 5);
                 setPiojos(numPiojos);
                 contador.text = numPiojos.ToString();
-                vidaActual -= contPiojoMazao * 5;
-                barraVida.setVida(vidaActual);
+                listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - contPiojoMazao*5);
+                barraVida.setVida(listaEnemigos[0].GetVidaActual());               
+                if(listaEnemigos[0].GetVidaActual() <= 0)
+                {
+                    listaEnemigos.RemoveAt(0);
+                    barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
+                    barraVida.setVida(listaEnemigos[0].GetVidaActual());
+                }
+       
             }
 
         }
@@ -469,6 +484,17 @@ public class ManagerJuego : MonoBehaviour
             costePMan = Mathf.RoundToInt(costePMan * 1.2f);
             costeActualPMan.text = costePMan.ToString();
         }
+    }
+
+    private void inicializarEnemigos()
+    {
+        Enemigo e1 = new Enemigo(100, tipoEnemigo.Pulga);
+        Enemigo e2 = new Enemigo(200, tipoEnemigo.Salamandra);
+        Enemigo e3 = new Enemigo(500, tipoEnemigo.HumanoConRepelente);
+        listaEnemigos.Add(e1);
+        listaEnemigos.Add(e2);
+        listaEnemigos.Add(e3);
+        barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
     }
 
 

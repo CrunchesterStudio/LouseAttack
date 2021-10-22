@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Manager : MonoBehaviour
+public class ManagerJuego : MonoBehaviour
 {
     //Contador Principal
     public Text contador;
@@ -28,13 +28,11 @@ public class Manager : MonoBehaviour
     public Text cantidadPmadre;
     private int contPiojoMadre = 0;
 
-
     //Escuela
     public Text costeActualEscuela;
     private int costeEscuela = 10;
     public Text cantidadEscuela;
     private int contEscuela = 0;
-
 
     //Hostal
     public Text costeActualHostal;
@@ -42,13 +40,11 @@ public class Manager : MonoBehaviour
     public Text cantidadHostal;
     private int contHostal = 0;
 
-
     //Manos Mágicas
     public Text costeActualManosM;
     private int costeManos = 50;
     public Text cantidadManosM;
     private int contManosMagicas = 0;
-
 
     //Jetpack
     public Text costeActualJetPack;
@@ -56,13 +52,11 @@ public class Manager : MonoBehaviour
     public Text cantidadJetpack;
     private int contJetpack = 0;
 
-
     //Piojo Mazao
     public Text costeActualPMazao;
     private int costePMazao = 10;
     public Text cantidadPiojoMazao;
     private int contPiojoMazao = 0;
-
 
     //Caza Titanes
     public Text costeActualCazaTitanes;
@@ -70,20 +64,17 @@ public class Manager : MonoBehaviour
     public Text cantidadCazaTitanes;
     private int contCazaTitanes = 0;
 
-
     //Piojo Cañón
     public Text costeActualPCanon;
     private int costePCanon = 10;
     public Text cantidadPCanon;
     private int contPCanon = 0;
 
-
     //Piojo Man
     public Text costeActualPMan;
     private int costePMan = 10;
     public Text cantidadPiojoMan;
     private int contPiojoMan = 0;
-
 
 
     // Start is called before the first frame update
@@ -479,4 +470,6 @@ public class Manager : MonoBehaviour
             costeActualPMan.text = costePMan.ToString();
         }
     }
+
+
 }

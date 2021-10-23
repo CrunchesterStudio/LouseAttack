@@ -75,6 +75,14 @@ public class ManagerJuego : MonoBehaviour
     public Text cantidadPiojoMan;
     private int contPiojoMan = 0;
 
+    //Tienda
+    public GameObject tienda;
+
+    public Text costeMejora1;
+    public Text cantMejora1;
+    private int cantidadMejora1 = 0;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -145,7 +153,7 @@ public class ManagerJuego : MonoBehaviour
             costeActualEnfermera.color = Color.red;
 
         //Piojo Madre
-        if (getPiojos() >= costePMadre)
+        if (getPiojos() >= costePMadre && listaEnemigos[0].tipo != tipoEnemigo.Pulga)
             costeActualPMadre.color = Color.green;
         else
             costeActualPMadre.color = Color.red;
@@ -295,7 +303,7 @@ public class ManagerJuego : MonoBehaviour
     //Piojo Madre
     public void añadePiojoMadre()
     {
-        if (getPiojos() >= costePMadre)
+        if (getPiojos() >= costePMadre && listaEnemigos[0].tipo != tipoEnemigo.Pulga)
         {
             contPiojoMadre++;
             cantidadPmadre.text = "x" + contPiojoMadre.ToString();
@@ -488,6 +496,8 @@ public class ManagerJuego : MonoBehaviour
         }
     }
 
+
+    //Enemigos
     private void inicializarEnemigos()
     {
         Enemigo e1 = new Enemigo(100, tipoEnemigo.Pulga);
@@ -498,6 +508,30 @@ public class ManagerJuego : MonoBehaviour
         listaEnemigos.Add(e3);
         barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
         vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
+    }
+
+    //Tienda
+    public void muestraTienda()
+    {
+        tienda.SetActive(true);
+    }
+
+    public void ocultaTienda()
+    {
+        tienda.SetActive(false);
+    }
+
+
+    //Mejora1
+    public void añadeMejora1()
+    {
+        //Condición
+
+
+
+
+        cantidadMejora1++;
+        cantMejora1.text = "x" + cantidadMejora1.ToString();
     }
 
 

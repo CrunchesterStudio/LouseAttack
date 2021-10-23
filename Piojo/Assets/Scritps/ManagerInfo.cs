@@ -19,6 +19,9 @@ public class ManagerInfo : MonoBehaviour
     public GameObject InfoPiojoCanon;
     public GameObject InfoPiojoMan;
 
+    //Mejoras de Pago
+    public GameObject InfoMejora1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +39,9 @@ public class ManagerInfo : MonoBehaviour
         InfoPiojoCanon.SetActive(false);
         InfoPiojoMan.SetActive(false);
 
-    }
+        //Mejoras de Pago
+        InfoMejora1.SetActive(false);
+}
 
     //Enfermera
     public void OnMouseOverEnfermera(){InfoEnfermera.SetActive(true);}
@@ -77,5 +82,11 @@ public class ManagerInfo : MonoBehaviour
     //PiojoMan
     public void OnMouseOverPiojoMan() { InfoPiojoMan.SetActive(true); }
     public void OnMouseExitPiojoMan() { InfoPiojoMan.SetActive(false); }
+
+    //Mejora 1
+    public void OnMouseOverMejora1() { InfoMejora1.SetActive(true); }
+    public void OnMouseExitMejora1() { InfoMejora1.SetActive(false); }
+
+
 
 }

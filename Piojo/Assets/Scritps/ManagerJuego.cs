@@ -13,8 +13,7 @@ public class ManagerJuego : MonoBehaviour
 
     //Botón Enemigos
     public LifeBar barraVida;
-    //public int maxVida = 100;
-    //public int vidaActual = 100;
+    public Text vidaEnemigo;
     public List<Enemigo> listaEnemigos;
     //Enfermera
     public Text costeActualEnfermera;
@@ -81,59 +80,58 @@ public class ManagerJuego : MonoBehaviour
     void Start()
     {
         //Botón Enemigo
-        //vidaActual = maxVida;
-       // barraVida.setVidaMaxima(maxVida);
         listaEnemigos = new List<Enemigo>();
         inicializarEnemigos();
+
         //Enfermera
         costeActualEnfermera.text = costeEnfermera.ToString();
         costeActualEnfermera.color = Color.red;
-        cantidadEnfermera.text = contEnfermeras.ToString();
+        cantidadEnfermera.text = "x" + contEnfermeras.ToString();
 
         //Piojo Madre
         costeActualPMadre.text = costePMadre.ToString();
         costeActualPMadre.color = Color.red;
-        cantidadPmadre.text = contPiojoMadre.ToString();
+        cantidadPmadre.text = "x" + contPiojoMadre.ToString();
 
         //Escuela
         costeActualEscuela.text = costeEscuela.ToString();
         costeActualEscuela.color = Color.red;
-        cantidadEscuela.text = contEscuela.ToString();
+        cantidadEscuela.text = "x" + contEscuela.ToString();
 
         //Hostal
         costeActualHostal.text = costeHostal.ToString();
         costeActualHostal.color = Color.red;
-        cantidadHostal.text = contHostal.ToString();
+        cantidadHostal.text = "x" + contHostal.ToString();
 
         //Manos Mágicas
         costeActualManosM.text = costeManos.ToString();
         costeActualManosM.color = Color.red;
-        cantidadManosM.text = contManosMagicas.ToString();
+        cantidadManosM.text = "x" + contManosMagicas.ToString();
 
         //Jetpack
         costeActualJetPack.text = costeJetpack.ToString();
         costeActualJetPack.color = Color.red;
-        cantidadJetpack.text = contJetpack.ToString();
+        cantidadJetpack.text = "x" + contJetpack.ToString();
 
         //Piojo Mazao
         costeActualPMazao.text = costePMazao.ToString();
         costeActualPMazao.color = Color.red;
-        cantidadPiojoMazao.text = contPiojoMazao.ToString();
+        cantidadPiojoMazao.text = "x" + contPiojoMazao.ToString();
 
         //Caza Titanes
         costeActualCazaTitanes.text = costeCTitanes.ToString();
         costeActualCazaTitanes.color = Color.red;
-        cantidadCazaTitanes.text = contCazaTitanes.ToString();
+        cantidadCazaTitanes.text = "x" + contCazaTitanes.ToString();
 
         //Piojo Cañón
         costeActualPCanon.text = costePCanon.ToString();
         costeActualPCanon.color = Color.red;
-        cantidadPCanon.text = contPCanon.ToString();
+        cantidadPCanon.text = "x" + contPCanon.ToString();
 
         //Piojo Man
         costeActualPMan.text = costePMan.ToString();
         costeActualPMan.color = Color.red;
-        cantidadPiojoMan.text = contPiojoMan.ToString();
+        cantidadPiojoMan.text = "x" + contPiojoMan.ToString();
 
     }
 
@@ -233,28 +231,32 @@ public class ManagerJuego : MonoBehaviour
                 contador.text = numPiojos.ToString();
                 listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - 1);
                 barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                if(listaEnemigos[0].GetVidaActual()<=0)
+                vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
+                if (listaEnemigos[0].GetVidaActual() <= 0)
                 {
                     listaEnemigos.RemoveAt(0);
                     barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
                     barraVida.setVida(listaEnemigos[0].GetVidaActual());
+                    vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
                 }
-                
+
             }
             else
             {
                 numPiojos = numPiojos - (contPiojoMazao * 5);
                 setPiojos(numPiojos);
                 contador.text = numPiojos.ToString();
-                listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - contPiojoMazao*5);
-                barraVida.setVida(listaEnemigos[0].GetVidaActual());               
-                if(listaEnemigos[0].GetVidaActual() <= 0)
+                listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - contPiojoMazao * 5);
+                barraVida.setVida(listaEnemigos[0].GetVidaActual());
+                vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
+                if (listaEnemigos[0].GetVidaActual() <= 0)
                 {
                     listaEnemigos.RemoveAt(0);
                     barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
                     barraVida.setVida(listaEnemigos[0].GetVidaActual());
+                    vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
                 }
-       
+
             }
 
         }
@@ -266,7 +268,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeEnfermera)
         {
             contEnfermeras++;
-            cantidadEnfermera.text = contEnfermeras.ToString();
+            cantidadEnfermera.text = "x" + contEnfermeras.ToString();
             numPiojos = getPiojos();
             numPiojos -= costeEnfermera;
             setPiojos(numPiojos);
@@ -296,7 +298,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePMadre)
         {
             contPiojoMadre++;
-            cantidadPmadre.text = contPiojoMadre.ToString();
+            cantidadPmadre.text = "x" + contPiojoMadre.ToString();
             numPiojos = getPiojos();
             numPiojos -= costePMadre;
             setPiojos(numPiojos);
@@ -324,7 +326,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeEscuela)
         {
             contEscuela++;
-            cantidadEscuela.text = contEscuela.ToString();
+            cantidadEscuela.text = "x" + contEscuela.ToString();
             numPiojos = getPiojos();
             numPiojos -= costeEscuela;
             setPiojos(numPiojos);
@@ -353,7 +355,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeHostal)
         {
             contHostal++;
-            cantidadHostal.text = contHostal.ToString();
+            cantidadHostal.text = "x" + contHostal.ToString();
             numPiojos = getPiojos();
             numPiojos -= costeHostal;
             setPiojos(numPiojos);
@@ -382,7 +384,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeManos)
         {
             contManosMagicas++;
-            cantidadManosM.text = contManosMagicas.ToString();
+            cantidadManosM.text = "x" + contManosMagicas.ToString();
             numPiojos = getPiojos();
             numPiojos -= costeManos;
             setPiojos(numPiojos);
@@ -398,7 +400,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeJetpack)
         {
             contJetpack++;
-            cantidadJetpack.text = contJetpack.ToString();
+            cantidadJetpack.text = "x" + contJetpack.ToString();
             numPiojos = getPiojos();
             numPiojos -= costeJetpack;
             setPiojos(numPiojos);
@@ -428,7 +430,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePMazao)
         {
             contPiojoMazao++;
-            cantidadPiojoMazao.text = contPiojoMazao.ToString();
+            cantidadPiojoMazao.text = "x" + contPiojoMazao.ToString();
             numPiojos = getPiojos();
             numPiojos -= costePMazao;
             setPiojos(numPiojos);
@@ -444,7 +446,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeCTitanes)
         {
             contCazaTitanes++;
-            cantidadCazaTitanes.text = contCazaTitanes.ToString();
+            cantidadCazaTitanes.text = "x" + contCazaTitanes.ToString();
             numPiojos = getPiojos();
             numPiojos -= costeCTitanes;
             setPiojos(numPiojos);
@@ -460,7 +462,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePCanon)
         {
             contPCanon++;
-            cantidadPCanon.text = contPCanon.ToString();
+            cantidadPCanon.text = "x" + contPCanon.ToString();
             numPiojos = getPiojos();
             numPiojos -= costePCanon;
             setPiojos(numPiojos);
@@ -476,7 +478,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePMan)
         {
             contPiojoMan++;
-            cantidadPiojoMan.text = contPiojoMan.ToString();
+            cantidadPiojoMan.text = "x" + contPiojoMan.ToString();
             numPiojos = getPiojos();
             numPiojos -= costePMan;
             setPiojos(numPiojos);
@@ -495,6 +497,7 @@ public class ManagerJuego : MonoBehaviour
         listaEnemigos.Add(e2);
         listaEnemigos.Add(e3);
         barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
+        vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
     }
 
 

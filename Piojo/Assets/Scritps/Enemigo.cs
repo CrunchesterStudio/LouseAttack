@@ -14,7 +14,7 @@ public class Enemigo
 {
     private int vidaMax;
     private int vidaActual;
-    private tipoEnemigo tipo;
+    public tipoEnemigo tipo;
 
     public Enemigo(int vidaMax, tipoEnemigo tipo)
     {

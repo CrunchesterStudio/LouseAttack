@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class ManagerInfo : MonoBehaviour
 {
     //Mejoras de Generación
-    public GameObject InfoEnfermera;
     public GameObject InfoPMadre;
+    public GameObject InfoCabezaN;
+    public GameObject InfoClaseInfantil;
+    public GameObject InfoPatioEscuela;
     public GameObject InfoEscuela;
+    public GameObject InfoCPerros;
     public GameObject InfoHostal;
-    public GameObject InfoManosMagicas;
     public GameObject InfoJetpack;
 
     //Mejoras de Combate
@@ -26,11 +28,13 @@ public class ManagerInfo : MonoBehaviour
     void Start()
     {
         //Mejoras de Generación
-        InfoEnfermera.SetActive(false);
         InfoPMadre.SetActive(false);
+        InfoCabezaN.SetActive(false);
+        InfoClaseInfantil.SetActive(false);
+        InfoPatioEscuela.SetActive(false);
         InfoEscuela.SetActive(false);
+        InfoCPerros.SetActive(false);
         InfoHostal.SetActive(false);
-        InfoManosMagicas.SetActive(false);
         InfoJetpack.SetActive(false);
 
         //Mejoras de Combate
@@ -43,29 +47,40 @@ public class ManagerInfo : MonoBehaviour
         InfoMejora1.SetActive(false);
 }
 
-    //Enfermera
-    public void OnMouseOverEnfermera(){InfoEnfermera.SetActive(true);}
-    public void OnMouseExitEnfermera(){InfoEnfermera.SetActive(false);}
-
     //Piojo Madre
     public void OnMouseOverPiojoMadre() { InfoPMadre.SetActive(true); }
     public void OnMouseExitPiojoMadre() { InfoPMadre.SetActive(false); }
+
+    //Cabeza Niño
+    public void OnMouseOverCabezaN() { InfoCabezaN.SetActive(true); }
+    public void OnMouseExitCabezaN() { InfoCabezaN.SetActive(false); }
+
+    //Clase Infantil
+    public void OnMouseOverClaseInfantil() { InfoClaseInfantil.SetActive(true); }
+    public void OnMouseExitClaseInfantil() { InfoClaseInfantil.SetActive(false); }
+
+    //Escuela
+    public void OnMouseOverPatioEscuela() { InfoPatioEscuela.SetActive(true); }
+    public void OnMouseExitPatioEscuela() { InfoPatioEscuela.SetActive(false); }
 
     //Escuela
     public void OnMouseOverEscuela() { InfoEscuela.SetActive(true); }
     public void OnMouseExitEscuela() { InfoEscuela.SetActive(false); }
 
+    //Cabalgadores de Perros
+    public void OnMouseOverCPerros() { InfoCPerros.SetActive(true); }
+    public void OnMouseExitCPerros() { InfoCPerros.SetActive(false); }
+
     //Hostal
     public void OnMouseOverHostal() { InfoHostal.SetActive(true); }
     public void OnMouseExitHostal() { InfoHostal.SetActive(false); }
 
-    //Manos Mágicas
-    public void OnMouseOverManosM() { InfoManosMagicas.SetActive(true); }
-    public void OnMouseExitManosM() { InfoManosMagicas.SetActive(false); }
-
     //Jetpack
     public void OnMouseOverJetpack() { InfoJetpack.SetActive(true); }
     public void OnMouseExitJetpack() { InfoJetpack.SetActive(false); }
+
+
+
 
     //PiojoMazao
     public void OnMouseOverPMazao() { InfoPiojoMazao.SetActive(true); }

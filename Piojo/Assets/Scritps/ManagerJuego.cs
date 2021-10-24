@@ -273,14 +273,61 @@ public class ManagerJuego : MonoBehaviour
         */
     }
 
+    private (Dictionary<string, int>, int) checkMejoras()
+    {
+        Dictionary<string, int> dic = new Dictionary<string, int>();
+        int aux = getPiojos();
+        while (true)
+        {
+            if (contPiojoMan * 20 / aux >= 1)
+            {
+                dic.Add("PiojoMan", contPiojoMan);
+                return (dic, 20);
+            }
+            else
+                contPiojoMan--;
+            if (contPiojoMan == 0 && contPCanon * 15 / aux >= 1)
+            {
+                dic.Add("PiojoCanon", contPCanon);
+                return (dic, 15);
+            }
+            else
+                contPCanon--;
+            if (contPCanon == 0 && contCazaTitanes * 10 / aux >= 1)
+            {
+                dic.Add("CazaTitanes", contCazaTitanes);
+                return (dic, 10);
+            }
+            else
+                contCazaTitanes--;
+            if (contCazaTitanes == 0 && contPiojoMazao * 5 / aux >= 1)
+            {
+                dic.Add("PiojoMazao", contPiojoMazao);
+                return (dic, 5);
+            }
+            else
+                contPiojoMazao--;
+            if (contPiojoMazao == 0)
+            {
+                dic.Add("SinMejoras", 0);
+                return (dic, 0);
+            }
+        }
+    }
+
+
     //Botón Enemigos
     public void DestructorPiojos()
     {
+        int aux, cont;
+        Dictionary<string, int> dic;
+        (dic, aux) = checkMejoras();
         numPiojos = getPiojos();
         if (numPiojos > 0)
         {
-            if (contPiojoMazao == 0 || numPiojos < contPiojoMazao * 5)
+            if (dic.ContainsKey("SinMejoras"))
             {
+                dic.Clear();
                 numPiojos--;
                 setPiojos(numPiojos);
                 contador.text = numPiojos.ToString();

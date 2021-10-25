@@ -8,10 +8,10 @@ public class ManagerJuego : MonoBehaviour
     //Contador Principal
     public Text contador;
 
-    //Botón Piojos
+    //BotÃ³n Piojos
     public int numPiojos = 0;
 
-    //Botón Enemigos
+    //BotÃ³n Enemigos
     public LifeBar barraVida;
     public Text vidaEnemigo;
     public List<Enemigo> listaEnemigos;
@@ -23,7 +23,7 @@ public class ManagerJuego : MonoBehaviour
     public Text cantidadPmadre;
     private int contPiojoMadre = 0;
 
-    //Cabeza Niño
+    //Cabeza NiÃ±o
     public Text costeActualCabezaN;
     private int costeCabezaN = 1500;
     public Text cantidadCabezaN;
@@ -77,7 +77,7 @@ public class ManagerJuego : MonoBehaviour
     public Text cantidadCazaTitanes;
     private int contCazaTitanes = 0;
 
-    //Piojo Cañón
+    //Piojo CaÃ±Ã³n
     public Text costeActualPCanon;
     private int costePCanon = 50000;
     public Text cantidadPCanon;
@@ -95,7 +95,7 @@ public class ManagerJuego : MonoBehaviour
     public Text cantidadJefe;
     private int contJefe = 0;
 
-    //Líder Motivador
+    //LÃ­der Motivador
     public Text costeActualLiderM;
     private int costeLiderM = 35000;
     public Text cantidadLiderM;
@@ -126,7 +126,7 @@ public class ManagerJuego : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Botón Enemigo
+        //BotÃ³n Enemigo
         listaEnemigos = new List<Enemigo>();
         inicializarEnemigos();
         nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
@@ -136,7 +136,7 @@ public class ManagerJuego : MonoBehaviour
         costeActualPMadre.color = Color.red;
         cantidadPmadre.text = "x" + contPiojoMadre.ToString();
 
-        //Cabeza Niño
+        //Cabeza NiÃ±o
         costeActualCabezaN.text = costeCabezaN.ToString();
         costeActualCabezaN.color = Color.red;
         cantidadCabezaN.text = "x" + contCabezaN.ToString();
@@ -181,7 +181,7 @@ public class ManagerJuego : MonoBehaviour
         costeActualCazaTitanes.color = Color.red;
         cantidadCazaTitanes.text = "x" + contCazaTitanes.ToString();
 
-        //Piojo Cañón
+        //Piojo CaÃ±Ã³n
         costeActualPCanon.text = costePCanon.ToString();
         costeActualPCanon.color = Color.red;
         cantidadPCanon.text = "x" + contPCanon.ToString();
@@ -198,7 +198,7 @@ public class ManagerJuego : MonoBehaviour
         costeActualJefe.color = Color.red;
         cantidadJefe.text = "x" + contJefe.ToString();
 
-        //Líder Motivador
+        //LÃ­der Motivador
         costeActualLiderM.text = costeLiderM.ToString();
         costeActualLiderM.color = Color.red;
         cantidadLiderM.text = "x" + contLiderM.ToString();
@@ -224,7 +224,7 @@ public class ManagerJuego : MonoBehaviour
         else
             costeActualPMadre.color = Color.red;
 
-        //Cabeza Niño && listaEnemigos[0].tipo != tipoEnemigo.Pulga
+        //Cabeza NiÃ±o && listaEnemigos[0].tipo != tipoEnemigo.Pulga
         if (getPiojos() >= costeCabezaN)
             costeActualCabezaN.color = Color.green;
         else
@@ -278,7 +278,7 @@ public class ManagerJuego : MonoBehaviour
         else
             costeActualCazaTitanes.color = Color.red;
 
-        //Piojo Cañón
+        //Piojo CaÃ±Ã³n
         if (getPiojos() >= costePCanon)
             costeActualPCanon.color = Color.green;
         else
@@ -315,7 +315,7 @@ public class ManagerJuego : MonoBehaviour
             costeActualPKasparov.color = Color.red;
     }
 
-    //Botón Piojo
+    //BotÃ³n Piojo
     public int getPiojos() { return numPiojos; }
     public void setPiojos(int newP) { numPiojos = newP; }
     public void GeneradorPiojos()
@@ -374,10 +374,10 @@ public class ManagerJuego : MonoBehaviour
             else if (cont4 != 0)
                 cont4--;
         }
-        return Mathf.Max(dic["PiojoMan"] * 20, dic["PiojoCanon"] * 15, dic["CazaTitanes"] * 10, dic["PiojoMazao"] * 5);
+        return Mathf.Max(dic["PiojoMan"] * 1000, dic["PiojoCanon"] * 100, dic["CazaTitanes"] * 50, dic["PiojoMazao"] * 10);
     }
 
-    //Botón Enemigos
+    //BotÃ³n Enemigos
     public void DestructorPiojos()
     {
 
@@ -426,7 +426,7 @@ public class ManagerJuego : MonoBehaviour
     }
 
     //Piojo Madre
-    public void añadePiojoMadre()
+    public void aÃ±adePiojoMadre()
     {
         if (getPiojos() >= costePMadre)
         {
@@ -453,8 +453,8 @@ public class ManagerJuego : MonoBehaviour
         }
     }
 
-    //Cabeza Niño
-    public void añadeCabezaN()
+    //Cabeza NiÃ±o
+    public void aÃ±adeCabezaN()
     {
         if (getPiojos() >= costeCabezaN)
         {
@@ -483,7 +483,7 @@ public class ManagerJuego : MonoBehaviour
     }
 
     //Clase Infantil
-    public void añadeClaseInfantil()
+    public void aÃ±adeClaseInfantil()
     {
         if (getPiojos() >= costeClaseInfantil)
         {
@@ -512,7 +512,7 @@ public class ManagerJuego : MonoBehaviour
     }
 
     //Patio Escuela
-    public void añadePatioEscuela()
+    public void aÃ±adePatioEscuela()
     {
         if (getPiojos() >= costePatioEscuela)
         {
@@ -540,7 +540,7 @@ public class ManagerJuego : MonoBehaviour
     }
 
     //Escuela
-    public void añadeEscuela()
+    public void aÃ±adeEscuela()
     {
         if (getPiojos() >= costeEscuela)
         {
@@ -568,7 +568,7 @@ public class ManagerJuego : MonoBehaviour
     }
 
     //Cabalgadores de Perros
-    public void añadeCPerros()
+    public void aÃ±adeCPerros()
     {
         if (getPiojos() >= costeCPerros)
         {
@@ -596,7 +596,7 @@ public class ManagerJuego : MonoBehaviour
     }
 
     //Hostal
-    public void añadeHostal()
+    public void aÃ±adeHostal()
     {
         if (getPiojos() >= costeHostal)
         {
@@ -624,7 +624,7 @@ public class ManagerJuego : MonoBehaviour
     }
 
     //Jetpack
-    public void añadeJetpack()
+    public void aÃ±adeJetpack()
     {
         if (getPiojos() >= costeJetpack)
         {
@@ -653,7 +653,7 @@ public class ManagerJuego : MonoBehaviour
     }
 
     //Piojo Mazao
-    public void añadePiojoMazao()
+    public void aÃ±adePiojoMazao()
     {
         if (getPiojos() >= costePMazao)
         {
@@ -669,7 +669,7 @@ public class ManagerJuego : MonoBehaviour
     }
 
     //Caza Titanes
-    public void añadeCazaTitanes()
+    public void aÃ±adeCazaTitanes()
     {
         if (getPiojos() >= costeCTitanes)
         {
@@ -684,8 +684,8 @@ public class ManagerJuego : MonoBehaviour
         }
     }
 
-    //Piojo Cañón
-    public void añadePiojoCanon()
+    //Piojo CaÃ±Ã³n
+    public void aÃ±adePiojoCanon()
     {
         if (getPiojos() >= costePCanon)
         {
@@ -701,7 +701,7 @@ public class ManagerJuego : MonoBehaviour
     }
 
     //Piojo Man
-    public void añadePiojoMan()
+    public void aÃ±adePiojoMan()
     {
         if (getPiojos() >= costePMan)
         {
@@ -717,7 +717,7 @@ public class ManagerJuego : MonoBehaviour
     }
 
     //Jefe de Equipo
-    public void añadeJefe()
+    public void aÃ±adeJefe()
     {
         if (getPiojos() >= costeJefe)
         {
@@ -734,7 +734,7 @@ public class ManagerJuego : MonoBehaviour
 
 
     //Lider Motivador
-    public void añadeLiderM()
+    public void aÃ±adeLiderM()
     {
         if (getPiojos() >= costeLiderM)
         {
@@ -750,7 +750,7 @@ public class ManagerJuego : MonoBehaviour
     }
 
     //Piojo Estratega
-    public void añadePEstratega()
+    public void aÃ±adePEstratega()
     {
         if (getPiojos() >= costePEstratega)
         {
@@ -766,7 +766,7 @@ public class ManagerJuego : MonoBehaviour
     }
 
     //Piojo Kasparov
-    public void añadePKasparov()
+    public void aÃ±adePKasparov()
     {
         if (getPiojos() >= costePKasparov)
         {
@@ -812,9 +812,9 @@ public class ManagerJuego : MonoBehaviour
 
 
     //Mejora1
-    public void añadeMejora1()
+    public void aÃ±adeMejora1()
     {
-        //Condición
+        //CondiciÃ³n
 
 
 

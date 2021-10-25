@@ -15,86 +15,108 @@ public class ManagerJuego : MonoBehaviour
     public LifeBar barraVida;
     public Text vidaEnemigo;
     public List<Enemigo> listaEnemigos;
+    public Text nombreEnemigo;
 
     //Piojo Madre
     public Text costeActualPMadre;
-    private int costePMadre = 10;
+    private int costePMadre = 200;
     public Text cantidadPmadre;
     private int contPiojoMadre = 0;
 
     //Cabeza Niño
     public Text costeActualCabezaN;
-    private int costeCabezaN = 10;
+    private int costeCabezaN = 1500;
     public Text cantidadCabezaN;
     private int contCabezaN = 0;
 
     //Clase Infantil
     public Text costeActualClaseInfantil;
-    private int costeClaseInfantil = 10;
+    private int costeClaseInfantil = 11000;
     public Text cantidadClaseInfantil;
     private int contClaseInfantil = 0;
 
     //Patio Escuela
     public Text costeActualPatioEscuela;
-    private int costePatioEscuela = 10;
+    private int costePatioEscuela = 80000;
     public Text cantidadPatioEscuela;
     private int contPatioEscuela = 0;
 
     //Escuela
     public Text costeActualEscuela;
-    private int costeEscuela = 10;
+    private int costeEscuela = 600000;
     public Text cantidadEscuela;
     private int contEscuela = 0;
 
-    //Hostal
+    //Cabalgadores de Perros
     public Text costeActualCPerros;
-    private int costeCPerros = 10;
+    private int costeCPerros = 4500000;
     public Text cantidadCPerros;
     private int contCPerros = 0;
 
     //Hostal
     public Text costeActualHostal;
-    private int costeHostal = 20;
+    private int costeHostal = 34000000;
     public Text cantidadHostal;
     private int contHostal = 0;
 
     //Jetpack
     public Text costeActualJetPack;
-    private int costeJetpack = 10;
+    private int costeJetpack = 250000000;
     public Text cantidadJetpack;
     private int contJetpack = 0;
 
-
-
-
-
     //Piojo Mazao
     public Text costeActualPMazao;
-    private int costePMazao = 10;
+    private int costePMazao = 1000;
     public Text cantidadPiojoMazao;
     private int contPiojoMazao = 0;
 
     //Caza Titanes
     public Text costeActualCazaTitanes;
-    private int costeCTitanes = 10;
+    private int costeCTitanes = 6500;
     public Text cantidadCazaTitanes;
     private int contCazaTitanes = 0;
 
     //Piojo Cañón
     public Text costeActualPCanon;
-    private int costePCanon = 10;
+    private int costePCanon = 50000;
     public Text cantidadPCanon;
     private int contPCanon = 0;
 
     //Piojo Man
     public Text costeActualPMan;
-    private int costePMan = 10;
+    private int costePMan = 500000;
     public Text cantidadPiojoMan;
     private int contPiojoMan = 0;
+
+    //Jefe de Equipo
+    public Text costeActualJefe;
+    private int costeJefe = 5000;
+    public Text cantidadJefe;
+    private int contJefe = 0;
+
+    //Líder Motivador
+    public Text costeActualLiderM;
+    private int costeLiderM = 35000;
+    public Text cantidadLiderM;
+    private int contLiderM = 0;
+
+    //Piojo Estratega
+    public Text costeActualPEstratega;
+    private int costePEstratega = 250000;
+    public Text cantidadPEstratega;
+    private int contPEstratega = 0;
+
+    //Piojo Kasparov
+    public Text costeActualPKasparov;
+    private int costePKasparov = 3000000;
+    public Text cantidadPKasparov;
+    private int contPKasparov = 0;
 
     //Tienda
     public GameObject tienda;
 
+    //Mejora 1
     public Text costeMejora1;
     public Text cantMejora1;
     private int cantidadMejora1 = 0;
@@ -107,6 +129,7 @@ public class ManagerJuego : MonoBehaviour
         //Botón Enemigo
         listaEnemigos = new List<Enemigo>();
         inicializarEnemigos();
+        nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
 
         //Piojo Madre
         costeActualPMadre.text = costePMadre.ToString();
@@ -148,9 +171,6 @@ public class ManagerJuego : MonoBehaviour
         costeActualJetPack.color = Color.red;
         cantidadJetpack.text = "x" + contJetpack.ToString();
 
-
-
-
         //Piojo Mazao
         costeActualPMazao.text = costePMazao.ToString();
         costeActualPMazao.color = Color.red;
@@ -170,6 +190,28 @@ public class ManagerJuego : MonoBehaviour
         costeActualPMan.text = costePMan.ToString();
         costeActualPMan.color = Color.red;
         cantidadPiojoMan.text = "x" + contPiojoMan.ToString();
+
+
+
+        //Jefe Equipo
+        costeActualJefe.text = costeJefe.ToString();
+        costeActualJefe.color = Color.red;
+        cantidadJefe.text = "x" + contJefe.ToString();
+
+        //Líder Motivador
+        costeActualLiderM.text = costeLiderM.ToString();
+        costeActualLiderM.color = Color.red;
+        cantidadLiderM.text = "x" + contLiderM.ToString();
+
+        //Piojo Estratega
+        costeActualPEstratega.text = costePEstratega.ToString();
+        costeActualPEstratega.color = Color.red;
+        cantidadPEstratega.text = "x" + contPEstratega.ToString();
+
+        //Piojo Kasparov
+        costeActualPKasparov.text = costePKasparov.ToString();
+        costeActualPKasparov.color = Color.red;
+        cantidadPKasparov.text = "x" + contPKasparov.ToString();
 
     }
 
@@ -224,9 +266,6 @@ public class ManagerJuego : MonoBehaviour
         else
             costeActualJetPack.color = Color.red;
 
-
-
-
         //Piojo Mazao
         if (getPiojos() >= costePMazao)
             costeActualPMazao.color = Color.green;
@@ -250,6 +289,30 @@ public class ManagerJuego : MonoBehaviour
             costeActualPMan.color = Color.green;
         else
             costeActualPMan.color = Color.red;
+
+        //Jefe Equipo
+        if (getPiojos() >= costeJefe)
+            costeActualJefe.color = Color.green;
+        else
+            costeActualJefe.color = Color.red;
+
+        //Lider Motivador
+        if (getPiojos() >= costeLiderM)
+            costeActualLiderM.color = Color.green;
+        else
+            costeActualLiderM.color = Color.red;
+
+        //Piojo Estratega
+        if (getPiojos() >= costePEstratega)
+            costeActualPEstratega.color = Color.green;
+        else
+            costeActualPEstratega.color = Color.red;
+
+        //Piojo Kasparov
+        if (getPiojos() >= costePKasparov)
+            costeActualPKasparov.color = Color.green;
+        else
+            costeActualPKasparov.color = Color.red;
     }
 
     //Botón Piojo
@@ -273,6 +336,7 @@ public class ManagerJuego : MonoBehaviour
         */
     }
 
+    //Mejoras de Combate
     private int checkMejoras()
     {
         int cont1 = contPiojoMan, cont2 = contPCanon, cont3 = contCazaTitanes, cont4 = contPiojoMazao;
@@ -282,28 +346,28 @@ public class ManagerJuego : MonoBehaviour
         while (dic.Count != 4)
         {
             dic.Clear();
-            if (cont1 == 0 || aux / (cont1 * 20) >= 1)
+            if (cont1 == 0 || aux / (cont1 * 1000) >= 1)
             {
                 dic.Add("PiojoMan", cont1);
             }
             else if (cont1 != 0)
                 cont1--;
 
-            if (cont2 == 0 || aux / (cont2 * 15) >= 1)
+            if (cont2 == 0 || aux / (cont2 * 100) >= 1)
             {
                 dic.Add("PiojoCanon", cont2);
             }
             else if (cont2 != 0)
                 cont2--;
 
-            if (cont3 == 0 || aux / (cont3 * 10) >= 1)
+            if (cont3 == 0 || aux / (cont3 * 50) >= 1)
             {
                 dic.Add("CazaTitanes", cont3);
             }
             else if (cont3 != 0)
                 cont3--;
 
-            if (cont4 == 0 || aux / (cont4 * 5) >= 1)
+            if (cont4 == 0 || aux / (cont4 * 10) >= 1)
             {
                 dic.Add("PiojoMazao", cont4);
             }
@@ -312,7 +376,6 @@ public class ManagerJuego : MonoBehaviour
         }
         return Mathf.Max(dic["PiojoMan"] * 20, dic["PiojoCanon"] * 15, dic["CazaTitanes"] * 10, dic["PiojoMazao"] * 5);
     }
-
 
     //Botón Enemigos
     public void DestructorPiojos()
@@ -333,6 +396,7 @@ public class ManagerJuego : MonoBehaviour
                 if (listaEnemigos[0].GetVidaActual() <= 0)
                 {
                     listaEnemigos.RemoveAt(0);
+                    nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
                     barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
                     barraVida.setVida(listaEnemigos[0].GetVidaActual());
                     vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
@@ -350,6 +414,7 @@ public class ManagerJuego : MonoBehaviour
                 if (listaEnemigos[0].GetVidaActual() <= 0)
                 {
                     listaEnemigos.RemoveAt(0);
+                    nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
                     barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
                     barraVida.setVida(listaEnemigos[0].GetVidaActual());
                     vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
@@ -371,7 +436,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costePMadre;
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
-            costePMadre = Mathf.RoundToInt(costePMadre * 1.2f);
+            costePMadre = Mathf.RoundToInt(costePMadre * 1.5f);
             costeActualPMadre.text = costePMadre.ToString();
             StartCoroutine(Gen1PiojoSeg());
         }
@@ -399,7 +464,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costeCabezaN;
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
-            costeCabezaN = Mathf.RoundToInt(costeCabezaN * 1.2f);
+            costeCabezaN = Mathf.RoundToInt(costeCabezaN * 1.5f);
             costeActualCabezaN.text = costeCabezaN.ToString();
             StartCoroutine(Gen5Piojos());
         }
@@ -428,7 +493,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costeClaseInfantil;
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
-            costeClaseInfantil = Mathf.RoundToInt(costeClaseInfantil * 1.2f);
+            costeClaseInfantil = Mathf.RoundToInt(costeClaseInfantil * 1.5f);
             costeActualClaseInfantil.text = costeClaseInfantil.ToString();
             StartCoroutine(Gen10Piojos());
         }
@@ -457,7 +522,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costePatioEscuela;
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
-            costePatioEscuela = Mathf.RoundToInt(costePatioEscuela * 1.2f);
+            costePatioEscuela = Mathf.RoundToInt(costePatioEscuela * 1.5f);
             costeActualPatioEscuela.text = costePatioEscuela.ToString();
             StartCoroutine(Gen20PiojoSeg());
         }
@@ -485,7 +550,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costeEscuela;
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
-            costeEscuela = Mathf.RoundToInt(costeEscuela * 1.2f);
+            costeEscuela = Mathf.RoundToInt(costeEscuela * 1.5f);
             costeActualEscuela.text = costeEscuela.ToString();
             StartCoroutine(Gen50PiojoSeg());
         }
@@ -513,17 +578,17 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costeCPerros;
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
-            costeCPerros = Mathf.RoundToInt(costeCPerros * 1.2f);
+            costeCPerros = Mathf.RoundToInt(costeCPerros * 1.5f);
             costeActualCPerros.text = costeCPerros.ToString();
-            StartCoroutine(Gen75PiojoSeg());
+            StartCoroutine(Gen100PiojoSeg());
         }
     }
-    IEnumerator Gen75PiojoSeg()
+    IEnumerator Gen100PiojoSeg()
     {
         while (true)
         {
             numPiojos = getPiojos();
-            numPiojos = numPiojos + (contCPerros * 75);
+            numPiojos = numPiojos + (contCPerros * 100);
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
             yield return new WaitForSeconds(1);
@@ -541,17 +606,17 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costeHostal;
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
-            costeHostal = Mathf.RoundToInt(costeHostal * 1.2f);
+            costeHostal = Mathf.RoundToInt(costeHostal * 1.5f);
             costeActualHostal.text = costeHostal.ToString();
-            StartCoroutine(Gen100PiojoSeg());
+            StartCoroutine(Gen500PiojoSeg());
         }
     }
-    IEnumerator Gen100PiojoSeg()
+    IEnumerator Gen500PiojoSeg()
     {
         while (true)
         {
             numPiojos = getPiojos();
-            numPiojos = numPiojos + (contHostal * 100);
+            numPiojos = numPiojos + (contHostal * 500);
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
             yield return new WaitForSeconds(1);
@@ -569,7 +634,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costeJetpack;
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
-            costeJetpack = Mathf.RoundToInt(costeJetpack * 1.2f);
+            costeJetpack = Mathf.RoundToInt(costeJetpack * 1.5f);
             costeActualJetPack.text = costeJetpack.ToString();
             StartCoroutine(Gen1000Piojos());
         }
@@ -587,8 +652,6 @@ public class ManagerJuego : MonoBehaviour
 
     }
 
-
-
     //Piojo Mazao
     public void añadePiojoMazao()
     {
@@ -600,7 +663,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costePMazao;
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
-            costePMazao = Mathf.RoundToInt(costePMazao * 1.2f);
+            costePMazao = Mathf.RoundToInt(costePMazao * 1.5f);
             costeActualPMazao.text = costePMazao.ToString();
         }
     }
@@ -616,7 +679,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costeCTitanes;
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
-            costeCTitanes = Mathf.RoundToInt(costeCTitanes * 1.2f);
+            costeCTitanes = Mathf.RoundToInt(costeCTitanes * 1.5f);
             costeActualCazaTitanes.text = costeCTitanes.ToString();
         }
     }
@@ -632,7 +695,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costePCanon;
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
-            costePCanon = Mathf.RoundToInt(costePCanon * 1.2f);
+            costePCanon = Mathf.RoundToInt(costePCanon * 1.5f);
             costeActualPCanon.text = costePCanon.ToString();
         }
     }
@@ -648,10 +711,79 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costePMan;
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
-            costePMan = Mathf.RoundToInt(costePMan * 1.2f);
+            costePMan = Mathf.RoundToInt(costePMan * 1.5f);
             costeActualPMan.text = costePMan.ToString();
         }
     }
+
+    //Jefe de Equipo
+    public void añadeJefe()
+    {
+        if (getPiojos() >= costeJefe)
+        {
+            contJefe++;
+            cantidadJefe.text = "x" + contJefe.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costeJefe;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costeJefe = Mathf.RoundToInt(costeJefe * 1.5f);
+            costeActualJefe.text = costeJefe.ToString();
+        }
+    }
+
+
+    //Lider Motivador
+    public void añadeLiderM()
+    {
+        if (getPiojos() >= costeLiderM)
+        {
+            contLiderM++;
+            cantidadLiderM.text = "x" + contLiderM.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costeLiderM;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costeLiderM = Mathf.RoundToInt(costeLiderM * 1.5f);
+            costeActualLiderM.text = costeLiderM.ToString();
+        }
+    }
+
+    //Piojo Estratega
+    public void añadePEstratega()
+    {
+        if (getPiojos() >= costePEstratega)
+        {
+            contPEstratega++;
+            cantidadPEstratega.text = "x" + contPEstratega.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costePEstratega;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costePEstratega = Mathf.RoundToInt(costePEstratega * 1.5f);
+            costeActualPEstratega.text = costePEstratega.ToString();
+        }
+    }
+
+    //Piojo Kasparov
+    public void añadePKasparov()
+    {
+        if (getPiojos() >= costePKasparov)
+        {
+            contPKasparov++;
+            cantidadPKasparov.text = "x" + contPKasparov.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costePKasparov;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costePKasparov = Mathf.RoundToInt(costePKasparov * 1.5f);
+            costeActualPKasparov.text = costePKasparov.ToString();
+        }
+    }
+
+
+
+
 
 
     //Enemigos

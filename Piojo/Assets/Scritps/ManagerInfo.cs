@@ -21,6 +21,11 @@ public class ManagerInfo : MonoBehaviour
     public GameObject InfoPiojoCanon;
     public GameObject InfoPiojoMan;
 
+    public GameObject InfoJefeEquipo;
+    public GameObject InfoLiderM;
+    public GameObject InfoPEstratega;
+    public GameObject InfoPKasparov;
+
     //Mejoras de Pago
     public GameObject InfoMejora1;
 
@@ -42,6 +47,11 @@ public class ManagerInfo : MonoBehaviour
         InfoCazaTitanes.SetActive(false);
         InfoPiojoCanon.SetActive(false);
         InfoPiojoMan.SetActive(false);
+
+        InfoJefeEquipo.SetActive(false);
+        InfoLiderM.SetActive(false);
+        InfoPEstratega.SetActive(false);
+        InfoPKasparov.SetActive(false);
 
         //Mejoras de Pago
         InfoMejora1.SetActive(false);
@@ -97,6 +107,27 @@ public class ManagerInfo : MonoBehaviour
     //PiojoMan
     public void OnMouseOverPiojoMan() { InfoPiojoMan.SetActive(true); }
     public void OnMouseExitPiojoMan() { InfoPiojoMan.SetActive(false); }
+
+
+    //Jefe Equipo
+    public void OnMouseOverJefe() { InfoJefeEquipo.SetActive(true); }
+    public void OnMouseExitJefe() { InfoJefeEquipo.SetActive(false); }
+
+    //Lider Motivador
+    public void OnMouseOverLiderM() { InfoLiderM.SetActive(true); }
+    public void OnMouseExitLiderM() { InfoLiderM.SetActive(false); }
+
+    //Piojo Estratega
+    public void OnMouseOverPEstratega() { InfoPEstratega.SetActive(true); }
+    public void OnMouseExitPEstratega() { InfoPEstratega.SetActive(false); }
+
+    //Piojo Kasparov
+    public void OnMouseOverPKasparov() { InfoPKasparov.SetActive(true); }
+    public void OnMouseExitPKasparov() { InfoPKasparov.SetActive(false); }
+
+
+
+
 
     //Mejora 1
     public void OnMouseOverMejora1() { InfoMejora1.SetActive(true); }

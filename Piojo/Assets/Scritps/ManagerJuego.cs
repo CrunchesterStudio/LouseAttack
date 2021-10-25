@@ -191,7 +191,7 @@ public class ManagerJuego : MonoBehaviour
         //Clase Infantil
         if (getPiojos() >= costeClaseInfantil)
             costeActualClaseInfantil.color = Color.green;
-        else          
+        else
             costeActualClaseInfantil.color = Color.red;
 
         //Patio Escuela
@@ -273,61 +273,57 @@ public class ManagerJuego : MonoBehaviour
         */
     }
 
-    private (Dictionary<string, int>, int) checkMejoras()
+    private int checkMejoras()
     {
+        int cont1 = contPiojoMan, cont2 = contPCanon, cont3 = contCazaTitanes, cont4 = contPiojoMazao;
         Dictionary<string, int> dic = new Dictionary<string, int>();
         int aux = getPiojos();
-        while (true)
+
+        while (dic.Count != 4)
         {
-            if (contPiojoMan * 20 / aux >= 1)
+            dic.Clear();
+            if (cont1 == 0 || aux / (cont1 * 20) >= 1)
             {
-                dic.Add("PiojoMan", contPiojoMan);
-                return (dic, 20);
+                dic.Add("PiojoMan", cont1);
             }
-            else
-                contPiojoMan--;
-            if (contPiojoMan == 0 && contPCanon * 15 / aux >= 1)
+            else if (cont1 != 0)
+                cont1--;
+
+            if (cont2 == 0 || aux / (cont2 * 15) >= 1)
             {
-                dic.Add("PiojoCanon", contPCanon);
-                return (dic, 15);
+                dic.Add("PiojoCanon", cont2);
             }
-            else
-                contPCanon--;
-            if (contPCanon == 0 && contCazaTitanes * 10 / aux >= 1)
+            else if (cont2 != 0)
+                cont2--;
+
+            if (cont3 == 0 || aux / (cont3 * 10) >= 1)
             {
-                dic.Add("CazaTitanes", contCazaTitanes);
-                return (dic, 10);
+                dic.Add("CazaTitanes", cont3);
             }
-            else
-                contCazaTitanes--;
-            if (contCazaTitanes == 0 && contPiojoMazao * 5 / aux >= 1)
+            else if (cont3 != 0)
+                cont3--;
+
+            if (cont4 == 0 || aux / (cont4 * 5) >= 1)
             {
-                dic.Add("PiojoMazao", contPiojoMazao);
-                return (dic, 5);
+                dic.Add("PiojoMazao", cont4);
             }
-            else
-                contPiojoMazao--;
-            if (contPiojoMazao == 0)
-            {
-                dic.Add("SinMejoras", 0);
-                return (dic, 0);
-            }
+            else if (cont4 != 0)
+                cont4--;
         }
+        return Mathf.Max(dic["PiojoMan"] * 20, dic["PiojoCanon"] * 15, dic["CazaTitanes"] * 10, dic["PiojoMazao"] * 5);
     }
 
 
     //Botón Enemigos
     public void DestructorPiojos()
     {
-        int aux, cont;
-        Dictionary<string, int> dic;
-        (dic, aux) = checkMejoras();
+
         numPiojos = getPiojos();
         if (numPiojos > 0)
         {
-            if (dic.ContainsKey("SinMejoras"))
+            int aux = checkMejoras();
+            if (aux == 0 || aux > numPiojos)
             {
-                dic.Clear();
                 numPiojos--;
                 setPiojos(numPiojos);
                 contador.text = numPiojos.ToString();
@@ -345,7 +341,7 @@ public class ManagerJuego : MonoBehaviour
             }
             else
             {
-                numPiojos = numPiojos - (contPiojoMazao * 5);
+                numPiojos = numPiojos - aux;
                 setPiojos(numPiojos);
                 contador.text = numPiojos.ToString();
                 listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - contPiojoMazao * 5);
@@ -367,7 +363,7 @@ public class ManagerJuego : MonoBehaviour
     //Piojo Madre
     public void añadePiojoMadre()
     {
-        if (getPiojos() >= costePMadre) 
+        if (getPiojos() >= costePMadre)
         {
             contPiojoMadre++;
             cantidadPmadre.text = "x" + contPiojoMadre.ToString();

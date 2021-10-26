@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Security.AccessControl;
+using Newtonsoft.Json;
 using UnityEngine;
+using System.Runtime.InteropServices;
 using UnityEngine.UI;
 
 public class ManagerJuego : MonoBehaviour
 {
     //Contador Principal
     public Text contador;
-
+    
     //Botón Piojos
     public int numPiojos = 0;
 
@@ -87,6 +91,8 @@ public class ManagerJuego : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //PlayerSettings.WebGL.memorySize = 1024;
+
         //Botón Enemigo
         listaEnemigos = new List<Enemigo>();
         inicializarEnemigos();
@@ -510,6 +516,124 @@ public class ManagerJuego : MonoBehaviour
         vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
     }
 
+    //SALVADO DE PARTIDA
+    public void guardarPartida()
+    {
+         Partida p=new Partida();
+         p.numPiojos=this.numPiojos;
+         p.listaEnemigos = this.listaEnemigos;
+         p.costeEnfermera =this.costeEnfermera;
+         p.contEnfermeras=this.contEnfermeras;
+         p.costePMadre=this.costePMadre;
+         p.contPiojoMadre=this.contPiojoMadre;
+         p.costeEscuela=this.costeEscuela;
+         p.contEscuela=this.contEscuela;
+         p.costeHostal =this.costeHostal;
+         p.contHostal=this.contHostal;
+         p.costeManos=this.costeManos;
+         p.contManosMagicas=this.contManosMagicas;
+         p.costeJetpack=this.costeJetpack;
+         p.contJetpack=this.contJetpack;
+
+         p.costePMazao=this.costePMazao;
+         p.contPiojoMazao=this.contPiojoMazao;
+         p.costeCTitanes= this.costeCTitanes;
+         p.contCazaTitanes=this.contCazaTitanes;
+         p.costePCanon= this.costePCanon;
+         p.contPCanon=this.contPCanon;
+         p.costePMan=this.costePMan;
+         p.contPiojoMan=this.contPiojoMan;
+        try
+        {
+            string jsonString = JsonConvert.SerializeObject(p, Formatting.Indented);
+            
+            GuardarDatos(jsonString);
+            //StreamWriter s = new StreamWriter(Application.persistentDataPath + "/data.json");
+            //s.Write(jsonString);
+            //s.Close();
+        }
+        catch(IOException e)
+        {
+
+        }
+        
+         
+    }
+    //CARGA DE PARTIDA
+    public void cargarPartida()
+    {
+        string datosPartida = "";
+        try
+        {
+            //StreamReader r = new StreamReader(Application.persistentDataPath + "/data.json");
+            //datosPartida = r.ReadToEnd();
+            //r.Close();
+            datosPartida=CargarDatos(datosPartida);
+        }
+        catch(IOException e)
+        {
+
+        }
+
+        Partida p = new Partida();
+        p = JsonConvert.DeserializeObject<Partida>(datosPartida);
+
+        this.numPiojos = p.numPiojos;
+        this.listaEnemigos = p.listaEnemigos;
+        this.costeEnfermera = p.costeEnfermera;
+        this.contEnfermeras = p.contEnfermeras;
+        this.costePMadre = p.costePMadre;
+        this.contPiojoMadre = p.contPiojoMadre;
+        this.costeEscuela = p.costeEscuela;
+        this.contEscuela = p.contEscuela;
+        this.costeHostal = p.costeHostal;
+        this.contHostal = p.contHostal;
+        this.costeManos = p.costeManos;
+        this.contManosMagicas = p.contManosMagicas;
+        this.costeJetpack = p.costeJetpack;
+        this.contJetpack = p.contJetpack;
+
+        this.costePMazao = p.costePMazao;
+        this.contPiojoMazao = p.contPiojoMazao;
+        this.costeCTitanes = p.costeCTitanes;
+        this.contCazaTitanes = p.contCazaTitanes;
+        this.costePCanon = p.costePCanon;
+        this.contPCanon = p.contPCanon;
+        this.costePMan = p.costePMan;
+        this.contPiojoMan = p.contPiojoMan;
+        this.barraVida.setVida(listaEnemigos[0].GetVidaActual());
+        this.barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
+        actualizarTextos();
+
+    }
+
+    private void actualizarTextos()
+    {
+        this.contador.text=this.numPiojos.ToString();
+        this.vidaEnemigo.text=this.listaEnemigos[0].GetVidaActual().ToString();
+        this.costeActualEnfermera.text=this.costeEnfermera.ToString();
+        this.cantidadEnfermera.text=this.contEnfermeras.ToString();
+        this.costeActualPMadre.text=this.costePMadre.ToString();
+        this.cantidadPmadre.text=this.contPiojoMadre.ToString();
+        this.costeActualEscuela.text=this.costeEscuela.ToString();
+        this.cantidadEscuela.text=this.contEscuela.ToString();
+        this.costeActualHostal.text=this.costeHostal.ToString();
+        this.cantidadHostal.text=this.contHostal.ToString();
+        this.costeActualManosM.text=this.costeManos.ToString();
+        this.cantidadManosM.text=this.contManosMagicas.ToString();
+        this.costeActualJetPack.text=this.costeJetpack.ToString();
+        this.cantidadJetpack.text=this.contJetpack.ToString();
+        this.costeActualPMazao.text=this.costePMazao.ToString();
+        this.cantidadPiojoMazao.text=this.contPiojoMazao.ToString();
+        this.costeActualCazaTitanes.text=this.costeCTitanes.ToString();
+        this.cantidadCazaTitanes.text=this.contCazaTitanes.ToString();
+        this.costeActualPCanon.text=this.costePCanon.ToString();
+        this.cantidadPCanon.text=this.contPCanon.ToString();
+        this.costeActualPMan.text=this.costePMan.ToString();
+        this.cantidadPiojoMan.text=this.contPiojoMan.ToString();
+        this.vidaEnemigo.text = this.listaEnemigos[0].GetVidaActual().ToString() + "/" + this.listaEnemigos[0].GetVidaMax().ToString();
+    }
+
     //Tienda
     public void muestraTienda()
     {
@@ -533,6 +657,10 @@ public class ManagerJuego : MonoBehaviour
         cantidadMejora1++;
         cantMejora1.text = "x" + cantidadMejora1.ToString();
     }
-
-
+    
+    [DllImport("__Internal")]
+    private static extern void GuardarDatos(string d);
+    
+    [DllImport("__Internal")]
+    private static extern string CargarDatos(string d);
 }

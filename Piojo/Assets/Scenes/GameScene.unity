@@ -654,7 +654,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Speed
+  m_Text: Cada ud. genera 1 click/2s.
 --- !u!222 &62141936
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4611,7 +4611,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: hecta
+  m_Text: Cada ud. aumenta +100 Piojos/click.
 --- !u!222 &576897193
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4769,7 +4769,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bien pagado
+  m_Text: Cada ud. genera 1 click/10s.
 --- !u!222 &598906467
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5006,7 +5006,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cafeina
+  m_Text: Cada ud. genera 1 click/5s.
 --- !u!222 &621522878
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6287,7 +6287,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mellizos
+  m_Text: Cada ud. aumenta +2 Piojos/click.
 --- !u!222 &767191781
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12228,7 +12228,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enfermera
+  m_Text: Cada ud. genera 1 click/20s.
 --- !u!222 &1264174154
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14000,7 +14000,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: quinti
+  m_Text: Cada ud. aumenta +5 Piojos/click.
 --- !u!222 &1442886986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17266,7 +17266,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: deca
+  m_Text: Cada ud. aumenta +10 Piojos/click.
 --- !u!222 &1736312026
 CanvasRenderer:
   m_ObjectHideFlags: 0

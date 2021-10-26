@@ -459,7 +459,7 @@ public class ManagerJuego : MonoBehaviour
     //Mejoras de Generacion
     private int checkGeneracion()
     {
-        return contPMellizos * 2 + contPQuinti * 10 + contPDeca * 50 + contPHecta * 100;
+        return contPMellizos * 2 + contPQuinti * 5 + contPDeca * 10 + contPHecta * 100;
     }
 
     public void GeneradorPiojos()
@@ -621,7 +621,7 @@ public class ManagerJuego : MonoBehaviour
     //Clase Infantil
     public void añadeClaseInfantil()
     {
-        if (getPiojos() >= costeClaseInfantil)
+        if (getPiojos() >= costeClaseInfantil && listaEnemigos[0].tipo != tipoEnemigo.Pulga)
         {
             contClaseInfantil++;
             cantidadClaseInfantil.text = "x" + contClaseInfantil.ToString();
@@ -650,7 +650,7 @@ public class ManagerJuego : MonoBehaviour
     //Patio Escuela
     public void añadePatioEscuela()
     {
-        if (getPiojos() >= costePatioEscuela)
+        if (getPiojos() >= costePatioEscuela && listaEnemigos[0].tipo != tipoEnemigo.Pulga)
         {
             contPatioEscuela++;
             cantidadPatioEscuela.text = "x" + contPatioEscuela.ToString();

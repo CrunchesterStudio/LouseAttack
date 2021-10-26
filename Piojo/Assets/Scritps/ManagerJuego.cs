@@ -113,6 +113,57 @@ public class ManagerJuego : MonoBehaviour
     public Text cantidadPKasparov;
     private int contPKasparov = 0;
 
+    //Enfermera Piojo
+    public Text costeActualEnfermera;
+    private int costeEnfermera = 10;
+    public Text cantidadEnfermera;
+    private int contEnfermera = 0;
+
+    //Piojo Bien Pagado
+    public Text costeActualPPagado;
+    private int costePPagado = 10;
+    public Text cantidadPPagado;
+    private int contPPagado = 0;
+
+    //Piojo Cafeína
+    public Text costeActualPCafeina;
+    private int costePCafeina = 10;
+    public Text cantidadPCafeina;
+    private int contPCafeina = 0;
+
+    //Piojo SpeedRunner
+    public Text costeActualPSpeed;
+    private int costePSpeed = 10;
+    public Text cantidadPSpeed;
+    private int contPSpeed = 0;
+
+    //Piojos Mellizos 
+    public Text costeActualPMellizos;
+    private int costePMellizos = 10;
+    public Text cantidadPMellizos;
+    private int contPMellizos = 0;
+
+    //Piojos Quintillizos 
+    public Text costeActualPQuinti;
+    private int costePQuinti = 10;
+    public Text cantidadPQuinti;
+    private int contPQuinti = 0;
+
+    //Piojos Decallizos 
+    public Text costeActualPDeca;
+    private int costePDeca = 10;
+    public Text cantidadPDeca;
+    private int contPDeca = 0;
+
+    //Piojos Hectallizos 
+    public Text costeActualPHecta;
+    private int costePHecta = 10;
+    public Text cantidadPHecta;
+    private int contPHecta = 0;
+
+    //Mejoras Generacion
+    public GameObject mejGeneracion;
+
     //Tienda
     public GameObject tienda;
 
@@ -191,8 +242,6 @@ public class ManagerJuego : MonoBehaviour
         costeActualPMan.color = Color.red;
         cantidadPiojoMan.text = "x" + contPiojoMan.ToString();
 
-
-
         //Jefe Equipo
         costeActualJefe.text = costeJefe.ToString();
         costeActualJefe.color = Color.red;
@@ -212,6 +261,46 @@ public class ManagerJuego : MonoBehaviour
         costeActualPKasparov.text = costePKasparov.ToString();
         costeActualPKasparov.color = Color.red;
         cantidadPKasparov.text = "x" + contPKasparov.ToString();
+
+        //Enfermera Piojo
+        costeActualEnfermera.text = costeEnfermera.ToString();
+        costeActualEnfermera.color = Color.red;
+        cantidadEnfermera.text = "x" + contEnfermera.ToString();
+
+        //Piojo Bien Pagado
+        costeActualPPagado.text = costePPagado.ToString();
+        costeActualPPagado.color = Color.red;
+        cantidadPPagado.text = "x" + contPPagado.ToString();
+
+        //Piojo Cafeina
+        costeActualPCafeina.text = costePCafeina.ToString();
+        costeActualPCafeina.color = Color.red;
+        cantidadPCafeina.text = "x" + contPCafeina.ToString();
+
+        //Piojo Speedrunner
+        costeActualPSpeed.text = costePSpeed.ToString();
+        costeActualPSpeed.color = Color.red;
+        cantidadPSpeed.text = "x" + contPSpeed.ToString();
+
+        //Piojos Mellizos
+        costeActualPMellizos.text = costePMellizos.ToString();
+        costeActualPMellizos.color = Color.red;
+        cantidadPMellizos.text = "x" + contPMellizos.ToString();
+
+        //Piojo Quintillizos
+        costeActualPQuinti.text = costePQuinti.ToString();
+        costeActualPQuinti.color = Color.red;
+        cantidadPQuinti.text = "x" + contPQuinti.ToString();
+
+        //Piojo Decallizos
+        costeActualPDeca.text = costePDeca.ToString();
+        costeActualPDeca.color = Color.red;
+        cantidadPDeca.text = "x" + contPDeca.ToString();
+
+        //Piojo Hectallizos
+        costeActualPHecta.text = costePHecta.ToString();
+        costeActualPHecta.color = Color.red;
+        cantidadPHecta.text = "x" + contPHecta.ToString();
 
     }
 
@@ -313,27 +402,74 @@ public class ManagerJuego : MonoBehaviour
             costeActualPKasparov.color = Color.green;
         else
             costeActualPKasparov.color = Color.red;
+
+        //Enfermera Piojo 
+        if (getPiojos() >= costeEnfermera)
+            costeActualEnfermera.color = Color.green;
+        else
+            costeActualEnfermera.color = Color.red;
+
+        //Piojo Bien Pagado
+        if (getPiojos() >= costePPagado)
+            costeActualPPagado.color = Color.green;
+        else
+            costeActualPPagado.color = Color.red;
+
+        //Piojo Cafeina
+        if (getPiojos() >= costePCafeina)
+            costeActualPCafeina.color = Color.green;
+        else
+            costeActualPCafeina.color = Color.red;
+
+        //Piojo Speedrunner
+        if (getPiojos() >= costePSpeed)
+            costeActualPSpeed.color = Color.green;
+        else
+            costeActualPSpeed.color = Color.red;
+
+        //Piojos Mellizos
+        if (getPiojos() >= costePMellizos)
+            costeActualPMellizos.color = Color.green;
+        else
+            costeActualPMellizos.color = Color.red;
+
+        //Piojos Quintillizos
+        if (getPiojos() >= costePQuinti)
+            costeActualPQuinti.color = Color.green;
+        else
+            costeActualPQuinti.color = Color.red;
+
+        //Piojos Decallizos
+        if (getPiojos() >= costePDeca)
+            costeActualPDeca.color = Color.green;
+        else
+            costeActualPDeca.color = Color.red;
+
+        //Piojos Hectallizos
+        if (getPiojos() >= costePHecta)
+            costeActualPHecta.color = Color.green;
+        else
+            costeActualPHecta.color = Color.red;
     }
 
     //Botón Piojo
     public int getPiojos() { return numPiojos; }
     public void setPiojos(int newP) { numPiojos = newP; }
+
+    //Mejoras de Generacion
+    private int checkGeneracion()
+    {
+        return contPMellizos * 2 + contPQuinti * 10 + contPDeca * 50 + contPHecta * 100;
+    }
+
     public void GeneradorPiojos()
     {
-        numPiojos++;
-        contador.text = numPiojos.ToString();
-        /*
-        if (contManosMagicas == 0)
-        {
+        int aux = checkGeneracion();
+        if (aux == 0)
             numPiojos++;
-            contador.text = numPiojos.ToString();
-        }
         else
-        {
-            numPiojos = numPiojos + (contManosMagicas * 100);
-            contador.text = numPiojos.ToString();
-        }
-        */
+            numPiojos += aux;
+        contador.text = numPiojos.ToString();
     }
 
     //Mejoras de Combate
@@ -649,7 +785,6 @@ public class ManagerJuego : MonoBehaviour
             contador.text = numPiojos.ToString();
             yield return new WaitForSeconds(1);
         }
-
     }
 
     //Piojo Mazao
@@ -732,7 +867,6 @@ public class ManagerJuego : MonoBehaviour
         }
     }
 
-
     //Lider Motivador
     public void añadeLiderM()
     {
@@ -781,10 +915,177 @@ public class ManagerJuego : MonoBehaviour
         }
     }
 
+    //Enfermera Piojo 
+    public void añadeEnfermera()
+    {
+        if (getPiojos() >= costeEnfermera)
+        {
+            contEnfermera++;
+            cantidadEnfermera.text = "x" + contEnfermera.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costeEnfermera;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costeEnfermera = Mathf.RoundToInt(costeEnfermera * 1.5f);
+            costeActualEnfermera.text = costeEnfermera.ToString();
+            StartCoroutine(click20s());
+        }
+    }
 
+    IEnumerator click20s()
+    {
+        yield return new WaitForSeconds(20);
+        while (true)
+        {
+            GeneradorPiojos();
+            yield return new WaitForSeconds(20);
+        }
+    }
 
+    //Piojo Bien Pagado 
+    public void añadePPagado()
+    {
+        if (getPiojos() >= costePPagado)
+        {
+            contPPagado++;
+            cantidadPPagado.text = "x" + contPPagado.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costePPagado;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costePPagado = Mathf.RoundToInt(costePPagado * 1.5f);
+            costeActualPPagado.text = costePPagado.ToString();
+            StartCoroutine(click10s());
+        }
+    }
 
+    IEnumerator click10s()
+    {
+        yield return new WaitForSeconds(10);
+        while (true)
+        {
+            GeneradorPiojos();
+            yield return new WaitForSeconds(10);
+        }
+    }
 
+    //Piojo Cafeina
+    public void añadePCafeina()
+    {
+        if (getPiojos() >= costePCafeina)
+        {
+            contPCafeina++;
+            cantidadPCafeina.text = "x" + contPCafeina.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costePCafeina;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costePCafeina = Mathf.RoundToInt(costePCafeina * 1.5f);
+            costeActualPCafeina.text = costePCafeina.ToString();
+            StartCoroutine(click5s());
+        }
+    }
+
+    IEnumerator click5s()
+    {
+        yield return new WaitForSeconds(5);
+        while (true)
+        {
+            GeneradorPiojos();
+            yield return new WaitForSeconds(5);
+        }
+    }
+
+    //Piojo SpeedRunner 
+    public void añadePSpeed()
+    {
+        if (getPiojos() >= costePSpeed)
+        {
+            contPSpeed++;
+            cantidadPSpeed.text = "x" + contPSpeed.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costePSpeed;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costePSpeed = Mathf.RoundToInt(costePSpeed * 1.5f);
+            costeActualPSpeed.text = costePSpeed.ToString();
+            StartCoroutine(click2s());
+        }
+    }
+
+    IEnumerator click2s()
+    {
+        yield return new WaitForSeconds(2);
+        while (true)
+        {
+            GeneradorPiojos();
+            yield return new WaitForSeconds(2);
+        }
+    }
+
+    //Piojos Mellizos 
+    public void añadePMellizos()
+    {
+        if (getPiojos() >= costePMellizos)
+        {
+            contPMellizos++;
+            cantidadPMellizos.text = "x" + contPMellizos.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costePMellizos;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costePMellizos = Mathf.RoundToInt(costePMellizos * 1.5f);
+            costeActualPMellizos.text = costePMellizos.ToString();
+        }
+    }
+
+    //Piojos Quintillizos 
+    public void añadePQuinti()
+    {
+        if (getPiojos() >= costePQuinti)
+        {
+            contPQuinti++;
+            cantidadPQuinti.text = "x" + contPQuinti.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costePQuinti;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costePQuinti = Mathf.RoundToInt(costePQuinti * 1.5f);
+            costeActualPQuinti.text = costePQuinti.ToString();
+        }
+    }
+
+    //Piojos Decallizos 
+    public void añadePDeca()
+    {
+        if (getPiojos() >= costePDeca)
+        {
+            contPDeca++;
+            cantidadPDeca.text = "x" + contPDeca.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costePDeca;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costePDeca = Mathf.RoundToInt(costePDeca * 1.5f);
+            costeActualPDeca.text = costePDeca.ToString();
+        }
+    }
+
+    //Piojos Hectallizos 
+    public void añadePHecta()
+    {
+        if (getPiojos() >= costePHecta)
+        {
+            contPHecta++;
+            cantidadPHecta.text = "x" + contPHecta.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costePHecta;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costePHecta = Mathf.RoundToInt(costePHecta * 1.5f);
+            costeActualPHecta.text = costePHecta.ToString();
+        }
+    }
 
     //Enemigos
     private void inicializarEnemigos()
@@ -810,6 +1111,16 @@ public class ManagerJuego : MonoBehaviour
         tienda.SetActive(false);
     }
 
+    //Mejoras Click
+    public void muestraGeneracion()
+    {
+        mejGeneracion.SetActive(true);
+    }
+
+    public void ocultaGeneracion()
+    {
+        mejGeneracion.SetActive(false);
+    }
 
     //Mejora1
     public void añadeMejora1()

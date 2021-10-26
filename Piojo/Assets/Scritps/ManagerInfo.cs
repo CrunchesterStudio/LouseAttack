@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ManagerInfo : MonoBehaviour
 {
-    //Mejoras de Generación
+    //Mejoras de Expansión
     public GameObject InfoPMadre;
     public GameObject InfoCabezaN;
     public GameObject InfoClaseInfantil;
@@ -26,13 +26,23 @@ public class ManagerInfo : MonoBehaviour
     public GameObject InfoPEstratega;
     public GameObject InfoPKasparov;
 
+    //Mejoras Generación
+    public GameObject InfoEnfermera;
+    public GameObject InfoPPagado;
+    public GameObject InfoPCafeina;
+    public GameObject InfoPSpeed;
+    public GameObject InfoPMellizos;
+    public GameObject InfoPQuinti;
+    public GameObject InfoPDeca;
+    public GameObject InfoPHecta;
+
     //Mejoras de Pago
     public GameObject InfoMejora1;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Mejoras de Generación
+        //Mejoras de Expansión
         InfoPMadre.SetActive(false);
         InfoCabezaN.SetActive(false);
         InfoClaseInfantil.SetActive(false);
@@ -47,11 +57,21 @@ public class ManagerInfo : MonoBehaviour
         InfoCazaTitanes.SetActive(false);
         InfoPiojoCanon.SetActive(false);
         InfoPiojoMan.SetActive(false);
-
         InfoJefeEquipo.SetActive(false);
         InfoLiderM.SetActive(false);
         InfoPEstratega.SetActive(false);
         InfoPKasparov.SetActive(false);
+
+        //Mejoras Generación
+        InfoEnfermera.SetActive(false);
+        InfoPPagado.SetActive(false);
+        InfoPCafeina.SetActive(false);
+        InfoPSpeed.SetActive(false);
+        InfoPMellizos.SetActive(false);
+        InfoPQuinti.SetActive(false);
+        InfoPDeca.SetActive(false);
+        InfoPHecta.SetActive(false);
+
 
         //Mejoras de Pago
         InfoMejora1.SetActive(false);
@@ -89,9 +109,6 @@ public class ManagerInfo : MonoBehaviour
     public void OnMouseOverJetpack() { InfoJetpack.SetActive(true); }
     public void OnMouseExitJetpack() { InfoJetpack.SetActive(false); }
 
-
-
-
     //PiojoMazao
     public void OnMouseOverPMazao() { InfoPiojoMazao.SetActive(true); }
     public void OnMouseExitPMazao() { InfoPiojoMazao.SetActive(false); }
@@ -107,7 +124,6 @@ public class ManagerInfo : MonoBehaviour
     //PiojoMan
     public void OnMouseOverPiojoMan() { InfoPiojoMan.SetActive(true); }
     public void OnMouseExitPiojoMan() { InfoPiojoMan.SetActive(false); }
-
 
     //Jefe Equipo
     public void OnMouseOverJefe() { InfoJefeEquipo.SetActive(true); }
@@ -125,8 +141,37 @@ public class ManagerInfo : MonoBehaviour
     public void OnMouseOverPKasparov() { InfoPKasparov.SetActive(true); }
     public void OnMouseExitPKasparov() { InfoPKasparov.SetActive(false); }
 
+    //Enfermera Piojo
+    public void OnMouseOverEnfermera() { InfoEnfermera.SetActive(true); }
+    public void OnMouseExitEnfermera() { InfoEnfermera.SetActive(false); }
 
+    //Piojo Bien Pagado
+    public void OnMouseOverPPagado() { InfoPPagado.SetActive(true); }
+    public void OnMouseExitPPagado() { InfoPPagado.SetActive(false); }
 
+    //Piojo Cafeina
+    public void OnMouseOverPCafeina() { InfoPCafeina.SetActive(true); }
+    public void OnMouseExitPCafeina() { InfoPCafeina.SetActive(false); }
+
+    //Piojo Speedrunner
+    public void OnMouseOverPSpeed() { InfoPSpeed.SetActive(true); }
+    public void OnMouseExitPSpeed() { InfoPSpeed.SetActive(false); }
+
+    //Piojos Mellizos
+    public void OnMouseOverPMellizos() { InfoPMellizos.SetActive(true); }
+    public void OnMouseExitPMellizos() { InfoPMellizos.SetActive(false); }
+
+    //Piojos Quintillizos 
+    public void OnMouseOverPQuinti() { InfoPQuinti.SetActive(true); }
+    public void OnMouseExitPQuinti() { InfoPQuinti.SetActive(false); }
+
+    //Piojos Decallizos
+    public void OnMouseOverPDeca() { InfoPDeca.SetActive(true); }
+    public void OnMouseExitPDeca() { InfoPDeca.SetActive(false); }
+
+    //Piojos Hectallizos
+    public void OnMouseOverPHecta() { InfoPHecta.SetActive(true); }
+    public void OnMouseExitPHecta() { InfoPHecta.SetActive(false); }
 
 
     //Mejora 1

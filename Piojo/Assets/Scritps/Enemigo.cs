@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Newtonsoft.Json;
+
 public enum tipoEnemigo
 {
     Pulga,
@@ -12,9 +12,7 @@ public enum tipoEnemigo
 }
 public class Enemigo
 {
-    [JsonProperty]
     private int vidaMax;
-    [JsonProperty]
     private int vidaActual;
     public tipoEnemigo tipo;
 

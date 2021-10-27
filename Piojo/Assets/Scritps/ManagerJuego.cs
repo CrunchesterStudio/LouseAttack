@@ -495,7 +495,7 @@ public class ManagerJuego : MonoBehaviour
     //Mejoras de Generacion
     private int checkGeneracion()
     {
-        return contPMellizos * 2 + contPQuinti * 5 + contPDeca * 10 + contPHecta * 100;
+        return contPMellizos * 2 + contPQuinti * 10 + contPDeca * 50 + contPHecta * 100;
     }
 
     public void GeneradorPiojos()

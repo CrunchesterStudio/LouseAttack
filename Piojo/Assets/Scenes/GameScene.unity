@@ -15012,7 +15012,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cada ud. aumenta +5 Piojos/click.
+  m_Text: Cada ud. aumenta +10 Piojos/click.
 --- !u!222 &1442886986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18436,7 +18436,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Cada ud. aumenta +10 Piojos/click.
+  m_Text: Cada ud. aumenta +50 Piojos/click.
 --- !u!222 &1736312026
 CanvasRenderer:
   m_ObjectHideFlags: 0

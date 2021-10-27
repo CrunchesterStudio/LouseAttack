@@ -161,17 +161,29 @@ public class ManagerJuego : MonoBehaviour
     public Text cantidadPHecta;
     private int contPHecta = 0;
 
-    //Mejoras Generacion
+    //Mejoras
+    public GameObject mejExpansion;
     public GameObject mejGeneracion;
+    public GameObject mejCombate;
+    public GameObject mejTemporal;
 
     //Tienda
     public GameObject tienda;
 
-    //Mejora 1
-    public Text costeMejora1;
-    public Text cantMejora1;
-    private int cantidadMejora1 = 0;
+    //Mejora Pago
+    public Text costeMejoraPago;
+    public Text cantMejoraPago;
+    private int cantidadMejorPago = 0;
 
+    //ClonaPiojos
+    public Text costeActualClonaP;
+    private int costeClonaP = 10;
+    private bool activeClonaP = false;
+
+    //Multi Clic
+    public Text costeActualMultiC;
+    private int costeMultiC = 10;
+    private bool activeMultiC = false;
 
 
     // Start is called before the first frame update
@@ -302,6 +314,18 @@ public class ManagerJuego : MonoBehaviour
         costeActualPHecta.color = Color.red;
         cantidadPHecta.text = "x" + contPHecta.ToString();
 
+        //Clona Piojos
+        costeActualClonaP.text = costeClonaP.ToString();
+        costeActualClonaP.color = Color.red;
+
+        //Multi Clic
+        costeActualMultiC.text = costeMultiC.ToString();
+        costeActualMultiC.color = Color.red;
+
+        //Mejoras
+        mejExpansion.SetActive(false);
+        mejGeneracion.SetActive(false);
+        mejCombate.SetActive(false);
     }
 
     // Update is called once per frame
@@ -450,6 +474,18 @@ public class ManagerJuego : MonoBehaviour
             costeActualPHecta.color = Color.green;
         else
             costeActualPHecta.color = Color.red;
+
+        //Clona Piojos
+        if (getPiojos() >= costeClonaP)
+            costeActualClonaP.color = Color.green;
+        else
+            costeActualClonaP.color = Color.red;
+
+        //Multi Clic
+        if (getPiojos() >= costeMultiC)
+            costeActualMultiC.color = Color.green;
+        else
+            costeActualMultiC.color = Color.red;
     }
 
     //Botón Piojo
@@ -465,63 +501,47 @@ public class ManagerJuego : MonoBehaviour
     public void GeneradorPiojos()
     {
         int aux = checkGeneracion();
-        if (aux == 0)
-            numPiojos++;
+        if (activeClonaP)
+        {
+            if (aux == 0)
+                numPiojos += 2;
+            else
+                numPiojos += (2 * aux);
+        }
+        else if (activeMultiC)
+        {
+            if (getPiojos() == 0)
+                numPiojos++;
+            else if (aux == 0)
+                numPiojos *= 2;
+            else
+                numPiojos += (aux * 20);
+        }
         else
-            numPiojos += aux;
+        {
+            if (aux == 0)
+                numPiojos++;
+            else
+                numPiojos += aux;
+        }
         contador.text = numPiojos.ToString();
     }
 
     //Mejoras de Combate
     private int checkMejoras()
     {
-        int cont1 = contPiojoMan, cont2 = contPCanon, cont3 = contCazaTitanes, cont4 = contPiojoMazao;
-        Dictionary<string, int> dic = new Dictionary<string, int>();
-        int aux = getPiojos();
 
-        while (dic.Count != 4)
-        {
-            dic.Clear();
-            if (cont1 == 0 || aux / (cont1 * 1000) >= 1)
-            {
-                dic.Add("PiojoMan", cont1);
-            }
-            else if (cont1 != 0)
-                cont1--;
-
-            if (cont2 == 0 || aux / (cont2 * 100) >= 1)
-            {
-                dic.Add("PiojoCanon", cont2);
-            }
-            else if (cont2 != 0)
-                cont2--;
-
-            if (cont3 == 0 || aux / (cont3 * 50) >= 1)
-            {
-                dic.Add("CazaTitanes", cont3);
-            }
-            else if (cont3 != 0)
-                cont3--;
-
-            if (cont4 == 0 || aux / (cont4 * 10) >= 1)
-            {
-                dic.Add("PiojoMazao", cont4);
-            }
-            else if (cont4 != 0)
-                cont4--;
-        }
-        return Mathf.Max(dic["PiojoMan"] * 1000, dic["PiojoCanon"] * 100, dic["CazaTitanes"] * 50, dic["PiojoMazao"] * 10);
+        return (contPiojoMan * 1000 + contPCanon * 100 + contCazaTitanes * 50 + contPiojoMazao * 10);
     }
 
     //Botón Enemigos
     public void DestructorPiojos()
     {
-
         numPiojos = getPiojos();
         if (numPiojos > 0)
         {
             int aux = checkMejoras();
-            if (aux == 0 || aux > numPiojos)
+            if (aux == 0)
             {
                 numPiojos--;
                 setPiojos(numPiojos);
@@ -541,23 +561,26 @@ public class ManagerJuego : MonoBehaviour
             }
             else
             {
-                numPiojos = numPiojos - aux;
-                setPiojos(numPiojos);
-                contador.text = numPiojos.ToString();
-                listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - contPiojoMazao * 5);
-                barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
-                if (listaEnemigos[0].GetVidaActual() <= 0)
+                if ((numPiojos - aux) <= 0)
+                    numPiojos = 0;
+                else
                 {
-                    listaEnemigos.RemoveAt(0);
-                    nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
-                    barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
+                    numPiojos = (numPiojos - aux);
+                    setPiojos(numPiojos);
+                    contador.text = numPiojos.ToString();
+                    listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - aux);
                     barraVida.setVida(listaEnemigos[0].GetVidaActual());
                     vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
+                    if (listaEnemigos[0].GetVidaActual() <= 0)
+                    {
+                        listaEnemigos.RemoveAt(0);
+                        nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
+                        barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
+                        barraVida.setVida(listaEnemigos[0].GetVidaActual());
+                        vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
+                    }
                 }
-
             }
-
         }
     }
 
@@ -1203,36 +1226,95 @@ public class ManagerJuego : MonoBehaviour
     //Tienda
     public void muestraTienda()
     {
-        tienda.SetActive(true);
+        if (tienda.active == false)
+            tienda.SetActive(true);
+        else
+            tienda.SetActive(false);
     }
 
-    public void ocultaTienda()
+    //Mejoras
+    public void muestraExpansion()
     {
-        tienda.SetActive(false);
+        if (mejExpansion.active == false)
+        {
+            mejExpansion.SetActive(true);
+            mejGeneracion.SetActive(false);
+            mejCombate.SetActive(false);
+        }
+        else
+            mejExpansion.SetActive(false);
     }
 
-    //Mejoras Click
     public void muestraGeneracion()
     {
-        mejGeneracion.SetActive(true);
+        if (mejGeneracion.active == false)
+        {
+            mejExpansion.SetActive(false);
+            mejGeneracion.SetActive(true);
+            mejCombate.SetActive(false);
+        }
+        else
+            mejGeneracion.SetActive(false);
     }
 
-    public void ocultaGeneracion()
+    public void muestraCombate()
     {
-        mejGeneracion.SetActive(false);
+        if (mejCombate.active == false)
+        {
+            mejExpansion.SetActive(false);
+            mejGeneracion.SetActive(false);
+            mejCombate.SetActive(true);
+        }
+        else
+            mejCombate.SetActive(false);
     }
 
-    //Mejora1
-    public void añadeMejora1()
+    //Mejora Pago
+    public void añadeMejoraPago()
     {
-        //Condición
-
-
-
-
-        cantidadMejora1++;
-        cantMejora1.text = "x" + cantidadMejora1.ToString();
+        cantidadMejorPago++;
+        cantMejoraPago.text = "x" + cantidadMejorPago.ToString();
     }
 
+    //Clona Piojo
+    public void añadeClonaP()
+    {
+        if (getPiojos() >= costeClonaP)
+        {
+            numPiojos = getPiojos();
+            numPiojos -= costeClonaP;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            StartCoroutine(active30s());
+        }
+    }
 
+    IEnumerator active30s()
+    {
+        activeClonaP = true;
+        yield return new WaitForSeconds(30);
+        activeClonaP = false;
+        StopCoroutine(active30s());
+    }
+
+    //Clona Piojo
+    public void añadeMultiC()
+    {
+        if (getPiojos() >= costeMultiC)
+        {
+            numPiojos = getPiojos();
+            numPiojos -= costeMultiC;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            StartCoroutine(clicx2());
+        }
+    }
+
+    IEnumerator clicx2()
+    {
+        activeMultiC = true;
+        yield return new WaitForSeconds(5);
+        activeMultiC = false;
+        StopCoroutine(clicx2());
+    }
 }

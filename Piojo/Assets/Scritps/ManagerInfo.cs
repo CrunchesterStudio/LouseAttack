@@ -37,7 +37,11 @@ public class ManagerInfo : MonoBehaviour
     public GameObject InfoPHecta;
 
     //Mejoras de Pago
-    public GameObject InfoMejora1;
+    public GameObject InfoMejoraPago;
+
+    //Mejoras Temporales
+    public GameObject InfoClonaP;
+    public GameObject InfoMultiC;
 
     // Start is called before the first frame update
     void Start()
@@ -72,10 +76,13 @@ public class ManagerInfo : MonoBehaviour
         InfoPDeca.SetActive(false);
         InfoPHecta.SetActive(false);
 
-
         //Mejoras de Pago
-        InfoMejora1.SetActive(false);
-}
+        InfoMejoraPago.SetActive(false);
+
+        //Mejoras Temporales
+        InfoClonaP.SetActive(false);
+        InfoMultiC.SetActive(false);
+    }
 
     //Piojo Madre
     public void OnMouseOverPiojoMadre() { InfoPMadre.SetActive(true); }
@@ -174,9 +181,17 @@ public class ManagerInfo : MonoBehaviour
     public void OnMouseExitPHecta() { InfoPHecta.SetActive(false); }
 
 
-    //Mejora 1
-    public void OnMouseOverMejora1() { InfoMejora1.SetActive(true); }
-    public void OnMouseExitMejora1() { InfoMejora1.SetActive(false); }
+    //Mejora Pago 1
+    public void OnMouseOverMejoraPago() { InfoMejoraPago.SetActive(true); }
+    public void OnMouseExitMejoraPago() { InfoMejoraPago.SetActive(false); }
+
+    //Clona Piojos
+    public void OnMouseOverClonaP() { InfoClonaP.SetActive(true); }
+    public void OnMouseExitClonaP() { InfoClonaP.SetActive(false); }
+
+    //Multi Clic
+    public void OnMouseOverMultiC() { InfoMultiC.SetActive(true); }
+    public void OnMouseExitMultiC() { InfoMultiC.SetActive(false); }
 
 
 

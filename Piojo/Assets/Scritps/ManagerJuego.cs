@@ -1313,7 +1313,7 @@ public class ManagerJuego : MonoBehaviour
     IEnumerator clicx2()
     {
         activeMultiC = true;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(30);
         activeMultiC = false;
         StopCoroutine(clicx2());
     }

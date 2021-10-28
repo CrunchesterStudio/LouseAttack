@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Newtonsoft.Json;
+using System.Runtime.InteropServices;
+using System.IO;
 public class ManagerJuego : MonoBehaviour
 {
     //Contador Principal
@@ -1316,4 +1319,82 @@ public class ManagerJuego : MonoBehaviour
         activeMultiC = false;
         StopCoroutine(clicx2());
     }
+
+    //SALVADO DE PARTIDA
+    public void guardarPartida()
+    {
+        Partida p = new Partida();
+        p.numPiojos = this.numPiojos;
+        p.listaEnemigos = this.listaEnemigos;
+        p.costePMadre = this.costePMadre;
+        p.contPiojoMadre = this.contPiojoMadre;
+        p.costeCabezaN = this.costeCabezaN;
+        p.contCabezaN = this.contCabezaN;
+        p.costeClaseInfantil = this.costeClaseInfantil;
+        p.contClaseInfantil = this.contClaseInfantil;
+        p.costePatioEscuela = this.costePatioEscuela;
+        p.contPatioEscuela = this.contPatioEscuela;
+        p.costeEscuela = this.costeEscuela;
+        p.contEscuela = this.contEscuela;
+        p.costeCPerros = this.costeCPerros;
+        p.contCPerros = this.contCPerros;
+        p.costeHostal = this.costeHostal;
+        p.contHostal = this.contHostal;
+        p.costeJetpack = this.costeJetpack;
+        p.contJetpack = this.contJetpack;
+
+        p.costePMazao = this.costePMazao;
+        p.contPiojoMazao = this.contPiojoMazao;
+        p.costeCTitanes = this.costeCTitanes;
+        p.contCazaTitanes = this.contCazaTitanes;
+        p.costePCanon = this.costePCanon;
+        p.contPCanon = this.contPCanon;
+        p.costePMan = this.costePMan;
+        p.contPiojoMan = this.contPiojoMan;
+        p.costeJefe = this.costeJefe;
+        p.contJefe = this.contJefe;
+        p.costeLiderM = this.costeLiderM;
+        p.contLiderM = this.contLiderM;
+        p.costePEstratega = this.costePEstratega;
+        p.contPEstratega = this.contPEstratega;
+        p.costePKasparov = this.costePKasparov;
+        p.contPKasparov = this.contPKasparov;
+        p.costeEnfermera = this.costeEnfermera;
+        p.contEnfermera = this.contEnfermera;
+        p.costePPagado = this.costePPagado;
+        p.contPPagado = this.contPPagado;
+        p.costePCafeina = this.costePCafeina;
+        p.contPCafeina = this.contPCafeina;
+        p.costePSpeed = this.costePSpeed;
+        p.contPSpeed = this.contPSpeed;
+        p.costePMellizos = this.costePMellizos;
+        p.contPMellizos = this.contPMellizos;
+        p.costePQuinti = this.costePQuinti;
+        p.contPQuinti = this.contPQuinti;
+        p.costePDeca = this.costePDeca;
+        p.contPDeca = this.contPDeca;
+        p.costePHecta = this.costePHecta;
+        p.contPHecta = this.contPHecta;
+        p.costeClonaP = this.costeClonaP;
+        p.activeClonaP = this.activeClonaP;
+        p.costeMultiC = this.costeMultiC;
+        p.activeMultiC = this.activeMultiC;
+        //try
+        //{
+            string jsonString = JsonConvert.SerializeObject(p, Formatting.Indented);
+
+            GuardarDatos(jsonString);
+        //    //StreamWriter s = new StreamWriter(Application.persistentDataPath + "/data.json");
+        //    //s.Write(jsonString);
+        //    //s.Close();
+        //}
+        //catch (IOException e)
+        //{
+
+        //}
+
+
+    }
+    [DllImport("__Internal")]
+    private static extern void GuardarDatos(string d);
 }

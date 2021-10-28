@@ -69,7 +69,7 @@ public class ManagerJuego : MonoBehaviour
 
     //Piojo Mazao
     public Text costeActualPMazao;
-    private int costePMazao = 1000;
+    private int costePMazao = 10;
     public Text cantidadPiojoMazao;
     private int contPiojoMazao = 0;
 
@@ -186,6 +186,11 @@ public class ManagerJuego : MonoBehaviour
     public Text costeActualMultiC;
     private int costeMultiC = 10;
     private bool activeMultiC = false;
+
+    //Suma y Resta Piojos
+    public Text sumaPiojos;
+    public Text restaPiojos;
+
 
 
     // Start is called before the first frame update
@@ -324,10 +329,15 @@ public class ManagerJuego : MonoBehaviour
         costeActualMultiC.text = costeMultiC.ToString();
         costeActualMultiC.color = Color.red;
 
+        //Suma y Resta Piojos
+        sumaPiojos.text = "";
+        restaPiojos.text = "";
+
         //Mejoras
         mejExpansion.SetActive(false);
         mejGeneracion.SetActive(false);
         mejCombate.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -506,25 +516,48 @@ public class ManagerJuego : MonoBehaviour
         if (activeClonaP)
         {
             if (aux == 0)
+            {
                 numPiojos += 2;
+                StartCoroutine(Sumador("+2"));
+            }
+
             else
+            {
                 numPiojos += (2 * aux);
+                StartCoroutine(Sumador("+" + (2 * aux).ToString()));
+            }
+
         }
         else if (activeMultiC)
         {
             if (getPiojos() == 0)
+            {
                 numPiojos++;
+                StartCoroutine(Sumador("+1"));
+            }
             else if (aux == 0)
+            {
                 numPiojos *= 2;
+                StartCoroutine(Sumador("+" + (numPiojos *= 2).ToString()));
+            }
             else
+            {
                 numPiojos += (aux * 20);
+                StartCoroutine(Sumador("+" + (aux * 20).ToString()));
+            }
         }
         else
         {
             if (aux == 0)
+            {
                 numPiojos++;
+                StartCoroutine(Sumador("+1"));
+            }
             else
+            {
                 numPiojos += aux;
+                StartCoroutine(Sumador("+" + aux.ToString()));
+            }
         }
         contador.text = numPiojos.ToString();
     }
@@ -547,40 +580,29 @@ public class ManagerJuego : MonoBehaviour
             {
                 numPiojos--;
                 setPiojos(numPiojos);
+                StartCoroutine(Restador("-1"));
                 contador.text = numPiojos.ToString();
                 listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - 1);
-                barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
-                if (listaEnemigos[0].GetVidaActual() <= 0)
-                {
-                    listaEnemigos.RemoveAt(0);
-                    nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
-                    barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
-                    barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                    vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
-                }
-
+                codigoVida();
             }
             else
             {
                 if ((numPiojos - aux) <= 0)
+                {
+                    StartCoroutine(Restador("-" + numPiojos.ToString()));
+                    listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - numPiojos);
                     numPiojos = 0;
+                    contador.text = numPiojos.ToString();
+                    codigoVida();
+                }
                 else
                 {
                     numPiojos = (numPiojos - aux);
                     setPiojos(numPiojos);
+                    StartCoroutine(Restador("-" + aux.ToString()));
                     contador.text = numPiojos.ToString();
                     listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - aux);
-                    barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                    vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
-                    if (listaEnemigos[0].GetVidaActual() <= 0)
-                    {
-                        listaEnemigos.RemoveAt(0);
-                        nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
-                        barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
-                        barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                        vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
-                    }
+                    codigoVida();
                 }
             }
         }
@@ -902,16 +924,7 @@ public class ManagerJuego : MonoBehaviour
                 setPiojos(numPiojos);
                 contador.text = numPiojos.ToString();
                 listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - 1);
-                barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
-                if (listaEnemigos[0].GetVidaActual() <= 0)
-                {
-                    listaEnemigos.RemoveAt(0);
-                    nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
-                    barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
-                    barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                    vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
-                }
+                codigoVida();
             }
             yield return new WaitForSeconds(1);
         }
@@ -943,16 +956,7 @@ public class ManagerJuego : MonoBehaviour
                 setPiojos(numPiojos);
                 contador.text = numPiojos.ToString();
                 listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - 10);
-                barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
-                if (listaEnemigos[0].GetVidaActual() <= 0)
-                {
-                    listaEnemigos.RemoveAt(0);
-                    nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
-                    barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
-                    barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                    vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
-                }
+                codigoVida();
             }
             yield return new WaitForSeconds(1);
         }
@@ -984,16 +988,7 @@ public class ManagerJuego : MonoBehaviour
                 setPiojos(numPiojos);
                 contador.text = numPiojos.ToString();
                 listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - 50);
-                barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
-                if (listaEnemigos[0].GetVidaActual() <= 0)
-                {
-                    listaEnemigos.RemoveAt(0);
-                    nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
-                    barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
-                    barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                    vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
-                }
+                codigoVida();
             }
             yield return new WaitForSeconds(1);
         }
@@ -1025,16 +1020,7 @@ public class ManagerJuego : MonoBehaviour
                 setPiojos(numPiojos);
                 contador.text = numPiojos.ToString();
                 listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - 100);
-                barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
-                if (listaEnemigos[0].GetVidaActual() <= 0)
-                {
-                    listaEnemigos.RemoveAt(0);
-                    nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
-                    barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
-                    barraVida.setVida(listaEnemigos[0].GetVidaActual());
-                    vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
-                }
+                codigoVida();
             }
             yield return new WaitForSeconds(1);
         }
@@ -1320,6 +1306,37 @@ public class ManagerJuego : MonoBehaviour
         StopCoroutine(clicx2());
     }
 
+    //Sumador y Restador
+    IEnumerator Sumador(string s)
+    {
+        sumaPiojos.text = s;
+        yield return new WaitForSeconds(1);
+        sumaPiojos.text = "";
+        StopCoroutine(Sumador(s));
+    }
+
+    IEnumerator Restador(string s)
+    {
+        restaPiojos.text = s;
+        yield return new WaitForSeconds(1);
+        restaPiojos.text = "";
+        StopCoroutine(Restador(s));
+    }
+
+    private void codigoVida()
+    {
+        barraVida.setVida(listaEnemigos[0].GetVidaActual());
+        vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
+        if (listaEnemigos[0].GetVidaActual() <= 0)
+        {
+            listaEnemigos.RemoveAt(0);
+            nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
+            barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
+            barraVida.setVida(listaEnemigos[0].GetVidaActual());
+            vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
+        }
+    }
+
     //SALVADO DE PARTIDA
     public void guardarPartida()
     {
@@ -1381,9 +1398,9 @@ public class ManagerJuego : MonoBehaviour
         p.activeMultiC = this.activeMultiC;
         //try
         //{
-            string jsonString = JsonConvert.SerializeObject(p, Formatting.Indented);
+        string jsonString = JsonConvert.SerializeObject(p, Formatting.Indented);
 
-            GuardarDatos(jsonString);
+        GuardarDatos(jsonString);
         //    //StreamWriter s = new StreamWriter(Application.persistentDataPath + "/data.json");
         //    //s.Write(jsonString);
         //    //s.Close();

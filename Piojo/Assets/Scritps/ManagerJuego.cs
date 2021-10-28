@@ -1491,16 +1491,76 @@ public class ManagerJuego : MonoBehaviour
             this.activeClonaP = p.activeClonaP;
             this.costeMultiC = p.costeMultiC;
             this.activeMultiC = p.activeMultiC;
-            this.barraVida.setVida(listaEnemigos[0].GetVidaActual());
             this.barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
-            //actualizarTextos();
+            this.barraVida.setVida(listaEnemigos[0].GetVidaActual());
+            
+            actualizarTextos();
         }
 
 
     }
 
 
-    
+    private void actualizarTextos()
+    {
+        this.contador.text = this.numPiojos.ToString();
+        this.vidaEnemigo.text = this.listaEnemigos[0].GetVidaActual().ToString();
+        this.costeActualPMadre.text = this.costePMadre.ToString();
+        this.cantidadPmadre.text = "x" + this.contPiojoMadre.ToString();
+        this.costeActualCabezaN.text = this.costeCabezaN.ToString();
+        this.cantidadCabezaN.text = "x" + this.contCabezaN.ToString();
+        this.costeActualClaseInfantil.text = this.costeClaseInfantil.ToString();
+        this.cantidadClaseInfantil.text = "x" + this.contClaseInfantil.ToString();
+        this.costeActualPatioEscuela.text = this.costePatioEscuela.ToString();
+        this.cantidadPatioEscuela.text = "x" + this.contPatioEscuela.ToString();
+        this.costeActualEscuela.text = this.costeEscuela.ToString();
+        this.cantidadEscuela.text = "x" + this.contEscuela.ToString();
+        this.costeActualCPerros.text = this.costeCPerros.ToString();
+        this.cantidadCPerros.text = "x" + this.contCPerros.ToString();
+        this.costeActualHostal.text = this.costeHostal.ToString();
+        this.cantidadHostal.text = "x" + this.contHostal.ToString();
+        this.costeActualJetPack.text = this.costeJetpack.ToString();
+        this.cantidadJetpack.text = "x"+this.contJetpack.ToString();
+
+        this.costeActualPMazao.text = this.costePMazao.ToString();
+        this.cantidadPiojoMazao.text = "x"+this.contPiojoMazao.ToString();
+        this.costeActualCazaTitanes.text = this.costeCTitanes.ToString();
+        this.cantidadCazaTitanes.text = "x"+this.contCazaTitanes.ToString();
+        this.costeActualPCanon.text = this.costePCanon.ToString();
+        this.cantidadPCanon.text = "x"+this.contPCanon.ToString();
+        this.costeActualPMan.text = this.costePMan.ToString();
+        this.cantidadPiojoMan.text = "x"+this.contPiojoMan.ToString();
+        this.costeActualJefe.text = this.costeJefe.ToString();
+        this.cantidadJefe.text = "x"+this.contJefe.ToString();
+        this.costeActualLiderM.text = this.costeLiderM.ToString();
+        this.cantidadLiderM.text = "x"+this.contLiderM.ToString();
+        this.costeActualPEstratega.text = this.costePEstratega.ToString();
+        this.cantidadPEstratega.text = "x"+this.contPEstratega.ToString();
+        this.costeActualPKasparov.text = this.costePKasparov.ToString();
+        this.cantidadPKasparov.text = "x"+ this.contPKasparov.ToString();
+        this.costeActualEnfermera.text = this.costeEnfermera.ToString();
+        this.cantidadEnfermera.text = "x"+ this.contEnfermera.ToString();
+        this.costeActualPPagado.text = this.costePPagado.ToString();
+        this.cantidadPPagado.text = "x"+ this.contPPagado.ToString();
+        this.costeActualPCafeina.text = this.costePCafeina.ToString();
+        this.cantidadPCafeina.text = "x"+ this.contPCafeina.ToString();
+        this.costeActualPSpeed.text = this.costePSpeed.ToString();
+        this.cantidadPSpeed.text = "x"+ this.contPSpeed.ToString();
+        this.costeActualPMellizos.text = this.costePMellizos.ToString();
+        this.cantidadPMellizos.text = "x"+ this.contPMellizos.ToString();
+        this.costeActualPQuinti.text = this.costePQuinti.ToString();
+        this.cantidadPQuinti.text = "x"+this.contPQuinti.ToString();
+        this.costeActualPDeca.text = this.costePDeca.ToString();
+        this.cantidadPDeca.text = "x"+this.contPDeca.ToString();
+        this.costeActualPHecta.text = this.costePHecta.ToString();
+        this.cantidadPHecta.text = "x"+this.contPHecta.ToString();
+
+        this.cantMejoraPago.text = "x"+this.cantidadMejorPago.ToString();
+        this.costeActualClonaP.text = this.costeClonaP.ToString();
+        this.costeActualMultiC.text = this.costeMultiC.ToString();
+
+        this.vidaEnemigo.text = this.listaEnemigos[0].GetVidaActual().ToString() + "/" + this.listaEnemigos[0].GetVidaMax().ToString();
+    }
 
 
 

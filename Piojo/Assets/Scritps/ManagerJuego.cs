@@ -1424,6 +1424,88 @@ public class ManagerJuego : MonoBehaviour
 
 
     }
+
+    //CARGA DE PARTIDA
+    public void cargarPartida()
+    {
+        //string datosPartida = "";
+
+        string datosPartida = CargarDatos();
+        Partida p = new Partida();
+        p = JsonConvert.DeserializeObject<Partida>(datosPartida);
+
+        this.numPiojos = p.numPiojos;
+        this.listaEnemigos = p.listaEnemigos;
+        this.costePMadre = p.costePMadre;
+        this.contPiojoMadre = p.contPiojoMadre;
+        this.costeCabezaN = p.costeCabezaN;
+        this.contCabezaN = p.contCabezaN;
+        this.costeClaseInfantil = p.costeClaseInfantil;
+        this.contClaseInfantil = p.contClaseInfantil;
+        this.costePatioEscuela = p.costePatioEscuela;
+        this.contPatioEscuela = p.contPatioEscuela;
+        this.costeEscuela = p.costeEscuela;
+        this.contEscuela = p.contEscuela;
+        this.costeCPerros = p.costeCPerros;
+        this.contCPerros = p.contCPerros;
+        this.costeHostal = p.costeHostal;
+        this.contHostal = p.contHostal;
+        this.costeJetpack = p.costeJetpack;
+        this.contJetpack = p.contJetpack;
+
+        this.costePMazao = p.costePMazao;
+        this.contPiojoMazao = p.contPiojoMazao;
+        this.costeCTitanes = p.costeCTitanes;
+        this.contCazaTitanes = p.contCazaTitanes;
+        this.costePCanon = p.costePCanon;
+        this.contPCanon = p.contPCanon;
+        this.costePMan = p.costePMan;
+        this.contPiojoMan = p.contPiojoMan;
+        this.costeJefe = p.costeJefe;
+        this.contJefe = p.contJefe;
+        this.costeLiderM = p.costeLiderM;
+        this.contLiderM = p.contLiderM;
+        this.costePEstratega = p.costePEstratega;
+        this.contPEstratega = p.contPEstratega;
+        this.costePKasparov = p.costePKasparov;
+        this.contPKasparov = p.contPKasparov;
+        this.costeEnfermera = p.costeEnfermera;
+        this.contEnfermera = p.contEnfermera;
+        this.costePPagado = p.costePPagado;
+        this.contPPagado = p.contPPagado;
+        this.costePCafeina = p.costePCafeina;
+        this.contPCafeina = p.contPCafeina;
+        this.costePSpeed = p.costePSpeed;
+        this.contPSpeed = p.contPSpeed;
+        this.costePMellizos = p.costePMellizos;
+        this.contPMellizos = p.contPMellizos;
+        this.costePQuinti = p.costePQuinti;
+        this.contPQuinti = p.contPQuinti;
+        this.costePDeca = p.costePDeca;
+        this.contPDeca = p.contPDeca;
+        this.costePHecta = p.costePHecta;
+        this.contPHecta = p.contPHecta;
+        this.costeClonaP = p.costeClonaP;
+        this.activeClonaP = p.activeClonaP;
+        this.costeMultiC = p.costeMultiC;
+        this.activeMultiC = p.activeMultiC;
+        this.barraVida.setVida(listaEnemigos[0].GetVidaActual());
+        this.barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
+
+
+    }
+
+
+    
+
+
+
+
+
+
     [DllImport("__Internal")]
     private static extern void GuardarDatos(string d);
+
+    [DllImport("__Internal")]
+    private static extern string CargarDatos();
 }

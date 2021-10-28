@@ -1211,6 +1211,17 @@ public class ManagerJuego : MonoBehaviour
         vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
     }
 
+    private void recuperaVida()
+    {
+        int num = Random.Range(0, 10);
+        if (listaEnemigos[0].GetVidaActual() <= listaEnemigos[0].GetVidaMax() / 2 && num > 8)
+        {
+            barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
+            listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaMax());
+            vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
+        }
+    }
+
     //Tienda
     public void muestraTienda()
     {
@@ -1327,6 +1338,7 @@ public class ManagerJuego : MonoBehaviour
     {
         barraVida.setVida(listaEnemigos[0].GetVidaActual());
         vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
+        recuperaVida();
         if (listaEnemigos[0].GetVidaActual() <= 0)
         {
             listaEnemigos.RemoveAt(0);

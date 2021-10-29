@@ -194,6 +194,9 @@ public class ManagerJuego : MonoBehaviour
     //Texto guardado
     public Text textoGuardado;
 
+    //Contador de enemigos derrotados
+    private int enemDerrotados = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -357,37 +360,37 @@ public class ManagerJuego : MonoBehaviour
             costeActualCabezaN.color = Color.red;
 
         //Clase Infantil
-        if (getPiojos() >= costeClaseInfantil && listaEnemigos[0].tipo != tipoEnemigo.Pulga)
+        if (getPiojos() >= costeClaseInfantil && enemDerrotados>0)
             costeActualClaseInfantil.color = Color.green;
         else
             costeActualClaseInfantil.color = Color.red;
 
         //Patio Escuela
-        if (getPiojos() >= costePatioEscuela && listaEnemigos[0].tipo != tipoEnemigo.Pulga)
+        if (getPiojos() >= costePatioEscuela && enemDerrotados>0)
             costeActualPatioEscuela.color = Color.green;
         else
             costeActualPatioEscuela.color = Color.red;
 
         //Escuela
-        if (getPiojos() >= costeEscuela && listaEnemigos.Count < 2)
+        if (getPiojos() >= costeEscuela && enemDerrotados>1)
             costeActualEscuela.color = Color.green;
         else
             costeActualEscuela.color = Color.red;
 
         //Cabalgadores de Perros
-        if (getPiojos() >= costeCPerros && listaEnemigos.Count < 2)
+        if (getPiojos() >= costeCPerros && enemDerrotados>1)
             costeActualCPerros.color = Color.green;
         else
             costeActualCPerros.color = Color.red;
 
         //Hostal
-        if (getPiojos() >= costeHostal && listaEnemigos.Count == 0)
+        if (getPiojos() >= costeHostal && enemDerrotados>2)
             costeActualHostal.color = Color.green;
         else
             costeActualHostal.color = Color.red;
 
         //Jetpack
-        if (getPiojos() >= costeJetpack && listaEnemigos.Count == 0)
+        if (getPiojos() >= costeJetpack && enemDerrotados>3)
             costeActualJetPack.color = Color.green;
         else
             costeActualJetPack.color = Color.red;
@@ -669,7 +672,7 @@ public class ManagerJuego : MonoBehaviour
     //Clase Infantil
     public void añadeClaseInfantil()
     {
-        if (getPiojos() >= costeClaseInfantil && listaEnemigos[0].tipo != tipoEnemigo.Pulga)
+        if (getPiojos() >= costeClaseInfantil && enemDerrotados>0)
         {
             contClaseInfantil++;
             cantidadClaseInfantil.text = "x" + contClaseInfantil.ToString();
@@ -698,7 +701,7 @@ public class ManagerJuego : MonoBehaviour
     //Patio Escuela
     public void añadePatioEscuela()
     {
-        if (getPiojos() >= costePatioEscuela && listaEnemigos[0].tipo != tipoEnemigo.Pulga)
+        if (getPiojos() >= costePatioEscuela && enemDerrotados>0)
         {
             contPatioEscuela++;
             cantidadPatioEscuela.text = "x" + contPatioEscuela.ToString();
@@ -726,7 +729,7 @@ public class ManagerJuego : MonoBehaviour
     //Escuela
     public void añadeEscuela()
     {
-        if (getPiojos() >= costeEscuela)
+        if (getPiojos() >= costeEscuela && enemDerrotados>1)
         {
             contEscuela++;
             cantidadEscuela.text = "x" + contEscuela.ToString();
@@ -754,7 +757,7 @@ public class ManagerJuego : MonoBehaviour
     //Cabalgadores de Perros
     public void añadeCPerros()
     {
-        if (getPiojos() >= costeCPerros)
+        if (getPiojos() >= costeCPerros && enemDerrotados>1)
         {
             contCPerros++;
             cantidadCPerros.text = "x" + contCPerros.ToString();
@@ -782,7 +785,7 @@ public class ManagerJuego : MonoBehaviour
     //Hostal
     public void añadeHostal()
     {
-        if (getPiojos() >= costeHostal)
+        if (getPiojos() >= costeHostal && enemDerrotados>2)
         {
             contHostal++;
             cantidadHostal.text = "x" + contHostal.ToString();
@@ -810,7 +813,7 @@ public class ManagerJuego : MonoBehaviour
     //Jetpack
     public void añadeJetpack()
     {
-        if (getPiojos() >= costeJetpack)
+        if (getPiojos() >= costeJetpack && enemDerrotados>3)
         {
             contJetpack++;
             cantidadJetpack.text = "x" + contJetpack.ToString();
@@ -1346,11 +1349,12 @@ public class ManagerJuego : MonoBehaviour
             if (listaEnemigos.Count == 1)
             {
                 Random.InitState((int)Time.realtimeSinceStartup);
-                int r = Random.Range(0, 3);
+                int r = Random.Range(0, 7);
                 Enemigo e = new Enemigo(listaEnemigos[0].GetVidaMax() * 2, (tipoEnemigo)r);
                 listaEnemigos.Add(e);
             }
             listaEnemigos.RemoveAt(0);
+            enemDerrotados++;
             nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
             barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
             barraVida.setVida(listaEnemigos[0].GetVidaActual());

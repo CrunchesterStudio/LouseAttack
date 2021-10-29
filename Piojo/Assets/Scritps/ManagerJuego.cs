@@ -191,7 +191,8 @@ public class ManagerJuego : MonoBehaviour
     public Text sumaPiojos;
     public Text restaPiojos;
 
-
+    //Texto guardado
+    public Text textoGuardado;
 
     // Start is called before the first frame update
     void Start()
@@ -1213,6 +1214,7 @@ public class ManagerJuego : MonoBehaviour
 
     private void recuperaVida()
     {
+        Random.InitState((int)Time.realtimeSinceStartup);
         int num = Random.Range(0, 10);
         if (listaEnemigos[0].GetVidaActual() <= listaEnemigos[0].GetVidaMax() / 2 && num > 8)
         {
@@ -1341,6 +1343,13 @@ public class ManagerJuego : MonoBehaviour
         recuperaVida();
         if (listaEnemigos[0].GetVidaActual() <= 0)
         {
+            if (listaEnemigos.Count == 1)
+            {
+                Random.InitState((int)Time.realtimeSinceStartup);
+                int r = Random.Range(0, 3);
+                Enemigo e = new Enemigo(listaEnemigos[0].GetVidaMax() * 2, (tipoEnemigo)r);
+                listaEnemigos.Add(e);
+            }
             listaEnemigos.RemoveAt(0);
             nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
             barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
@@ -1408,21 +1417,39 @@ public class ManagerJuego : MonoBehaviour
         p.activeClonaP = this.activeClonaP;
         p.costeMultiC = this.costeMultiC;
         p.activeMultiC = this.activeMultiC;
-        //try
-        //{
+
         string jsonString = JsonConvert.SerializeObject(p, Formatting.Indented);
 
         GuardarDatos(jsonString);
-        //    //StreamWriter s = new StreamWriter(Application.persistentDataPath + "/data.json");
-        //    //s.Write(jsonString);
-        //    //s.Close();
-        //}
-        //catch (IOException e)
-        //{
-
-        //}
+        StartCoroutine(mostrarGuardado());
 
 
+    }
+
+    IEnumerator mostrarGuardado()
+    {
+        textoGuardado.text = "PARTIDA GUARDADA";
+        yield return new WaitForSeconds(2);
+        textoGuardado.text = "";
+        //StopCoroutine(mostrarGuardado());
+    }
+    IEnumerator mostrarCarga(string s)
+    {
+        if (s != null)
+        {
+            textoGuardado.text = "PARTIDA CARGADA";
+            yield return new WaitForSeconds(2);
+            textoGuardado.text = "";
+            //StopCoroutine(mostrarCarga(s));
+        }
+        else
+        {
+            textoGuardado.text = "NO HAY SALVADOS";
+            yield return new WaitForSeconds(2);
+            textoGuardado.text = "";
+            //StopCoroutine(mostrarCarga(s));
+        }
+       
     }
 
     //CARGA DE PARTIDA
@@ -1498,7 +1525,7 @@ public class ManagerJuego : MonoBehaviour
             retomarCorutinas();
         }
 
-
+        StartCoroutine(mostrarCarga(datosPartida));
     }
 
 

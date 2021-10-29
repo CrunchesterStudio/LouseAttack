@@ -6,9 +6,14 @@ using Newtonsoft.Json;
 public enum tipoEnemigo
 {
     Pulga,
+    Garrapata,
+    Mosca,
     Salamandra,
+    PerroSucio,
     HumanoQueSeDucha,
-    HumanoConRepelente
+    HumanoConRepelente,
+    LocaDeLosGatos
+
 }
 public class Enemigo
 {

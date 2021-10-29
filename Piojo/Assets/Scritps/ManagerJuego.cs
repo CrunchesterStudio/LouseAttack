@@ -1495,6 +1495,7 @@ public class ManagerJuego : MonoBehaviour
             this.barraVida.setVida(listaEnemigos[0].GetVidaActual());
 
             actualizarTextos();
+            retomarCorutinas();
         }
 
 
@@ -1563,7 +1564,73 @@ public class ManagerJuego : MonoBehaviour
     }
 
 
-
+    public void retomarCorutinas()
+    {
+        for (int i = 0; i < contPiojoMadre; i++)
+        {
+            StartCoroutine(Gen1PiojoSeg());
+        }
+        for (int i = 0; i < contCabezaN; i++)
+        {
+            StartCoroutine(Gen5Piojos());
+        }
+        for (int i = 0; i < contClaseInfantil; i++)
+        {
+            StartCoroutine(Gen10Piojos());
+        }
+        for (int i = 0; i < contPatioEscuela; i++)
+        {
+            StartCoroutine(Gen20PiojoSeg());
+        }
+        for (int i = 0; i < contEscuela; i++)
+        {
+            StartCoroutine(Gen50PiojoSeg());
+        }
+        for (int i = 0; i < contCPerros; i++)
+        {
+            StartCoroutine(Gen100PiojoSeg());
+        }
+        for (int i = 0; i < contHostal; i++)
+        {
+            StartCoroutine(Gen500PiojoSeg());
+        }
+        for (int i = 0; i < contJetpack; i++)
+        {
+            StartCoroutine(Gen1000Piojos());
+        }
+        for (int i = 0; i < contJefe; i++)
+        {
+            StartCoroutine(attack1s());
+        }
+        for (int i = 0; i < contLiderM; i++)
+        {
+            StartCoroutine(attack10s());
+        }
+        for (int i = 0; i < contPEstratega; i++)
+        {
+            StartCoroutine(attack50s());
+        }
+        for (int i = 0; i < contPKasparov; i++)
+        {
+            StartCoroutine(attack100s());
+        }
+        for (int i = 0; i < contEnfermera; i++)
+        {
+            StartCoroutine(click20s());
+        }
+        for (int i = 0; i < contPPagado; i++)
+        {
+            StartCoroutine(click10s());
+        }
+        for (int i = 0; i < contPCafeina; i++)
+        {
+            StartCoroutine(click5s());
+        }
+        for (int i = 0; i < contPSpeed; i++)
+        {
+            StartCoroutine(click2s());
+        }
+    }
 
 
 

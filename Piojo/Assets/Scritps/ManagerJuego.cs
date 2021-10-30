@@ -1244,6 +1244,7 @@ public class ManagerJuego : MonoBehaviour
             mejExpansion.SetActive(true);
             mejGeneracion.SetActive(false);
             mejCombate.SetActive(false);
+            mejTemporal.SetActive(false);
         }
         else
             mejExpansion.SetActive(false);
@@ -1256,6 +1257,7 @@ public class ManagerJuego : MonoBehaviour
             mejExpansion.SetActive(false);
             mejGeneracion.SetActive(true);
             mejCombate.SetActive(false);
+            mejTemporal.SetActive(false);
         }
         else
             mejGeneracion.SetActive(false);
@@ -1267,10 +1269,24 @@ public class ManagerJuego : MonoBehaviour
         {
             mejExpansion.SetActive(false);
             mejGeneracion.SetActive(false);
+            mejTemporal.SetActive(false);
             mejCombate.SetActive(true);
         }
         else
             mejCombate.SetActive(false);
+    }
+
+    public void muestraTemporales()
+    {
+        if (mejTemporal.active == false)
+        {
+            mejExpansion.SetActive(false);
+            mejGeneracion.SetActive(false);
+            mejCombate.SetActive(false);
+            mejTemporal.SetActive(true);
+        }
+        else
+            mejTemporal.SetActive(false);
     }
 
     //Mejora Pago

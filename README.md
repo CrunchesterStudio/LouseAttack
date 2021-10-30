@@ -14,7 +14,7 @@ Además se aceptarán donaciones a través de plataformas como ko-fi...
 Descripción:
 Se trata de un juego de tipo Idle o “Clicker”, donde el jugador es responsable de generar y gestionar recursos, en este caso concreto son piojos que buscan expandir su imperio.
 Estos piojos pelearán contra temibles enemigos de diversa índole como humanos con repelente, salamandras...
-Los recursos van creciendo con el tiempo, y el jugador los gestiona acorde a lo que le parezca más úti,por lo que siempre va a haber sensación de progreso, aunque el jugador abandone el juego varias horas o días.
+Los recursos van creciendo con el tiempo, y el jugador los gestiona acorde a lo que le parezca más útil.
 
 Instalación:
 Para empezar a jugar a Louse Attack puede:

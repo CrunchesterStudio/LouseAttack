@@ -1,0 +1,48 @@
+LOUSE ATTACK
+
+GÉNERO:
+Se trata de un juego de tipo idle o "Clicker". 
+
+INTERACCIONES:
+Todas las interacciones de este juego se realizan a través de clics en el caso del PC,
+o mediante pulsaciones en la pantalla táctil en los dispositivos móviles.
+
+GUÍA DE USO:
+En el menú de inicio el jugador tiene dos botones, un botón para ir a la escena de créditos
+y otro botón para comenzar el juego propiamente dicho.
+
+Menú de Créditos: En este sencillo menú, solo se puede volver al menú inicial  mediante 
+el único botón existente y actualmente sirve para visualizar el logo del estudio.
+
+Menú de Juego:Se trata de la escena de juego propiamente dicha. A continuación se definen las mecánicas.
+
+Contador Principal: Es el elemento que muestra la cantidad de piojos que se disponen en el
+momento actual. Mostrará el aumento o decremento de unidades en todo momento.
+
+Generador de Piojos: Es es botón principal, en este botón se generan los piojos que 
+son la moneda del juego. Con ellos se podrán realizar compras de mejoras y atacar a los enemigos.
+
+Atacar Enemigo: Con este botón atacamos a los enemigos y les reducimos su barra de vida.
+Para poder atacar a los enemigos tenemos que tener piojos. Un piojo generado podrá quitar
+1 punto de vida al enemigo. Si se ataca al enemigo los piojos atacantes son descontados 
+del contador principal.
+Nota: Si la vida del enemigo baja a la mitad o menos, existe un 10% de probabilidad de que
+se cure y restablezca su vida por completo.
+
+Salir: Este botón lleva a la escena de Game Over o fin de partida.
+
+Tienda: Despliega/Oculta un panel con aquellas mejoras que se pueden comprar con dinero real.
+
+Mejoras Temporales:Despliega/Oculta un panel con las mejoras cuyo efecto es limitado en el tiempo.
+
+Mejoras Expansión:Despliega/Oculta un panel con las mejoras que generan más piojos cada cierto tiempo.
+
+Mejoras Generación: Despliega/Oculta un panel con las mejoras que generan clics automáticos o 
+que mejoran la eficiencia de los clics de generación de piojos.
+
+Mejoras Combate:Despliega/Oculta un panel con las mejoras que automatizan el combate o mejoran
+la eficiencia de los clics de ataque.
+
+Guardar/Cargar: Botones para salvar el progreso actual o cargar una partida anterior.
+ 
+

@@ -197,6 +197,30 @@ public class ManagerJuego : MonoBehaviour
     //Contador de enemigos derrotados
     private int enemDerrotados = 0;
 
+    //Candados bloqueados Expansion
+    public Button MejExp3Candado;
+    public Button MejExp4Candado;
+    public Button MejExp5Candado;
+    public Button MejExp6Candado;
+    public Button MejExp7Candado;
+    public Button MejExp8Candado;
+
+    //Candados bloqueados Generacion
+    public Button MejGen3Candado;
+    public Button MejGen4Candado;
+    public Button MejGen5Candado;
+    public Button MejGen6Candado;
+    public Button MejGen7Candado;
+    public Button MejGen8Candado;
+
+    //Candados bloqueados Combate
+    public Button MejComb3Candado;
+    public Button MejComb4Candado;
+    public Button MejComb5Candado;
+    public Button MejComb6Candado;
+    public Button MejComb7Candado;
+    public Button MejComb8Candado;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -1371,6 +1395,33 @@ public class ManagerJuego : MonoBehaviour
             }
             listaEnemigos.RemoveAt(0);
             enemDerrotados++;
+            if (enemDerrotados == 1)
+            {
+                MejExp3Candado.gameObject.SetActive(false);
+                MejExp4Candado.gameObject.SetActive(false);
+                MejGen3Candado.gameObject.SetActive(false);
+                MejGen4Candado.gameObject.SetActive(false);
+                MejComb3Candado.gameObject.SetActive(false);
+                MejComb4Candado.gameObject.SetActive(false);
+            }
+            if (enemDerrotados == 2)
+            {
+                MejExp5Candado.gameObject.SetActive(false);
+                MejExp6Candado.gameObject.SetActive(false);
+                MejGen5Candado.gameObject.SetActive(false);
+                MejGen6Candado.gameObject.SetActive(false);
+                MejComb5Candado.gameObject.SetActive(false);
+                MejComb6Candado.gameObject.SetActive(false);
+            }
+            if (enemDerrotados == 3)
+            {
+                MejExp7Candado.gameObject.SetActive(false);
+                MejExp8Candado.gameObject.SetActive(false);
+                MejGen7Candado.gameObject.SetActive(false);
+                MejGen8Candado.gameObject.SetActive(false);
+                MejComb7Candado.gameObject.SetActive(false);
+                MejComb8Candado.gameObject.SetActive(false);
+            }
             nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
             barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
             barraVida.setVida(listaEnemigos[0].GetVidaActual());

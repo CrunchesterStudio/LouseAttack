@@ -414,7 +414,7 @@ public class ManagerJuego : MonoBehaviour
             costeActualHostal.color = Color.red;
 
         //Jetpack
-        if (getPiojos() >= costeJetpack && enemDerrotados>3)
+        if (getPiojos() >= costeJetpack && enemDerrotados>2)
             costeActualJetPack.color = Color.green;
         else
             costeActualJetPack.color = Color.red;
@@ -426,19 +426,19 @@ public class ManagerJuego : MonoBehaviour
             costeActualPMazao.color = Color.red;
 
         //Caza Titanes
-        if (getPiojos() >= costeCTitanes)
+        if (getPiojos() >= costeCTitanes&&enemDerrotados>0)
             costeActualCazaTitanes.color = Color.green;
         else
             costeActualCazaTitanes.color = Color.red;
 
         //Piojo Cañón
-        if (getPiojos() >= costePCanon)
+        if (getPiojos() >= costePCanon && enemDerrotados > 1)
             costeActualPCanon.color = Color.green;
         else
             costeActualPCanon.color = Color.red;
 
         //Piojo Man
-        if (getPiojos() >= costePMan)
+        if (getPiojos() >= costePMan && enemDerrotados > 2)
             costeActualPMan.color = Color.green;
         else
             costeActualPMan.color = Color.red;
@@ -450,19 +450,19 @@ public class ManagerJuego : MonoBehaviour
             costeActualJefe.color = Color.red;
 
         //Lider Motivador
-        if (getPiojos() >= costeLiderM)
+        if (getPiojos() >= costeLiderM && enemDerrotados > 0)
             costeActualLiderM.color = Color.green;
         else
             costeActualLiderM.color = Color.red;
 
         //Piojo Estratega
-        if (getPiojos() >= costePEstratega)
+        if (getPiojos() >= costePEstratega && enemDerrotados > 1)
             costeActualPEstratega.color = Color.green;
         else
             costeActualPEstratega.color = Color.red;
 
         //Piojo Kasparov
-        if (getPiojos() >= costePKasparov)
+        if (getPiojos() >= costePKasparov && enemDerrotados > 2)
             costeActualPKasparov.color = Color.green;
         else
             costeActualPKasparov.color = Color.red;
@@ -474,19 +474,19 @@ public class ManagerJuego : MonoBehaviour
             costeActualEnfermera.color = Color.red;
 
         //Piojo Bien Pagado
-        if (getPiojos() >= costePPagado)
+        if (getPiojos() >= costePPagado && enemDerrotados > 0)
             costeActualPPagado.color = Color.green;
         else
             costeActualPPagado.color = Color.red;
 
         //Piojo Cafeina
-        if (getPiojos() >= costePCafeina)
+        if (getPiojos() >= costePCafeina && enemDerrotados > 1)
             costeActualPCafeina.color = Color.green;
         else
             costeActualPCafeina.color = Color.red;
 
         //Piojo Speedrunner
-        if (getPiojos() >= costePSpeed)
+        if (getPiojos() >= costePSpeed && enemDerrotados > 2)
             costeActualPSpeed.color = Color.green;
         else
             costeActualPSpeed.color = Color.red;
@@ -498,19 +498,19 @@ public class ManagerJuego : MonoBehaviour
             costeActualPMellizos.color = Color.red;
 
         //Piojos Quintillizos
-        if (getPiojos() >= costePQuinti)
+        if (getPiojos() >= costePQuinti && enemDerrotados > 0)
             costeActualPQuinti.color = Color.green;
         else
             costeActualPQuinti.color = Color.red;
 
         //Piojos Decallizos
-        if (getPiojos() >= costePDeca)
+        if (getPiojos() >= costePDeca && enemDerrotados > 1)
             costeActualPDeca.color = Color.green;
         else
             costeActualPDeca.color = Color.red;
 
         //Piojos Hectallizos
-        if (getPiojos() >= costePHecta)
+        if (getPiojos() >= costePHecta && enemDerrotados > 2)
             costeActualPHecta.color = Color.green;
         else
             costeActualPHecta.color = Color.red;
@@ -837,7 +837,7 @@ public class ManagerJuego : MonoBehaviour
     //Jetpack
     public void añadeJetpack()
     {
-        if (getPiojos() >= costeJetpack && enemDerrotados>3)
+        if (getPiojos() >= costeJetpack && enemDerrotados>2)
         {
             contJetpack++;
             cantidadJetpack.text = "x" + contJetpack.ToString();
@@ -881,7 +881,7 @@ public class ManagerJuego : MonoBehaviour
     //Caza Titanes
     public void añadeCazaTitanes()
     {
-        if (getPiojos() >= costeCTitanes)
+        if (getPiojos() >= costeCTitanes && enemDerrotados > 0)
         {
             contCazaTitanes++;
             cantidadCazaTitanes.text = "x" + contCazaTitanes.ToString();
@@ -897,7 +897,7 @@ public class ManagerJuego : MonoBehaviour
     //Piojo Cañón
     public void añadePiojoCanon()
     {
-        if (getPiojos() >= costePCanon)
+        if (getPiojos() >= costePCanon && enemDerrotados > 1)
         {
             contPCanon++;
             cantidadPCanon.text = "x" + contPCanon.ToString();
@@ -913,7 +913,7 @@ public class ManagerJuego : MonoBehaviour
     //Piojo Man
     public void añadePiojoMan()
     {
-        if (getPiojos() >= costePMan)
+        if (getPiojos() >= costePMan && enemDerrotados > 2)
         {
             contPiojoMan++;
             cantidadPiojoMan.text = "x" + contPiojoMan.ToString();
@@ -961,7 +961,7 @@ public class ManagerJuego : MonoBehaviour
     //Lider Motivador
     public void añadeLiderM()
     {
-        if (getPiojos() >= costeLiderM)
+        if (getPiojos() >= costeLiderM && enemDerrotados > 0)
         {
             contLiderM++;
             cantidadLiderM.text = "x" + contLiderM.ToString();
@@ -993,7 +993,7 @@ public class ManagerJuego : MonoBehaviour
     //Piojo Estratega
     public void añadePEstratega()
     {
-        if (getPiojos() >= costePEstratega)
+        if (getPiojos() >= costePEstratega && enemDerrotados > 1)
         {
             contPEstratega++;
             cantidadPEstratega.text = "x" + contPEstratega.ToString();
@@ -1025,7 +1025,7 @@ public class ManagerJuego : MonoBehaviour
     //Piojo Kasparov
     public void añadePKasparov()
     {
-        if (getPiojos() >= costePKasparov)
+        if (getPiojos() >= costePKasparov && enemDerrotados > 2)
         {
             contPKasparov++;
             cantidadPKasparov.text = "x" + contPKasparov.ToString();
@@ -1084,7 +1084,7 @@ public class ManagerJuego : MonoBehaviour
     //Piojo Bien Pagado 
     public void añadePPagado()
     {
-        if (getPiojos() >= costePPagado)
+        if (getPiojos() >= costePPagado && enemDerrotados > 0)
         {
             contPPagado++;
             cantidadPPagado.text = "x" + contPPagado.ToString();
@@ -1111,7 +1111,7 @@ public class ManagerJuego : MonoBehaviour
     //Piojo Cafeina
     public void añadePCafeina()
     {
-        if (getPiojos() >= costePCafeina)
+        if (getPiojos() >= costePCafeina && enemDerrotados > 1)
         {
             contPCafeina++;
             cantidadPCafeina.text = "x" + contPCafeina.ToString();
@@ -1138,7 +1138,7 @@ public class ManagerJuego : MonoBehaviour
     //Piojo SpeedRunner 
     public void añadePSpeed()
     {
-        if (getPiojos() >= costePSpeed)
+        if (getPiojos() >= costePSpeed && enemDerrotados > 2)
         {
             contPSpeed++;
             cantidadPSpeed.text = "x" + contPSpeed.ToString();
@@ -1181,7 +1181,7 @@ public class ManagerJuego : MonoBehaviour
     //Piojos Quintillizos 
     public void añadePQuinti()
     {
-        if (getPiojos() >= costePQuinti)
+        if (getPiojos() >= costePQuinti && enemDerrotados > 0)
         {
             contPQuinti++;
             cantidadPQuinti.text = "x" + contPQuinti.ToString();
@@ -1197,7 +1197,7 @@ public class ManagerJuego : MonoBehaviour
     //Piojos Decallizos 
     public void añadePDeca()
     {
-        if (getPiojos() >= costePDeca)
+        if (getPiojos() >= costePDeca && enemDerrotados > 1)
         {
             contPDeca++;
             cantidadPDeca.text = "x" + contPDeca.ToString();
@@ -1213,7 +1213,7 @@ public class ManagerJuego : MonoBehaviour
     //Piojos Hectallizos 
     public void añadePHecta()
     {
-        if (getPiojos() >= costePHecta)
+        if (getPiojos() >= costePHecta && enemDerrotados > 2)
         {
             contPHecta++;
             cantidadPHecta.text = "x" + contPHecta.ToString();
@@ -1502,7 +1502,6 @@ public class ManagerJuego : MonoBehaviour
         textoGuardado.text = "PARTIDA GUARDADA";
         yield return new WaitForSeconds(2);
         textoGuardado.text = "";
-        //StopCoroutine(mostrarGuardado());
     }
     IEnumerator mostrarCarga(string s)
     {
@@ -1511,14 +1510,12 @@ public class ManagerJuego : MonoBehaviour
             textoGuardado.text = "PARTIDA CARGADA";
             yield return new WaitForSeconds(2);
             textoGuardado.text = "";
-            //StopCoroutine(mostrarCarga(s));
         }
         else
         {
             textoGuardado.text = "NO HAY SALVADOS";
             yield return new WaitForSeconds(2);
             textoGuardado.text = "";
-            //StopCoroutine(mostrarCarga(s));
         }
        
     }

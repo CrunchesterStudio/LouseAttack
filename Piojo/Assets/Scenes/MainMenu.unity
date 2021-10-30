@@ -289,6 +289,7 @@ GameObject:
   - component: {fileID: 400321770}
   - component: {fileID: 400321769}
   - component: {fileID: 400321768}
+  - component: {fileID: 400321767}
   m_Layer: 5
   m_Name: PLAY
   m_TagString: Untagged
@@ -296,6 +297,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &400321767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400321766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!114 &400321768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +558,7 @@ GameObject:
   - component: {fileID: 778390664}
   - component: {fileID: 778390663}
   - component: {fileID: 778390662}
+  - component: {fileID: 778390661}
   m_Layer: 5
   m_Name: CREDITS
   m_TagString: Untagged
@@ -571,6 +586,19 @@ RectTransform:
   m_AnchoredPosition: {x: -259, y: -196}
   m_SizeDelta: {x: 120.1429, y: 79.9947}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &778390661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778390659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!114 &778390662
 MonoBehaviour:
   m_ObjectHideFlags: 0

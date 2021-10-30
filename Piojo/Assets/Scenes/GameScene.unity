@@ -1584,6 +1584,7 @@ GameObject:
   - component: {fileID: 250573643}
   - component: {fileID: 250573642}
   - component: {fileID: 250573641}
+  - component: {fileID: 250573644}
   m_Layer: 5
   m_Name: Piojos Quintillizos
   m_TagString: Untagged
@@ -1709,6 +1710,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250573639}
   m_CullTransparentMesh: 1
+--- !u!114 &250573644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250573639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &258346463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,6 +2283,7 @@ GameObject:
   - component: {fileID: 319616460}
   - component: {fileID: 319616459}
   - component: {fileID: 319616458}
+  - component: {fileID: 319616461}
   m_Layer: 5
   m_Name: Jetpack
   m_TagString: Untagged
@@ -2394,6 +2409,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319616456}
   m_CullTransparentMesh: 1
+--- !u!114 &319616461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319616456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &320696615
 GameObject:
   m_ObjectHideFlags: 0
@@ -3160,6 +3188,7 @@ GameObject:
   - component: {fileID: 369891535}
   - component: {fileID: 369891534}
   - component: {fileID: 369891533}
+  - component: {fileID: 369891536}
   m_Layer: 5
   m_Name: Button Guardar Partida
   m_TagString: Untagged
@@ -3281,6 +3310,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369891531}
   m_CullTransparentMesh: 1
+--- !u!114 &369891536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369891531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &376206141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3373,6 +3415,7 @@ GameObject:
   - component: {fileID: 379219481}
   - component: {fileID: 379219480}
   - component: {fileID: 379219479}
+  - component: {fileID: 379219483}
   m_Layer: 5
   m_Name: Generador_Piojos
   m_TagString: Untagged
@@ -3514,6 +3557,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379219477}
   m_CullTransparentMesh: 1
+--- !u!114 &379219483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379219477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &382668853
 GameObject:
   m_ObjectHideFlags: 0
@@ -4302,6 +4358,7 @@ GameObject:
   - component: {fileID: 497309059}
   - component: {fileID: 497309058}
   - component: {fileID: 497309057}
+  - component: {fileID: 497309060}
   m_Layer: 5
   m_Name: "Cabeza de Ni\xF1o"
   m_TagString: Untagged
@@ -4427,6 +4484,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497309055}
   m_CullTransparentMesh: 1
+--- !u!114 &497309060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497309055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &502856599
 GameObject:
   m_ObjectHideFlags: 0
@@ -6789,6 +6859,7 @@ GameObject:
   - component: {fileID: 727735361}
   - component: {fileID: 727735360}
   - component: {fileID: 727735359}
+  - component: {fileID: 727735362}
   m_Layer: 5
   m_Name: Clase Infantil
   m_TagString: Untagged
@@ -6914,6 +6985,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727735357}
   m_CullTransparentMesh: 1
+--- !u!114 &727735362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727735357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &752452934
 GameObject:
   m_ObjectHideFlags: 0
@@ -7160,6 +7244,7 @@ GameObject:
   - component: {fileID: 764354370}
   - component: {fileID: 764354369}
   - component: {fileID: 764354368}
+  - component: {fileID: 764354371}
   m_Layer: 5
   m_Name: Piojos Decallizos
   m_TagString: Untagged
@@ -7285,6 +7370,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764354366}
   m_CullTransparentMesh: 1
+--- !u!114 &764354371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764354366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &767191778
 GameObject:
   m_ObjectHideFlags: 0
@@ -7376,6 +7474,7 @@ GameObject:
   - component: {fileID: 768429491}
   - component: {fileID: 768429490}
   - component: {fileID: 768429489}
+  - component: {fileID: 768429492}
   m_Layer: 5
   m_Name: Piojos Mellizos
   m_TagString: Untagged
@@ -7501,6 +7600,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768429487}
   m_CullTransparentMesh: 1
+--- !u!114 &768429492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768429487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &771034438
 GameObject:
   m_ObjectHideFlags: 0
@@ -8149,6 +8261,7 @@ GameObject:
   - component: {fileID: 804912076}
   - component: {fileID: 804912075}
   - component: {fileID: 804912074}
+  - component: {fileID: 804912077}
   m_Layer: 5
   m_Name: "Button M.Expansi\xF3n"
   m_TagString: Untagged
@@ -8270,6 +8383,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804912072}
   m_CullTransparentMesh: 1
+--- !u!114 &804912077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804912072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &813676281
 GameObject:
   m_ObjectHideFlags: 0
@@ -8404,6 +8530,7 @@ GameObject:
   - component: {fileID: 821230010}
   - component: {fileID: 821230009}
   - component: {fileID: 821230008}
+  - component: {fileID: 821230011}
   m_Layer: 5
   m_Name: Patio Escuela
   m_TagString: Untagged
@@ -8529,6 +8656,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821230006}
   m_CullTransparentMesh: 1
+--- !u!114 &821230011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821230006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &833655694
 GameObject:
   m_ObjectHideFlags: 0
@@ -8847,6 +8987,7 @@ GameObject:
   - component: {fileID: 848675343}
   - component: {fileID: 848675342}
   - component: {fileID: 848675341}
+  - component: {fileID: 848675344}
   m_Layer: 5
   m_Name: "Piojo Ca\xF1\xF3n"
   m_TagString: Untagged
@@ -8972,6 +9113,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848675339}
   m_CullTransparentMesh: 1
+--- !u!114 &848675344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848675339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &853400133
 GameObject:
   m_ObjectHideFlags: 0
@@ -8984,6 +9138,7 @@ GameObject:
   - component: {fileID: 853400137}
   - component: {fileID: 853400136}
   - component: {fileID: 853400135}
+  - component: {fileID: 853400138}
   m_Layer: 5
   m_Name: Piojo_Madre
   m_TagString: Untagged
@@ -9109,6 +9264,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853400133}
   m_CullTransparentMesh: 1
+--- !u!114 &853400138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853400133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &855425403
 GameObject:
   m_ObjectHideFlags: 0
@@ -9322,6 +9490,7 @@ GameObject:
   - component: {fileID: 878950263}
   - component: {fileID: 878950262}
   - component: {fileID: 878950261}
+  - component: {fileID: 878950264}
   m_Layer: 5
   m_Name: MultiClics
   m_TagString: Untagged
@@ -9446,6 +9615,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878950259}
   m_CullTransparentMesh: 1
+--- !u!114 &878950264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878950259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &882595864
 GameObject:
   m_ObjectHideFlags: 0
@@ -9695,6 +9877,7 @@ GameObject:
   - component: {fileID: 892949685}
   - component: {fileID: 892949684}
   - component: {fileID: 892949683}
+  - component: {fileID: 892949686}
   m_Layer: 5
   m_Name: "Piojo Cafe\xEDna"
   m_TagString: Untagged
@@ -9820,6 +10003,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892949681}
   m_CullTransparentMesh: 1
+--- !u!114 &892949686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892949681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &895357046
 GameObject:
   m_ObjectHideFlags: 0
@@ -10184,6 +10380,7 @@ GameObject:
   - component: {fileID: 924774610}
   - component: {fileID: 924774609}
   - component: {fileID: 924774608}
+  - component: {fileID: 924774611}
   m_Layer: 5
   m_Name: "Button M.Generaci\xF3n"
   m_TagString: Untagged
@@ -10305,6 +10502,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924774606}
   m_CullTransparentMesh: 1
+--- !u!114 &924774611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924774606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &927779470
 GameObject:
   m_ObjectHideFlags: 0
@@ -10791,6 +11001,7 @@ GameObject:
   - component: {fileID: 955454839}
   - component: {fileID: 955454838}
   - component: {fileID: 955454837}
+  - component: {fileID: 955454840}
   m_Layer: 5
   m_Name: Button M.Combate
   m_TagString: Untagged
@@ -10912,6 +11123,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955454835}
   m_CullTransparentMesh: 1
+--- !u!114 &955454840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955454835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &955962674
 GameObject:
   m_ObjectHideFlags: 0
@@ -11592,6 +11816,7 @@ GameObject:
   - component: {fileID: 1033034698}
   - component: {fileID: 1033034697}
   - component: {fileID: 1033034696}
+  - component: {fileID: 1033034699}
   m_Layer: 5
   m_Name: Piojos Hectillizos
   m_TagString: Untagged
@@ -11717,6 +11942,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033034694}
   m_CullTransparentMesh: 1
+--- !u!114 &1033034699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033034694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1033829735
 GameObject:
   m_ObjectHideFlags: 0
@@ -12428,6 +12666,7 @@ GameObject:
   - component: {fileID: 1121034113}
   - component: {fileID: 1121034112}
   - component: {fileID: 1121034111}
+  - component: {fileID: 1121034114}
   m_Layer: 5
   m_Name: "Piojo Kasp\xE1rov"
   m_TagString: Untagged
@@ -12553,6 +12792,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121034109}
   m_CullTransparentMesh: 1
+--- !u!114 &1121034114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121034109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1134043698
 GameObject:
   m_ObjectHideFlags: 0
@@ -12924,6 +13176,7 @@ GameObject:
   - component: {fileID: 1186473230}
   - component: {fileID: 1186473229}
   - component: {fileID: 1186473228}
+  - component: {fileID: 1186473231}
   m_Layer: 5
   m_Name: Piojo SpeedRunner
   m_TagString: Untagged
@@ -13049,6 +13302,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186473226}
   m_CullTransparentMesh: 1
+--- !u!114 &1186473231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186473226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1188845257
 GameObject:
   m_ObjectHideFlags: 0
@@ -13496,6 +13762,7 @@ GameObject:
   - component: {fileID: 1256560329}
   - component: {fileID: 1256560328}
   - component: {fileID: 1256560327}
+  - component: {fileID: 1256560330}
   m_Layer: 5
   m_Name: Jefe de Equipo
   m_TagString: Untagged
@@ -13621,6 +13888,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256560325}
   m_CullTransparentMesh: 1
+--- !u!114 &1256560330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256560325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1262005794
 GameObject:
   m_ObjectHideFlags: 0
@@ -14225,6 +14505,7 @@ GameObject:
   - component: {fileID: 1306358791}
   - component: {fileID: 1306358790}
   - component: {fileID: 1306358789}
+  - component: {fileID: 1306358792}
   m_Layer: 5
   m_Name: Caza Titanes
   m_TagString: Untagged
@@ -14350,6 +14631,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306358787}
   m_CullTransparentMesh: 1
+--- !u!114 &1306358792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306358787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1307576719
 GameObject:
   m_ObjectHideFlags: 0
@@ -15274,6 +15568,7 @@ GameObject:
   - component: {fileID: 1387703078}
   - component: {fileID: 1387703077}
   - component: {fileID: 1387703076}
+  - component: {fileID: 1387703079}
   m_Layer: 5
   m_Name: Tienda
   m_TagString: Untagged
@@ -15395,6 +15690,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387703074}
   m_CullTransparentMesh: 1
+--- !u!114 &1387703079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387703074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1398346299
 GameObject:
   m_ObjectHideFlags: 0
@@ -16316,6 +16624,7 @@ GameObject:
   - component: {fileID: 1491235601}
   - component: {fileID: 1491235600}
   - component: {fileID: 1491235599}
+  - component: {fileID: 1491235602}
   m_Layer: 5
   m_Name: Cabalgadores de Perros
   m_TagString: Untagged
@@ -16441,6 +16750,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491235597}
   m_CullTransparentMesh: 1
+--- !u!114 &1491235602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491235597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1492038266
 GameObject:
   m_ObjectHideFlags: 0
@@ -16532,6 +16854,7 @@ GameObject:
   - component: {fileID: 1506318626}
   - component: {fileID: 1506318625}
   - component: {fileID: 1506318624}
+  - component: {fileID: 1506318627}
   m_Layer: 5
   m_Name: Salir
   m_TagString: Untagged
@@ -16653,6 +16976,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506318622}
   m_CullTransparentMesh: 1
+--- !u!114 &1506318627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506318622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1507981089
 GameObject:
   m_ObjectHideFlags: 0
@@ -17886,6 +18222,7 @@ GameObject:
   - component: {fileID: 1671105521}
   - component: {fileID: 1671105520}
   - component: {fileID: 1671105519}
+  - component: {fileID: 1671105522}
   m_Layer: 5
   m_Name: Hostal 1 Estrella
   m_TagString: Untagged
@@ -18011,6 +18348,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671105517}
   m_CullTransparentMesh: 1
+--- !u!114 &1671105522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671105517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1681330869
 GameObject:
   m_ObjectHideFlags: 0
@@ -18297,6 +18647,7 @@ GameObject:
   - component: {fileID: 1688981372}
   - component: {fileID: 1688981371}
   - component: {fileID: 1688981370}
+  - component: {fileID: 1688981373}
   m_Layer: 5
   m_Name: Escuela
   m_TagString: Untagged
@@ -18422,6 +18773,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688981368}
   m_CullTransparentMesh: 1
+--- !u!114 &1688981373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688981368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1718254675
 GameObject:
   m_ObjectHideFlags: 0
@@ -18434,6 +18798,7 @@ GameObject:
   - component: {fileID: 1718254679}
   - component: {fileID: 1718254678}
   - component: {fileID: 1718254677}
+  - component: {fileID: 1718254680}
   m_Layer: 5
   m_Name: MejoraPago
   m_TagString: Untagged
@@ -18559,6 +18924,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718254675}
   m_CullTransparentMesh: 1
+--- !u!114 &1718254680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718254675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1721597285
 GameObject:
   m_ObjectHideFlags: 0
@@ -18647,6 +19025,7 @@ GameObject:
   - component: {fileID: 1726552611}
   - component: {fileID: 1726552610}
   - component: {fileID: 1726552609}
+  - component: {fileID: 1726552612}
   m_Layer: 5
   m_Name: Piojo Mazao
   m_TagString: Untagged
@@ -18772,6 +19151,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726552607}
   m_CullTransparentMesh: 1
+--- !u!114 &1726552612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726552607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1727606577
 GameObject:
   m_ObjectHideFlags: 0
@@ -19222,6 +19614,7 @@ GameObject:
   - component: {fileID: 1751478526}
   - component: {fileID: 1751478525}
   - component: {fileID: 1751478524}
+  - component: {fileID: 1751478527}
   m_Layer: 5
   m_Name: Enfermera Piojo
   m_TagString: Untagged
@@ -19347,6 +19740,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751478522}
   m_CullTransparentMesh: 1
+--- !u!114 &1751478527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751478522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1769699339
 GameObject:
   m_ObjectHideFlags: 0
@@ -19951,6 +20357,7 @@ GameObject:
   - component: {fileID: 1827637091}
   - component: {fileID: 1827637090}
   - component: {fileID: 1827637089}
+  - component: {fileID: 1827637092}
   m_Layer: 5
   m_Name: Button Cargar Partida
   m_TagString: Untagged
@@ -20072,6 +20479,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827637087}
   m_CullTransparentMesh: 1
+--- !u!114 &1827637092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827637087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1871196014
 GameObject:
   m_ObjectHideFlags: 0
@@ -20719,6 +21139,7 @@ GameObject:
   - component: {fileID: 1917114172}
   - component: {fileID: 1917114171}
   - component: {fileID: 1917114170}
+  - component: {fileID: 1917114173}
   m_Layer: 5
   m_Name: Piojo Bien Pagado
   m_TagString: Untagged
@@ -20844,6 +21265,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917114168}
   m_CullTransparentMesh: 1
+--- !u!114 &1917114173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917114168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1917150286
 GameObject:
   m_ObjectHideFlags: 0
@@ -21690,6 +22124,7 @@ GameObject:
   - component: {fileID: 1965525183}
   - component: {fileID: 1965525182}
   - component: {fileID: 1965525181}
+  - component: {fileID: 1965525184}
   m_Layer: 5
   m_Name: "L\xEDder Motivador"
   m_TagString: Untagged
@@ -21815,6 +22250,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965525179}
   m_CullTransparentMesh: 1
+--- !u!114 &1965525184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965525179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &1974000497
 GameObject:
   m_ObjectHideFlags: 0
@@ -22290,6 +22738,7 @@ GameObject:
   - component: {fileID: 2000564046}
   - component: {fileID: 2000564045}
   - component: {fileID: 2000564044}
+  - component: {fileID: 2000564047}
   m_Layer: 5
   m_Name: Piojo Man
   m_TagString: Untagged
@@ -22415,6 +22864,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2000564042}
   m_CullTransparentMesh: 1
+--- !u!114 &2000564047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000564042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &2020462663
 GameObject:
   m_ObjectHideFlags: 0
@@ -22503,6 +22965,7 @@ GameObject:
   - component: {fileID: 2055596449}
   - component: {fileID: 2055596448}
   - component: {fileID: 2055596447}
+  - component: {fileID: 2055596450}
   m_Layer: 5
   m_Name: ClonaPiojos
   m_TagString: Untagged
@@ -22627,6 +23090,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055596445}
   m_CullTransparentMesh: 1
+--- !u!114 &2055596450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055596445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &2055851067
 GameObject:
   m_ObjectHideFlags: 0
@@ -22718,6 +23194,7 @@ GameObject:
   - component: {fileID: 2067400172}
   - component: {fileID: 2067400171}
   - component: {fileID: 2067400170}
+  - component: {fileID: 2067400173}
   m_Layer: 5
   m_Name: Piojo Estratega
   m_TagString: Untagged
@@ -22843,6 +23320,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067400168}
   m_CullTransparentMesh: 1
+--- !u!114 &2067400173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067400168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &2073371850
 GameObject:
   m_ObjectHideFlags: 0
@@ -23415,6 +23905,7 @@ GameObject:
   - component: {fileID: 2127728422}
   - component: {fileID: 2127728421}
   - component: {fileID: 2127728420}
+  - component: {fileID: 2127728423}
   m_Layer: 5
   m_Name: Enemigo
   m_TagString: Untagged
@@ -23539,6 +24030,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127728418}
   m_CullTransparentMesh: 1
+--- !u!114 &2127728423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127728418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c348b2f0f4763144aa9d530aeb67078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
 --- !u!1 &2133463118
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ Este repositorio pertenece al estudio de desarrollo Crunchester Studio.
 Equipo de desarrollo: María Hidalga de la Fuente, Diego Penedo Andrés, Juan Jesús Rodríguez Sánchez, Miguel Gálvez Lucena, Sara Fuente Águila.
 
 Versión Unity: 2020.3.19f1
+Portfolio: https://crunchesterstudio.github.io/Portfolio/
 
 
 LOUSE ATTACK
@@ -14,6 +15,11 @@ Descripción:
 Se trata de un juego de tipo Idle o “Clicker”, donde el jugador es responsable de generar y gestionar recursos, en este caso concreto son piojos que buscan expandir su imperio.
 Estos piojos pelearán contra temibles enemigos de diversa índole como humanos con repelente, salamandras...
 Los recursos van creciendo con el tiempo, y el jugador los gestiona acorde a lo que le parezca más úti,por lo que siempre va a haber sensación de progreso, aunque el jugador abandone el juego varias horas o días.
+
+Instalación:
+Para empezar a jugar a Louse Attack puede:
+- abrir el ejecutable desde su ordenador.
+- entrar mediante la plataforma itch.io: https://crunchesterstudio.itch.io/louse-attack
 
 
 Contáctanos mediante:

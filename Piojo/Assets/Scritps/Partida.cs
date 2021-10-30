@@ -4,6 +4,7 @@ using UnityEngine;
 public class Partida
 {
     public int numPiojos { get; set; }
+    public int enemDerrotados { get; set; }
     public List<Enemigo> listaEnemigos{ get; set; }
     public int costePMadre { get; set; }
     public int contPiojoMadre { get; set; }

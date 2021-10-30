@@ -526,6 +526,35 @@ public class ManagerJuego : MonoBehaviour
             costeActualMultiC.color = Color.green;
         else
             costeActualMultiC.color = Color.red;
+
+
+        if (enemDerrotados > 0)
+        {
+            MejExp3Candado.gameObject.SetActive(false);
+            MejExp4Candado.gameObject.SetActive(false);
+            MejGen3Candado.gameObject.SetActive(false);
+            MejGen4Candado.gameObject.SetActive(false);
+            MejComb3Candado.gameObject.SetActive(false);
+            MejComb4Candado.gameObject.SetActive(false);
+        }
+        if (enemDerrotados > 1)
+        {
+            MejExp5Candado.gameObject.SetActive(false);
+            MejExp6Candado.gameObject.SetActive(false);
+            MejGen5Candado.gameObject.SetActive(false);
+            MejGen6Candado.gameObject.SetActive(false);
+            MejComb5Candado.gameObject.SetActive(false);
+            MejComb6Candado.gameObject.SetActive(false);
+        }
+        if (enemDerrotados > 2)
+        {
+            MejExp7Candado.gameObject.SetActive(false);
+            MejExp8Candado.gameObject.SetActive(false);
+            MejGen7Candado.gameObject.SetActive(false);
+            MejGen8Candado.gameObject.SetActive(false);
+            MejComb7Candado.gameObject.SetActive(false);
+            MejComb8Candado.gameObject.SetActive(false);
+        }
     }
 
     //Botón Piojo
@@ -1395,33 +1424,7 @@ public class ManagerJuego : MonoBehaviour
             }
             listaEnemigos.RemoveAt(0);
             enemDerrotados++;
-            if (enemDerrotados == 1)
-            {
-                MejExp3Candado.gameObject.SetActive(false);
-                MejExp4Candado.gameObject.SetActive(false);
-                MejGen3Candado.gameObject.SetActive(false);
-                MejGen4Candado.gameObject.SetActive(false);
-                MejComb3Candado.gameObject.SetActive(false);
-                MejComb4Candado.gameObject.SetActive(false);
-            }
-            if (enemDerrotados == 2)
-            {
-                MejExp5Candado.gameObject.SetActive(false);
-                MejExp6Candado.gameObject.SetActive(false);
-                MejGen5Candado.gameObject.SetActive(false);
-                MejGen6Candado.gameObject.SetActive(false);
-                MejComb5Candado.gameObject.SetActive(false);
-                MejComb6Candado.gameObject.SetActive(false);
-            }
-            if (enemDerrotados == 3)
-            {
-                MejExp7Candado.gameObject.SetActive(false);
-                MejExp8Candado.gameObject.SetActive(false);
-                MejGen7Candado.gameObject.SetActive(false);
-                MejGen8Candado.gameObject.SetActive(false);
-                MejComb7Candado.gameObject.SetActive(false);
-                MejComb8Candado.gameObject.SetActive(false);
-            }
+            
             nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
             barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
             barraVida.setVida(listaEnemigos[0].GetVidaActual());
@@ -1434,6 +1437,7 @@ public class ManagerJuego : MonoBehaviour
     {
         Partida p = new Partida();
         p.numPiojos = this.numPiojos;
+        p.enemDerrotados = this.enemDerrotados;
         p.listaEnemigos = this.listaEnemigos;
         p.costePMadre = this.costePMadre;
         p.contPiojoMadre = this.contPiojoMadre;
@@ -1532,6 +1536,7 @@ public class ManagerJuego : MonoBehaviour
             p = JsonConvert.DeserializeObject<Partida>(datosPartida);
 
             this.numPiojos = p.numPiojos;
+            this.enemDerrotados = p.enemDerrotados;
             this.listaEnemigos = p.listaEnemigos;
             this.costePMadre = p.costePMadre;
             this.contPiojoMadre = p.contPiojoMadre;
@@ -1655,6 +1660,7 @@ public class ManagerJuego : MonoBehaviour
         this.costeActualClonaP.text = this.costeClonaP.ToString();
         this.costeActualMultiC.text = this.costeMultiC.ToString();
 
+        this.nombreEnemigo.text = this.listaEnemigos[0].tipo.ToString();
         this.vidaEnemigo.text = this.listaEnemigos[0].GetVidaActual().ToString() + "/" + this.listaEnemigos[0].GetVidaMax().ToString();
     }
 

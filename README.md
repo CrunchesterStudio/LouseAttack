@@ -25,9 +25,11 @@ Para empezar a jugar a Louse Attack puede:
 Contáctanos mediante:
 - Gmail: crunchesterstudio@gmail.com
 - Youtube: Crunchester Studio (https://www.youtube.com/channel/UC2mgQN5akJJlqqFHGw_2U2A/featured)
-- Twitter: @CrunchesterST
-- Itch.io/Instagram/TikTok: @crunchesterstudio
-- GitHub: CrunchesterStudio
+- Twitter: https://twitter.com/crunchesterST
+- Instagram: https://www.instagram.com/crunchesterstudio/
+- TikTok: https://www.tiktok.com/@crunchesterstudio
+- Itch.io: https://crunchesterstudio.itch.io/louse-attack
+- GitHub: https://github.com/CrunchesterStudio
 
 Recursos:
 Juego Responsive: https://seansleblanc.itch.io/better-minimal-webgl-template  

@@ -18,7 +18,6 @@ Los recursos van creciendo con el tiempo, y el jugador los gestiona acorde a lo 
 
 Instalación:
 Para empezar a jugar a Louse Attack puede:
-- abrir el ejecutable desde su ordenador.
 - entrar mediante la plataforma itch.io: https://crunchesterstudio.itch.io/louse-attack
 
 

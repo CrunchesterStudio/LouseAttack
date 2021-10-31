@@ -1,11 +1,11 @@
 Este repositorio pertenece al estudio de desarrollo Crunchester Studio. 
 Equipo de desarrollo: María Hidalga de la Fuente, Diego Penedo Andrés, Juan Jesús Rodríguez Sánchez, Miguel Gálvez Lucena, Sara Fuente Águila.
 
-Versión Unity: 2020.3.19f1
+Versión Unity: 2020.3.19f1  
 Portfolio: https://crunchesterstudio.github.io/Portfolio/
 
 
-LOUSE ATTACK
+LOUSE ATTACK  
 El presente proyecto consiste en un juego para navegador web en PC y móviles que se encuentra todavía en desarrollo (Versión Alpha).
 Es un juego sencillo de jugar, para todas las edades, accesible a jugadores habituales y también al público casual.
 Sigue un modelo freemium/pay to win: puede jugarse gratis, aunque el jugador puede obtener ciertas mejoras especiales y evitar publicidad con dinero real. 

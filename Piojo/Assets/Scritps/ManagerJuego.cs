@@ -367,6 +367,7 @@ public class ManagerJuego : MonoBehaviour
         mejCombate.SetActive(false);
 
         cargarPartida();
+        StartCoroutine(guardadoAutomatico());
     }
 
     // Update is called once per frame
@@ -1525,11 +1526,16 @@ public class ManagerJuego : MonoBehaviour
 
     }
 
+    IEnumerator guardadoAutomatico()
+    {
+        yield return new WaitForSeconds(60);
+        guardarPartida();
+        StartCoroutine(guardadoAutomatico());
+    }
+
     //CARGA DE PARTIDA
     public void cargarPartida()
     {
-        //string datosPartida = "";
-
         string datosPartida = CargarDatos();
         if (datosPartida != null)
         {

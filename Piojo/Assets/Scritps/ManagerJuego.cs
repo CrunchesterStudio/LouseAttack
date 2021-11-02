@@ -366,6 +366,7 @@ public class ManagerJuego : MonoBehaviour
         mejGeneracion.SetActive(false);
         mejCombate.SetActive(false);
 
+        cargarPartida();
     }
 
     // Update is called once per frame

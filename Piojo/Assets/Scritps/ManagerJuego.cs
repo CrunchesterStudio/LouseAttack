@@ -21,19 +21,19 @@ public class ManagerJuego : MonoBehaviour
 
     //Piojo Madre
     public Text costeActualPMadre;
-    private int costePMadre = 10;
+    private int costePMadre = 200;
     public Text cantidadPmadre;
     private int contPiojoMadre = 0;
 
     //Cabeza Niño
     public Text costeActualCabezaN;
-    private int costeCabezaN = 10;
+    private int costeCabezaN = 1500;
     public Text cantidadCabezaN;
     private int contCabezaN = 0;
 
     //Clase Infantil
     public Text costeActualClaseInfantil;
-    private int costeClaseInfantil = 10;
+    private int costeClaseInfantil = 11000;
     public Text cantidadClaseInfantil;
     private int contClaseInfantil = 0;
 
@@ -69,7 +69,7 @@ public class ManagerJuego : MonoBehaviour
 
     //Piojo Mazao
     public Text costeActualPMazao;
-    private int costePMazao = 10;
+    private int costePMazao = 1000;
     public Text cantidadPiojoMazao;
     private int contPiojoMazao = 0;
 
@@ -93,73 +93,73 @@ public class ManagerJuego : MonoBehaviour
 
     //Jefe de Equipo
     public Text costeActualJefe;
-    private int costeJefe = 10;
+    private int costeJefe = 5000;
     public Text cantidadJefe;
     private int contJefe = 0;
 
     //Líder Motivador
     public Text costeActualLiderM;
-    private int costeLiderM = 10;
+    private int costeLiderM = 35000;
     public Text cantidadLiderM;
     private int contLiderM = 0;
 
     //Piojo Estratega
     public Text costeActualPEstratega;
-    private int costePEstratega = 10;
+    private int costePEstratega = 250000;
     public Text cantidadPEstratega;
     private int contPEstratega = 0;
 
     //Piojo Kasparov
     public Text costeActualPKasparov;
-    private int costePKasparov = 10;
+    private int costePKasparov = 3000000;
     public Text cantidadPKasparov;
     private int contPKasparov = 0;
 
     //Enfermera Piojo
     public Text costeActualEnfermera;
-    private int costeEnfermera = 10;
+    private int costeEnfermera = 200;
     public Text cantidadEnfermera;
     private int contEnfermera = 0;
 
     //Piojo Bien Pagado
     public Text costeActualPPagado;
-    private int costePPagado = 10;
+    private int costePPagado = 5000;
     public Text cantidadPPagado;
     private int contPPagado = 0;
 
     //Piojo Cafeína
     public Text costeActualPCafeina;
-    private int costePCafeina = 10;
+    private int costePCafeina = 85000;
     public Text cantidadPCafeina;
     private int contPCafeina = 0;
 
     //Piojo SpeedRunner
     public Text costeActualPSpeed;
-    private int costePSpeed = 10;
+    private int costePSpeed = 2000000;
     public Text cantidadPSpeed;
     private int contPSpeed = 0;
 
     //Piojos Mellizos 
     public Text costeActualPMellizos;
-    private int costePMellizos = 10;
+    private int costePMellizos = 20;
     public Text cantidadPMellizos;
     private int contPMellizos = 0;
 
     //Piojos Quintillizos 
     public Text costeActualPQuinti;
-    private int costePQuinti = 10;
+    private int costePQuinti = 500;
     public Text cantidadPQuinti;
     private int contPQuinti = 0;
 
     //Piojos Decallizos 
     public Text costeActualPDeca;
-    private int costePDeca = 10;
+    private int costePDeca = 12000;
     public Text cantidadPDeca;
     private int contPDeca = 0;
 
     //Piojos Hectallizos 
     public Text costeActualPHecta;
-    private int costePHecta = 10;
+    private int costePHecta = 450000;
     public Text cantidadPHecta;
     private int contPHecta = 0;
 

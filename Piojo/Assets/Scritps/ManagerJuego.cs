@@ -168,6 +168,7 @@ public class ManagerJuego : MonoBehaviour
     public GameObject mejGeneracion;
     public GameObject mejCombate;
     public GameObject mejTemporal;
+    public GameObject mejPago;
 
     //Tienda
     public GameObject tienda;
@@ -1286,12 +1287,36 @@ public class ManagerJuego : MonoBehaviour
     public void muestraTienda()
     {
         if (tienda.active == false)
+        {
             tienda.SetActive(true);
+            mejExpansion.SetActive(true);
+        }
         else
+        {
             tienda.SetActive(false);
+            mejPago.SetActive(false);
+            mejExpansion.SetActive(false);
+            mejGeneracion.SetActive(false);
+            mejCombate.SetActive(false);
+            mejTemporal.SetActive(false);
+        } 
     }
 
     //Mejoras
+    public void muestraPago()
+    {
+        if (mejPago.active == false)
+        {
+            mejPago.SetActive(true);
+            mejExpansion.SetActive(false);
+            mejGeneracion.SetActive(false);
+            mejCombate.SetActive(false);
+            mejTemporal.SetActive(false);
+        }
+        else
+            mejPago.SetActive(false);
+    }
+
     public void muestraExpansion()
     {
         if (mejExpansion.active == false)
@@ -1300,6 +1325,7 @@ public class ManagerJuego : MonoBehaviour
             mejGeneracion.SetActive(false);
             mejCombate.SetActive(false);
             mejTemporal.SetActive(false);
+            mejPago.SetActive(false);
         }
         else
             mejExpansion.SetActive(false);
@@ -1313,6 +1339,7 @@ public class ManagerJuego : MonoBehaviour
             mejGeneracion.SetActive(true);
             mejCombate.SetActive(false);
             mejTemporal.SetActive(false);
+            mejPago.SetActive(false);
         }
         else
             mejGeneracion.SetActive(false);
@@ -1326,6 +1353,7 @@ public class ManagerJuego : MonoBehaviour
             mejGeneracion.SetActive(false);
             mejTemporal.SetActive(false);
             mejCombate.SetActive(true);
+            mejPago.SetActive(false);
         }
         else
             mejCombate.SetActive(false);
@@ -1339,6 +1367,7 @@ public class ManagerJuego : MonoBehaviour
             mejGeneracion.SetActive(false);
             mejCombate.SetActive(false);
             mejTemporal.SetActive(true);
+            mejPago.SetActive(false);
         }
         else
             mejTemporal.SetActive(false);

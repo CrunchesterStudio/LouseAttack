@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class ManagerInfo : MonoBehaviour
 {
+    //Paneles
+    public GameObject mejExpansion;
+    public GameObject mejGeneracion;
+    public GameObject mejCombate;
+    public GameObject mejTemporal;
+    public GameObject mejPago;
+
     //Mejoras de Expansión
     public GameObject InfoPMadre;
     public GameObject InfoCabezaN;
@@ -84,115 +91,111 @@ public class ManagerInfo : MonoBehaviour
         InfoMultiC.SetActive(false);
     }
 
-    //Piojo Madre
-    public void OnMouseOverPiojoMadre() { InfoPMadre.SetActive(true); }
-    public void OnMouseExitPiojoMadre() { InfoPMadre.SetActive(false); }
 
-    //Cabeza Niño
-    public void OnMouseOverCabezaN() { InfoCabezaN.SetActive(true); }
-    public void OnMouseExitCabezaN() { InfoCabezaN.SetActive(false); }
+    public void OnMouseOverInfo()
+    {
+        //Mejoras de Expansión
+        if (mejExpansion.active == true)
+        {
+            InfoPMadre.SetActive(true);
+            InfoCabezaN.SetActive(true);
+            InfoClaseInfantil.SetActive(true);
+            InfoPatioEscuela.SetActive(true);
+            InfoEscuela.SetActive(true);
+            InfoCPerros.SetActive(true);
+            InfoHostal.SetActive(true);
+            InfoJetpack.SetActive(true);
+        }
 
-    //Clase Infantil
-    public void OnMouseOverClaseInfantil() { InfoClaseInfantil.SetActive(true); }
-    public void OnMouseExitClaseInfantil() { InfoClaseInfantil.SetActive(false); }
+        //Mejoras de Combate
+        if (mejCombate.active == true)
+        {
+            InfoPiojoMazao.SetActive(true);
+            InfoCazaTitanes.SetActive(true);
+            InfoPiojoCanon.SetActive(true);
+            InfoPiojoMan.SetActive(true);
+            InfoJefeEquipo.SetActive(true);
+            InfoLiderM.SetActive(true);
+            InfoPEstratega.SetActive(true);
+            InfoPKasparov.SetActive(true);
+        }
 
-    //Escuela
-    public void OnMouseOverPatioEscuela() { InfoPatioEscuela.SetActive(true); }
-    public void OnMouseExitPatioEscuela() { InfoPatioEscuela.SetActive(false); }
+        //Mejoras Generación
+        if (mejGeneracion.active == true)
+        {
+            InfoEnfermera.SetActive(true);
+            InfoPPagado.SetActive(true);
+            InfoPCafeina.SetActive(true);
+            InfoPSpeed.SetActive(true);
+            InfoPMellizos.SetActive(true);
+            InfoPQuinti.SetActive(true);
+            InfoPDeca.SetActive(true);
+            InfoPHecta.SetActive(true);
+        }
 
-    //Escuela
-    public void OnMouseOverEscuela() { InfoEscuela.SetActive(true); }
-    public void OnMouseExitEscuela() { InfoEscuela.SetActive(false); }
+        //Mejoras de Pago
+        if (mejPago.active == true)
+            InfoMejoraPago.SetActive(true);
 
-    //Cabalgadores de Perros
-    public void OnMouseOverCPerros() { InfoCPerros.SetActive(true); }
-    public void OnMouseExitCPerros() { InfoCPerros.SetActive(false); }
+        //Mejoras Temporales
+        if (mejTemporal.active == true)
+        {
+            InfoClonaP.SetActive(true);
+            InfoMultiC.SetActive(true);
+        }
+    }
 
-    //Hostal
-    public void OnMouseOverHostal() { InfoHostal.SetActive(true); }
-    public void OnMouseExitHostal() { InfoHostal.SetActive(false); }
+    public void OnMouseExitInfo()
+    {
+        //Mejoras de Expansión
+        if (mejExpansion.active == true)
+        {
+            InfoPMadre.SetActive(false);
+            InfoCabezaN.SetActive(false);
+            InfoClaseInfantil.SetActive(false);
+            InfoPatioEscuela.SetActive(false);
+            InfoEscuela.SetActive(false);
+            InfoCPerros.SetActive(false);
+            InfoHostal.SetActive(false);
+            InfoJetpack.SetActive(false);
+        }
 
-    //Jetpack
-    public void OnMouseOverJetpack() { InfoJetpack.SetActive(true); }
-    public void OnMouseExitJetpack() { InfoJetpack.SetActive(false); }
+        //Mejoras de Combate
+        if (mejCombate.active == true)
+        {
+            InfoPiojoMazao.SetActive(false);
+            InfoCazaTitanes.SetActive(false);
+            InfoPiojoCanon.SetActive(false);
+            InfoPiojoMan.SetActive(false);
+            InfoJefeEquipo.SetActive(false);
+            InfoLiderM.SetActive(false);
+            InfoPEstratega.SetActive(false);
+            InfoPKasparov.SetActive(false);
+        }
 
-    //PiojoMazao
-    public void OnMouseOverPMazao() { InfoPiojoMazao.SetActive(true); }
-    public void OnMouseExitPMazao() { InfoPiojoMazao.SetActive(false); }
+        //Mejoras Generación
+        if (mejGeneracion.active == true)
+        {
+            InfoEnfermera.SetActive(false);
+            InfoPPagado.SetActive(false);
+            InfoPCafeina.SetActive(false);
+            InfoPSpeed.SetActive(false);
+            InfoPMellizos.SetActive(false);
+            InfoPQuinti.SetActive(false);
+            InfoPDeca.SetActive(false);
+            InfoPHecta.SetActive(false);
+        }
 
-    //CazaTitanes
-    public void OnMouseOverCazaTitanes() { InfoCazaTitanes.SetActive(true); }
-    public void OnMouseExitCazaTitanes() { InfoCazaTitanes.SetActive(false); }
+        //Mejoras de Pago
+        if (mejPago.active == true)
+            InfoMejoraPago.SetActive(false);
 
-    //PiojoCanon
-    public void OnMouseOverPCanon() { InfoPiojoCanon.SetActive(true); }
-    public void OnMouseExitPCanon() { InfoPiojoCanon.SetActive(false); }
-
-    //PiojoMan
-    public void OnMouseOverPiojoMan() { InfoPiojoMan.SetActive(true); }
-    public void OnMouseExitPiojoMan() { InfoPiojoMan.SetActive(false); }
-
-    //Jefe Equipo
-    public void OnMouseOverJefe() { InfoJefeEquipo.SetActive(true); }
-    public void OnMouseExitJefe() { InfoJefeEquipo.SetActive(false); }
-
-    //Lider Motivador
-    public void OnMouseOverLiderM() { InfoLiderM.SetActive(true); }
-    public void OnMouseExitLiderM() { InfoLiderM.SetActive(false); }
-
-    //Piojo Estratega
-    public void OnMouseOverPEstratega() { InfoPEstratega.SetActive(true); }
-    public void OnMouseExitPEstratega() { InfoPEstratega.SetActive(false); }
-
-    //Piojo Kasparov
-    public void OnMouseOverPKasparov() { InfoPKasparov.SetActive(true); }
-    public void OnMouseExitPKasparov() { InfoPKasparov.SetActive(false); }
-
-    //Enfermera Piojo
-    public void OnMouseOverEnfermera() { InfoEnfermera.SetActive(true); }
-    public void OnMouseExitEnfermera() { InfoEnfermera.SetActive(false); }
-
-    //Piojo Bien Pagado
-    public void OnMouseOverPPagado() { InfoPPagado.SetActive(true); }
-    public void OnMouseExitPPagado() { InfoPPagado.SetActive(false); }
-
-    //Piojo Cafeina
-    public void OnMouseOverPCafeina() { InfoPCafeina.SetActive(true); }
-    public void OnMouseExitPCafeina() { InfoPCafeina.SetActive(false); }
-
-    //Piojo Speedrunner
-    public void OnMouseOverPSpeed() { InfoPSpeed.SetActive(true); }
-    public void OnMouseExitPSpeed() { InfoPSpeed.SetActive(false); }
-
-    //Piojos Mellizos
-    public void OnMouseOverPMellizos() { InfoPMellizos.SetActive(true); }
-    public void OnMouseExitPMellizos() { InfoPMellizos.SetActive(false); }
-
-    //Piojos Quintillizos 
-    public void OnMouseOverPQuinti() { InfoPQuinti.SetActive(true); }
-    public void OnMouseExitPQuinti() { InfoPQuinti.SetActive(false); }
-
-    //Piojos Decallizos
-    public void OnMouseOverPDeca() { InfoPDeca.SetActive(true); }
-    public void OnMouseExitPDeca() { InfoPDeca.SetActive(false); }
-
-    //Piojos Hectallizos
-    public void OnMouseOverPHecta() { InfoPHecta.SetActive(true); }
-    public void OnMouseExitPHecta() { InfoPHecta.SetActive(false); }
-
-
-    //Mejora Pago 1
-    public void OnMouseOverMejoraPago() { InfoMejoraPago.SetActive(true); }
-    public void OnMouseExitMejoraPago() { InfoMejoraPago.SetActive(false); }
-
-    //Clona Piojos
-    public void OnMouseOverClonaP() { InfoClonaP.SetActive(true); }
-    public void OnMouseExitClonaP() { InfoClonaP.SetActive(false); }
-
-    //Multi Clic
-    public void OnMouseOverMultiC() { InfoMultiC.SetActive(true); }
-    public void OnMouseExitMultiC() { InfoMultiC.SetActive(false); }
-
-
+        //Mejoras Temporales
+        if (mejTemporal.active == true)
+        {
+            InfoClonaP.SetActive(false);
+            InfoMultiC.SetActive(false);
+        }
+    }
 
 }

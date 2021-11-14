@@ -6166,6 +6166,7 @@ MonoBehaviour:
   btnGuardar: {fileID: 369891533}
   btnCargar: {fileID: 1827637089}
   btnInfo: {fileID: 1575565502}
+  btnSalir: {fileID: 1506318624}
 --- !u!4 &633980882
 Transform:
   m_ObjectHideFlags: 0
@@ -16383,7 +16384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1506318623
 RectTransform:
   m_ObjectHideFlags: 0

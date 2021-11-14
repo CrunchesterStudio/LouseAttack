@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.IO;
 public class ManagerJuego : MonoBehaviour
 {
+    public Animation tutorial;
     //Contador Principal
     public Text contador;
 
@@ -369,6 +370,7 @@ public class ManagerJuego : MonoBehaviour
 
         cargarPartida();
         StartCoroutine(guardadoAutomatico());
+        tutorial.Play();
     }
 
     // Update is called once per frame

@@ -392,6 +392,7 @@ public class ManagerJuego : MonoBehaviour
     {
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
+            intro.gameObject.SetActive(false);
             btnTienda.gameObject.SetActive(true);
             btnGuardar.gameObject.SetActive(true);
             btnCargar.gameObject.SetActive(true);

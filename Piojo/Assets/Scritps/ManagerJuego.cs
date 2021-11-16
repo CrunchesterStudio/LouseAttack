@@ -235,6 +235,9 @@ public class ManagerJuego : MonoBehaviour
     public Button btnInfo;
     public Button btnSalir;
 
+    //Partida cargada por primera vez
+    private bool cargado = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -381,10 +384,9 @@ public class ManagerJuego : MonoBehaviour
         mejCombate.SetActive(false);
 
 
-        cargarPartida();
-        StartCoroutine(guardadoAutomatico());
+        
         animator.Play("Tutorial");
-
+        
     }
 
     // Update is called once per frame
@@ -398,6 +400,15 @@ public class ManagerJuego : MonoBehaviour
             btnCargar.gameObject.SetActive(true);
             btnAjustes.gameObject.SetActive(true);
             btnSalir.gameObject.SetActive(true);
+
+            if (!cargado)
+            {
+                textoGuardado.gameObject.SetActive(true);
+                cargarPartida();
+                StartCoroutine(guardadoAutomatico());
+                cargado = true;
+            }
+            
         }
 
         //Piojo Madre
@@ -1509,6 +1520,15 @@ public class ManagerJuego : MonoBehaviour
         btnCargar.gameObject.SetActive(true);
         btnAjustes.gameObject.SetActive(true);
         btnSalir.gameObject.SetActive(true);
+
+        if (!cargado)
+        {
+            textoGuardado.gameObject.SetActive(true);
+            cargarPartida();
+            StartCoroutine(guardadoAutomatico());
+            cargado = true;
+        }
+
     }
 
     //SALVADO DE PARTIDA
@@ -1582,6 +1602,7 @@ public class ManagerJuego : MonoBehaviour
 
     IEnumerator mostrarGuardado()
     {
+        
         textoGuardado.text = "PARTIDA GUARDADA";
         yield return new WaitForSeconds(2);
         textoGuardado.text = "";

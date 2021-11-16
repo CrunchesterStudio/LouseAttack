@@ -9,6 +9,9 @@ public class ManagerJuego : MonoBehaviour
 {
     private Animation tutorial;
     public Animator animator;
+    public GameObject panel;
+    public Button intro;
+
     //Contador Principal
     public Text contador;
 
@@ -376,7 +379,7 @@ public class ManagerJuego : MonoBehaviour
         mejExpansion.SetActive(false);
         mejGeneracion.SetActive(false);
         mejCombate.SetActive(false);
-        
+
 
         cargarPartida();
         StartCoroutine(guardadoAutomatico());
@@ -387,7 +390,7 @@ public class ManagerJuego : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime>1)
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
         {
             btnTienda.gameObject.SetActive(true);
             btnGuardar.gameObject.SetActive(true);
@@ -395,7 +398,7 @@ public class ManagerJuego : MonoBehaviour
             btnAjustes.gameObject.SetActive(true);
             btnSalir.gameObject.SetActive(true);
         }
-        
+
         //Piojo Madre
         if (getPiojos() >= costePMadre)
             costeActualPMadre.color = Color.green;
@@ -1323,7 +1326,7 @@ public class ManagerJuego : MonoBehaviour
             mejCombate.SetActive(false);
             mejTemporal.SetActive(false);
             btnInfo.gameObject.SetActive(false);
-        } 
+        }
     }
 
     //Mejoras
@@ -1485,6 +1488,26 @@ public class ManagerJuego : MonoBehaviour
             barraVida.setVida(listaEnemigos[0].GetVidaActual());
             vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
         }
+    }
+
+    public void saltarIntro()
+    {
+        animator.gameObject.GetComponent<Animator>().enabled = false;
+        Color temp = panel.GetComponent<Image>().color;
+        temp.a = 0.0f;
+        intro.gameObject.SetActive(false);
+        panel.GetComponent<Image>().color = temp;
+        panel.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        panel.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        panel.gameObject.transform.GetChild(2).gameObject.SetActive(false);
+        panel.gameObject.transform.GetChild(3).gameObject.SetActive(true);
+        panel.gameObject.transform.GetChild(4).gameObject.SetActive(true);
+        panel.gameObject.transform.GetChild(5).gameObject.SetActive(true);
+        btnTienda.gameObject.SetActive(true);
+        btnGuardar.gameObject.SetActive(true);
+        btnCargar.gameObject.SetActive(true);
+        btnAjustes.gameObject.SetActive(true);
+        btnSalir.gameObject.SetActive(true);
     }
 
     //SALVADO DE PARTIDA

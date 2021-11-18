@@ -9,7 +9,7 @@ public class ManagerInfo : MonoBehaviour
     public GameObject mejExpansion;
     public GameObject mejGeneracion;
     public GameObject mejCombate;
-    public GameObject mejTemporal;
+    public GameObject mejAntibarrera;
     public GameObject mejPago;
 
     //Mejoras de Expansión
@@ -43,10 +43,13 @@ public class ManagerInfo : MonoBehaviour
     public GameObject InfoPDeca;
     public GameObject InfoPHecta;
 
-    //Mejoras de Pago
-    public GameObject InfoMejoraPago;
+    //Mejoras Antibarrera
+    public GameObject InfoCasco;
+    public GameObject InfoChaleco;
+    public GameObject InfoSpray;
+    public GameObject InfoPulsera;
 
-    //Mejoras Temporales
+    //Mejoras de Pago
     public GameObject InfoClonaP;
     public GameObject InfoMultiC;
 
@@ -83,10 +86,13 @@ public class ManagerInfo : MonoBehaviour
         InfoPDeca.SetActive(false);
         InfoPHecta.SetActive(false);
 
-        //Mejoras de Pago
-        InfoMejoraPago.SetActive(false);
+        //Mejoras Antibarrera
+        InfoCasco.SetActive(false);
+        InfoChaleco.SetActive(false);
+        InfoSpray.SetActive(false);
+        InfoPulsera.SetActive(false);
 
-        //Mejoras Temporales
+        //Mejoras de Pago
         InfoClonaP.SetActive(false);
         InfoMultiC.SetActive(false);
     }
@@ -135,13 +141,18 @@ public class ManagerInfo : MonoBehaviour
 
         //Mejoras de Pago
         if (mejPago.active == true)
-            InfoMejoraPago.SetActive(true);
-
-        //Mejoras Temporales
-        if (mejTemporal.active == true)
         {
             InfoClonaP.SetActive(true);
             InfoMultiC.SetActive(true);
+        }
+          
+        //Mejoras Antibarrera
+        if (mejAntibarrera.active == true)
+        {
+            InfoCasco.SetActive(true);
+            InfoChaleco.SetActive(true);
+            InfoSpray.SetActive(true);
+            InfoPulsera.SetActive(true);
         }
     }
 
@@ -186,12 +197,17 @@ public class ManagerInfo : MonoBehaviour
             InfoPHecta.SetActive(false);
         }
 
+        //Mejoras Antibarrera
+        if (mejAntibarrera.active == true)
+        {
+            InfoCasco.SetActive(false);
+            InfoChaleco.SetActive(false);
+            InfoSpray.SetActive(false);
+            InfoPulsera.SetActive(false);
+        }
+
         //Mejoras de Pago
         if (mejPago.active == true)
-            InfoMejoraPago.SetActive(false);
-
-        //Mejoras Temporales
-        if (mejTemporal.active == true)
         {
             InfoClonaP.SetActive(false);
             InfoMultiC.SetActive(false);

@@ -13,8 +13,17 @@ public enum tipoEnemigo
     HumanoQueSeDucha,
     HumanoConRepelente,
     LocaDeLosGatos
-
 }
+
+public enum barreras
+{
+    Casco,
+    Chaleco,
+    Mascara,
+    Pulsera,
+    SinProtecciones
+}
+
 public class Enemigo
 {
     [JsonProperty]
@@ -23,11 +32,14 @@ public class Enemigo
     private int vidaActual;
     public tipoEnemigo tipo;
 
-    public Enemigo(int vidaMax, tipoEnemigo tipo)
+    public barreras barrier;
+
+    public Enemigo(int vidaMax, tipoEnemigo tipo, barreras barrier)
     {
         this.vidaMax = vidaMax;
         this.tipo = tipo;
         this.vidaActual = this.vidaMax;
+        this.barrier = barrier;
     }
 
     public int GetVidaMax()

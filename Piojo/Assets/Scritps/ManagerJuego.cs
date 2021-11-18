@@ -192,11 +192,11 @@ public class ManagerJuego : MonoBehaviour
     public Text cantidadChaleco;
     private int contChaleco = 0;
 
-    //Spray
-    public Text costeActualSpray;
-    private int costeSpray = 5;
-    public Text cantidadSpray;
-    private int contSpray = 0;
+    //Máscara
+    public Text costeActualMascara;
+    private int costeMascara = 5;
+    public Text cantidadMascara;
+    private int contMascara = 0;
 
     //Pulsera
     public Text costeActualPulsera;
@@ -272,6 +272,7 @@ public class ManagerJuego : MonoBehaviour
         listaEnemigos = new List<Enemigo>();
         inicializarEnemigos();
         nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
+        inicializarBarreras(listaEnemigos[0]);
 
         //Piojo Madre
         costeActualPMadre.text = costePMadre.ToString();
@@ -403,10 +404,10 @@ public class ManagerJuego : MonoBehaviour
         costeActualChaleco.color = Color.red;
         cantidadChaleco.text = "x" + contChaleco.ToString();
 
-        //Spray
-        costeActualSpray.text = costeSpray.ToString();
-        costeActualSpray.color = Color.red;
-        cantidadSpray.text = "x" + contSpray.ToString();
+        //Mascara
+        costeActualMascara.text = costeMascara.ToString();
+        costeActualMascara.color = Color.red;
+        cantidadMascara.text = "x" + contMascara.ToString();
 
         //Pulsera
         costeActualPulsera.text = costePulsera.ToString();
@@ -439,6 +440,31 @@ public class ManagerJuego : MonoBehaviour
 
     }
 
+    private void inicializarBarreras(Enemigo enemigo)
+    {
+        switch (enemigo.barrier.ToString())
+        {
+            case "Casco":
+                casco.gameObject.SetActive(true);
+                break;
+            case "Chaleco":
+                chaleco.gameObject.SetActive(true);
+                break;
+            case "Mascara":
+                mascara.gameObject.SetActive(true);
+                break;
+            case "Pulsera":
+                pulsera.gameObject.SetActive(true);
+                break;
+            case "SinProtecciones":
+                casco.gameObject.SetActive(false);
+                chaleco.gameObject.SetActive(false);
+                mascara.gameObject.SetActive(false);
+                pulsera.gameObject.SetActive(false);
+                break;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -458,7 +484,6 @@ public class ManagerJuego : MonoBehaviour
                 StartCoroutine(guardadoAutomatico());
                 cargado = true;
             }
-
         }
 
         //Piojo Madre
@@ -617,17 +642,18 @@ public class ManagerJuego : MonoBehaviour
         else
             costeActualChaleco.color = Color.red;
 
-        //Spray
-        if (getPiojos() >= costeSpray)
-            costeActualSpray.color = Color.green;
+        //Mascara
+        if (getPiojos() >= costeMascara)
+            costeActualMascara.color = Color.green;
         else
-            costeActualSpray.color = Color.red;
+            costeActualMascara.color = Color.red;
 
         //Pulsera
         if (getPiojos() >= costePulsera)
             costeActualPulsera.color = Color.green;
         else
             costeActualPulsera.color = Color.red;
+
 
         if (enemDerrotados > 0)
         {
@@ -1359,9 +1385,9 @@ public class ManagerJuego : MonoBehaviour
     //Enemigos
     private void inicializarEnemigos()
     {
-        Enemigo e1 = new Enemigo(100, tipoEnemigo.Pulga);
-        Enemigo e2 = new Enemigo(200, tipoEnemigo.Salamandra);
-        Enemigo e3 = new Enemigo(500, tipoEnemigo.HumanoConRepelente);
+        Enemigo e1 = new Enemigo(5, tipoEnemigo.Pulga, barreras.SinProtecciones);
+        Enemigo e2 = new Enemigo(5, tipoEnemigo.Salamandra, barreras.Casco);
+        Enemigo e3 = new Enemigo(5, tipoEnemigo.HumanoConRepelente, barreras.Chaleco);
         listaEnemigos.Add(e1);
         listaEnemigos.Add(e2);
         listaEnemigos.Add(e3);
@@ -1490,6 +1516,7 @@ public class ManagerJuego : MonoBehaviour
     {
         if (getPiojos() >= costeCasco)
         {
+            casco.gameObject.SetActive(false);
             contCasco++;
             cantidadCasco.text = "x" + contCasco.ToString();
             numPiojos = getPiojos();
@@ -1506,6 +1533,7 @@ public class ManagerJuego : MonoBehaviour
     {
         if (getPiojos() >= costeChaleco)
         {
+            chaleco.gameObject.SetActive(false);
             contChaleco++;
             cantidadChaleco.text = "x" + contChaleco.ToString();
             numPiojos = getPiojos();
@@ -1517,19 +1545,20 @@ public class ManagerJuego : MonoBehaviour
         }
     }
 
-    //Spray
-    public void añadeSpray()
+    //Mascara
+    public void añadeMascara()
     {
-        if (getPiojos() >= costeSpray)
+        if (getPiojos() >= costeMascara)
         {
-            contSpray++;
-            cantidadSpray.text = "x" + contSpray.ToString();
+            mascara.gameObject.SetActive(false);
+            contMascara++;
+            cantidadMascara.text = "x" + contMascara.ToString();
             numPiojos = getPiojos();
-            numPiojos -= costeSpray;
+            numPiojos -= costeMascara;
             setPiojos(numPiojos);
             contador.text = numPiojos.ToString();
-            costeSpray = Mathf.RoundToInt(costeSpray * 1.5f);
-            costeActualSpray.text = costeSpray.ToString();
+            costeMascara = Mathf.RoundToInt(costeMascara * 1.5f);
+            costeActualMascara.text = costeMascara.ToString();
         }
     }
 
@@ -1538,6 +1567,7 @@ public class ManagerJuego : MonoBehaviour
     {
         if (getPiojos() >= costePulsera)
         {
+            pulsera.gameObject.SetActive(false);
             contPulsera++;
             cantidadPulsera.text = "x" + contPulsera.ToString();
             numPiojos = getPiojos();
@@ -1619,10 +1649,13 @@ public class ManagerJuego : MonoBehaviour
             {
                 Random.InitState((int)Time.realtimeSinceStartup);
                 int r = Random.Range(0, 7);
-                Enemigo e = new Enemigo(listaEnemigos[0].GetVidaMax() * 2, (tipoEnemigo)r);
+                int barrier = Random.Range(0, 5);
+                Enemigo e = new Enemigo(listaEnemigos[0].GetVidaMax() * 2, (tipoEnemigo)r, (barreras)barrier);
+                inicializarBarreras(e);
                 listaEnemigos.Add(e);
             }
             listaEnemigos.RemoveAt(0);
+            inicializarBarreras(listaEnemigos[0]);
             enemDerrotados++;
 
             nombreEnemigo.text = listaEnemigos[0].tipo.ToString();

@@ -172,25 +172,44 @@ public class ManagerJuego : MonoBehaviour
     public GameObject mejExpansion;
     public GameObject mejGeneracion;
     public GameObject mejCombate;
-    public GameObject mejTemporal;
+    public GameObject mejAntibarrera;
     public GameObject mejPago;
 
     //Tienda
     public GameObject tienda;
 
-    //Mejora Pago
-    public Text costeMejoraPago;
-    public Text cantMejoraPago;
-    private int cantidadMejorPago = 0;
+    //Casco
+    public Text costeActualCasco;
+    private int costeCasco = 5;
+    public Text cantidadCasco;
+    private int contCasco = 0;
+
+    //Chaleco
+    public Text costeActualChaleco;
+    private int costeChaleco = 5;
+    public Text cantidadChaleco;
+    private int contChaleco = 0;
+
+    //Spray
+    public Text costeActualSpray;
+    private int costeSpray = 5;
+    public Text cantidadSpray;
+    private int contSpray = 0;
+
+    //Pulsera
+    public Text costeActualPulsera;
+    private int costePulsera = 5;
+    public Text cantidadPulsera;
+    private int contPulsera = 0;
 
     //ClonaPiojos
     public Text costeActualClonaP;
-    private int costeClonaP = 10;
+    private int costeClonaP = 2;
     private bool activeClonaP = false;
 
     //Multi Clic
     public Text costeActualMultiC;
-    private int costeMultiC = 10;
+    private int costeMultiC = 5;
     private bool activeMultiC = false;
 
     //Suma y Resta Piojos
@@ -226,6 +245,12 @@ public class ManagerJuego : MonoBehaviour
     public Button MejComb6Candado;
     public Button MejComb7Candado;
     public Button MejComb8Candado;
+
+    //Bloqueos de los enemigos
+    public Button casco;
+    public Button chaleco;
+    public Button mascara;
+    public Button pulsera;
 
     //Botones de la interfaz
     public Button btnTienda;
@@ -366,13 +391,34 @@ public class ManagerJuego : MonoBehaviour
         costeActualPHecta.color = Color.red;
         cantidadPHecta.text = "x" + contPHecta.ToString();
 
+        //Casco
+        costeActualCasco.text = costeCasco.ToString();
+        costeActualCasco.color = Color.red;
+        cantidadCasco.text = "x" + contCasco.ToString();
+
+        //Chaleco
+        costeActualChaleco.text = costeChaleco.ToString();
+        costeActualChaleco.color = Color.red;
+        cantidadChaleco.text = "x" + contChaleco.ToString();
+
+        //Spray
+        costeActualSpray.text = costeSpray.ToString();
+        costeActualSpray.color = Color.red;
+        cantidadSpray.text = "x" + contSpray.ToString();
+
+        //Pulsera
+        costeActualPulsera.text = costePulsera.ToString();
+        costeActualPulsera.color = Color.red;
+        cantidadPulsera.text = "x" + contPulsera.ToString();
+
+
         //Clona Piojos
-        costeActualClonaP.text = costeClonaP.ToString();
-        costeActualClonaP.color = Color.red;
+        costeActualClonaP.text = costeClonaP.ToString() + "€";
+        costeActualClonaP.color = Color.green;
 
         //Multi Clic
-        costeActualMultiC.text = costeMultiC.ToString();
-        costeActualMultiC.color = Color.red;
+        costeActualMultiC.text = costeMultiC.ToString() + "€";
+        costeActualMultiC.color = Color.green;
 
         //Suma y Resta Piojos
         sumaPiojos.text = "";
@@ -382,11 +428,13 @@ public class ManagerJuego : MonoBehaviour
         mejExpansion.SetActive(false);
         mejGeneracion.SetActive(false);
         mejCombate.SetActive(false);
+        mejAntibarrera.SetActive(false);
+        mejPago.SetActive(false);
 
 
-        
+
         animator.Play("Tutorial");
-        
+
     }
 
     // Update is called once per frame
@@ -408,7 +456,7 @@ public class ManagerJuego : MonoBehaviour
                 StartCoroutine(guardadoAutomatico());
                 cargado = true;
             }
-            
+
         }
 
         //Piojo Madre
@@ -555,18 +603,29 @@ public class ManagerJuego : MonoBehaviour
         else
             costeActualPHecta.color = Color.red;
 
-        //Clona Piojos
-        if (getPiojos() >= costeClonaP)
-            costeActualClonaP.color = Color.green;
+        //Casco
+        if (getPiojos() >= costeCasco)
+            costeActualCasco.color = Color.green;
         else
-            costeActualClonaP.color = Color.red;
+            costeActualCasco.color = Color.red;
 
-        //Multi Clic
-        if (getPiojos() >= costeMultiC)
-            costeActualMultiC.color = Color.green;
+        //Chaleco
+        if (getPiojos() >= costeChaleco)
+            costeActualChaleco.color = Color.green;
         else
-            costeActualMultiC.color = Color.red;
+            costeActualChaleco.color = Color.red;
 
+        //Spray
+        if (getPiojos() >= costeSpray)
+            costeActualSpray.color = Color.green;
+        else
+            costeActualSpray.color = Color.red;
+
+        //Pulsera
+        if (getPiojos() >= costePulsera)
+            costeActualPulsera.color = Color.green;
+        else
+            costeActualPulsera.color = Color.red;
 
         if (enemDerrotados > 0)
         {
@@ -1336,7 +1395,7 @@ public class ManagerJuego : MonoBehaviour
             mejExpansion.SetActive(false);
             mejGeneracion.SetActive(false);
             mejCombate.SetActive(false);
-            mejTemporal.SetActive(false);
+            mejAntibarrera.SetActive(false);
             btnInfo.gameObject.SetActive(false);
         }
     }
@@ -1350,7 +1409,7 @@ public class ManagerJuego : MonoBehaviour
             mejExpansion.SetActive(false);
             mejGeneracion.SetActive(false);
             mejCombate.SetActive(false);
-            mejTemporal.SetActive(false);
+            mejAntibarrera.SetActive(false);
         }
         else
             mejPago.SetActive(false);
@@ -1363,7 +1422,7 @@ public class ManagerJuego : MonoBehaviour
             mejExpansion.SetActive(true);
             mejGeneracion.SetActive(false);
             mejCombate.SetActive(false);
-            mejTemporal.SetActive(false);
+            mejAntibarrera.SetActive(false);
             mejPago.SetActive(false);
         }
         else
@@ -1377,7 +1436,7 @@ public class ManagerJuego : MonoBehaviour
             mejExpansion.SetActive(false);
             mejGeneracion.SetActive(true);
             mejCombate.SetActive(false);
-            mejTemporal.SetActive(false);
+            mejAntibarrera.SetActive(false);
             mejPago.SetActive(false);
         }
         else
@@ -1390,7 +1449,7 @@ public class ManagerJuego : MonoBehaviour
         {
             mejExpansion.SetActive(false);
             mejGeneracion.SetActive(false);
-            mejTemporal.SetActive(false);
+            mejAntibarrera.SetActive(false);
             mejCombate.SetActive(true);
             mejPago.SetActive(false);
         }
@@ -1398,25 +1457,82 @@ public class ManagerJuego : MonoBehaviour
             mejCombate.SetActive(false);
     }
 
-    public void muestraTemporales()
+    public void muestraAntibarrera()
     {
-        if (mejTemporal.active == false)
+        if (mejAntibarrera.active == false)
         {
             mejExpansion.SetActive(false);
             mejGeneracion.SetActive(false);
             mejCombate.SetActive(false);
-            mejTemporal.SetActive(true);
+            mejAntibarrera.SetActive(true);
             mejPago.SetActive(false);
         }
         else
-            mejTemporal.SetActive(false);
+            mejAntibarrera.SetActive(false);
     }
 
-    //Mejora Pago
-    public void añadeMejoraPago()
+    //Casco
+    public void añadeCasco()
     {
-        cantidadMejorPago++;
-        cantMejoraPago.text = "x" + cantidadMejorPago.ToString();
+        if (getPiojos() >= costeCasco)
+        {
+            contCasco++;
+            cantidadCasco.text = "x" + contCasco.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costeCasco;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costeCasco = Mathf.RoundToInt(costeCasco * 1.5f);
+            costeActualCasco.text = costeCasco.ToString();
+        }
+    }
+
+    //Chaleco
+    public void añadeChaleco()
+    {
+        if (getPiojos() >= costeChaleco)
+        {
+            contChaleco++;
+            cantidadChaleco.text = "x" + contChaleco.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costeChaleco;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costeChaleco = Mathf.RoundToInt(costeChaleco * 1.5f);
+            costeActualChaleco.text = costeChaleco.ToString();
+        }
+    }
+
+    //Spray
+    public void añadeSpray()
+    {
+        if (getPiojos() >= costeSpray)
+        {
+            contSpray++;
+            cantidadSpray.text = "x" + contSpray.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costeSpray;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costeSpray = Mathf.RoundToInt(costeSpray * 1.5f);
+            costeActualSpray.text = costeSpray.ToString();
+        }
+    }
+
+    //Pulsera
+    public void añadePulsera()
+    {
+        if (getPiojos() >= costePulsera)
+        {
+            contPulsera++;
+            cantidadPulsera.text = "x" + contPulsera.ToString();
+            numPiojos = getPiojos();
+            numPiojos -= costePulsera;
+            setPiojos(numPiojos);
+            contador.text = numPiojos.ToString();
+            costePulsera = Mathf.RoundToInt(costePulsera * 1.5f);
+            costeActualPulsera.text = costePulsera.ToString();
+        }
     }
 
     //Clona Piojo
@@ -1602,7 +1718,7 @@ public class ManagerJuego : MonoBehaviour
 
     IEnumerator mostrarGuardado()
     {
-        
+
         textoGuardado.text = "PARTIDA GUARDADA";
         yield return new WaitForSeconds(2);
         textoGuardado.text = "";
@@ -1761,7 +1877,7 @@ public class ManagerJuego : MonoBehaviour
         this.costeActualPHecta.text = this.costePHecta.ToString();
         this.cantidadPHecta.text = "x" + this.contPHecta.ToString();
 
-        this.cantMejoraPago.text = "x" + this.cantidadMejorPago.ToString();
+        this.cantidadCasco.text = "x" + this.contCasco.ToString();
         this.costeActualClonaP.text = this.costeClonaP.ToString();
         this.costeActualMultiC.text = this.costeMultiC.ToString();
 

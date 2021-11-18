@@ -12,6 +12,8 @@ public class ManagerJuego : MonoBehaviour
     public GameObject panel;
     public Button intro;
 
+    private int mejoraActiva = 0;
+
     //Contador Principal
     public Text contador;
 
@@ -1385,8 +1387,25 @@ public class ManagerJuego : MonoBehaviour
         if (tienda.active == false)
         {
             tienda.SetActive(true);
-            mejExpansion.SetActive(true);
             btnInfo.gameObject.SetActive(true);
+            switch (mejoraActiva)
+            {
+                case 0:
+                    mejExpansion.SetActive(true);
+                    break;
+                case 1:
+                    mejGeneracion.SetActive(true);
+                    break;
+                case 2:
+                    mejCombate.SetActive(true);
+                    break;
+                case 3:
+                    mejAntibarrera.SetActive(true);
+                    break;
+                case 4:
+                    mejPago.SetActive(true);
+                    break;
+            }
         }
         else
         {
@@ -1405,70 +1424,65 @@ public class ManagerJuego : MonoBehaviour
     {
         if (mejPago.active == false)
         {
+            mejoraActiva = 4;
             mejPago.SetActive(true);
             mejExpansion.SetActive(false);
             mejGeneracion.SetActive(false);
             mejCombate.SetActive(false);
             mejAntibarrera.SetActive(false);
         }
-        else
-            mejPago.SetActive(false);
     }
 
     public void muestraExpansion()
     {
         if (mejExpansion.active == false)
         {
+            mejoraActiva = 0;
             mejExpansion.SetActive(true);
             mejGeneracion.SetActive(false);
             mejCombate.SetActive(false);
             mejAntibarrera.SetActive(false);
             mejPago.SetActive(false);
         }
-        else
-            mejExpansion.SetActive(false);
     }
 
     public void muestraGeneracion()
     {
         if (mejGeneracion.active == false)
         {
+            mejoraActiva = 1;
             mejExpansion.SetActive(false);
             mejGeneracion.SetActive(true);
             mejCombate.SetActive(false);
             mejAntibarrera.SetActive(false);
             mejPago.SetActive(false);
         }
-        else
-            mejGeneracion.SetActive(false);
     }
 
     public void muestraCombate()
     {
         if (mejCombate.active == false)
         {
+            mejoraActiva = 2;
             mejExpansion.SetActive(false);
             mejGeneracion.SetActive(false);
             mejAntibarrera.SetActive(false);
             mejCombate.SetActive(true);
             mejPago.SetActive(false);
         }
-        else
-            mejCombate.SetActive(false);
     }
 
     public void muestraAntibarrera()
     {
         if (mejAntibarrera.active == false)
         {
+            mejoraActiva = 3;
             mejExpansion.SetActive(false);
             mejGeneracion.SetActive(false);
             mejCombate.SetActive(false);
             mejAntibarrera.SetActive(true);
             mejPago.SetActive(false);
         }
-        else
-            mejAntibarrera.SetActive(false);
     }
 
     //Casco
@@ -1631,6 +1645,7 @@ public class ManagerJuego : MonoBehaviour
         panel.gameObject.transform.GetChild(3).gameObject.SetActive(true);
         panel.gameObject.transform.GetChild(4).gameObject.SetActive(true);
         panel.gameObject.transform.GetChild(5).gameObject.SetActive(true);
+        panel.gameObject.transform.GetChild(10).gameObject.SetActive(false);
         btnTienda.gameObject.SetActive(true);
         btnGuardar.gameObject.SetActive(true);
         btnCargar.gameObject.SetActive(true);

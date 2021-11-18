@@ -246,6 +246,12 @@ public class ManagerJuego : MonoBehaviour
     public Button MejComb7Candado;
     public Button MejComb8Candado;
 
+    //Bloqueos de los enemigos
+    public Button casco;
+    public Button chaleco;
+    public Button mascara;
+    public Button pulsera;
+
     //Botones de la interfaz
     public Button btnTienda;
     public Button btnAjustes;

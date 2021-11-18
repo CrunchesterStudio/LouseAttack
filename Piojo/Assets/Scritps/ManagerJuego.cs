@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Newtonsoft.Json;
 using System.Runtime.InteropServices;
 using System.IO;
+using System.Globalization;
 public class ManagerJuego : MonoBehaviour
 {
     private Animation tutorial;
@@ -40,37 +41,37 @@ public class ManagerJuego : MonoBehaviour
 
     //Clase Infantil
     public Text costeActualClaseInfantil;
-    private int costeClaseInfantil = 11000;
+    private int costeClaseInfantil = 5000;
     public Text cantidadClaseInfantil;
     private int contClaseInfantil = 0;
 
     //Patio Escuela
     public Text costeActualPatioEscuela;
-    private int costePatioEscuela = 80000;
+    private int costePatioEscuela = 10000;
     public Text cantidadPatioEscuela;
     private int contPatioEscuela = 0;
 
     //Escuela
     public Text costeActualEscuela;
-    private int costeEscuela = 600000;
+    private int costeEscuela = 20000;
     public Text cantidadEscuela;
     private int contEscuela = 0;
 
     //Cabalgadores de Perros
     public Text costeActualCPerros;
-    private int costeCPerros = 4500000;
+    private int costeCPerros = 40000;
     public Text cantidadCPerros;
     private int contCPerros = 0;
 
     //Hostal
     public Text costeActualHostal;
-    private int costeHostal = 34000000;
+    private int costeHostal = 200000;
     public Text cantidadHostal;
     private int contHostal = 0;
 
     //Jetpack
     public Text costeActualJetPack;
-    private int costeJetpack = 250000000;
+    private int costeJetpack = 400000;
     public Text cantidadJetpack;
     private int contJetpack = 0;
 
@@ -265,6 +266,13 @@ public class ManagerJuego : MonoBehaviour
     //Partida cargada por primera vez
     private bool cargado = false;
 
+    //Idioma y formato
+    CultureInfo c = new CultureInfo("es-ES");
+
+    //Vida
+    int vidaBase = 1000;
+    int factor = 2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -275,144 +283,144 @@ public class ManagerJuego : MonoBehaviour
         inicializarBarreras(listaEnemigos[0]);
 
         //Piojo Madre
-        costeActualPMadre.text = costePMadre.ToString();
+        costeActualPMadre.text = FormatoNum(costePMadre);
         costeActualPMadre.color = Color.red;
-        cantidadPmadre.text = "x" + contPiojoMadre.ToString();
+        cantidadPmadre.text = "x" + FormatoNum(contPiojoMadre);
 
         //Cabeza Niño
-        costeActualCabezaN.text = costeCabezaN.ToString();
+        costeActualCabezaN.text = FormatoNum(costeCabezaN);
         costeActualCabezaN.color = Color.red;
-        cantidadCabezaN.text = "x" + contCabezaN.ToString();
+        cantidadCabezaN.text = "x" + FormatoNum(contCabezaN);
 
         //Clase Infantil
-        costeActualClaseInfantil.text = costeClaseInfantil.ToString();
+        costeActualClaseInfantil.text = FormatoNum(costeClaseInfantil);
         costeActualClaseInfantil.color = Color.red;
-        cantidadClaseInfantil.text = "x" + contClaseInfantil.ToString();
+        cantidadClaseInfantil.text = "x" + FormatoNum(contClaseInfantil);
 
         //Patio Escuela
-        costeActualPatioEscuela.text = costePatioEscuela.ToString();
+        costeActualPatioEscuela.text = FormatoNum(costePatioEscuela);
         costeActualPatioEscuela.color = Color.red;
-        cantidadPatioEscuela.text = "x" + contPatioEscuela.ToString();
+        cantidadPatioEscuela.text = "x" + FormatoNum(contPatioEscuela);
 
         //Escuela
-        costeActualEscuela.text = costeEscuela.ToString();
+        costeActualEscuela.text = FormatoNum(costeEscuela);
         costeActualEscuela.color = Color.red;
-        cantidadEscuela.text = "x" + contEscuela.ToString();
+        cantidadEscuela.text = "x" + FormatoNum(contEscuela);
 
         //Cabalgadores de Perros
-        costeActualCPerros.text = costeCPerros.ToString();
+        costeActualCPerros.text = FormatoNum(costeCPerros);
         costeActualCPerros.color = Color.red;
-        cantidadCPerros.text = "x" + contCPerros.ToString();
+        cantidadCPerros.text = "x" + FormatoNum(contCPerros);
 
         //Hostal
-        costeActualHostal.text = costeHostal.ToString();
+        costeActualHostal.text = FormatoNum(costeHostal);
         costeActualHostal.color = Color.red;
-        cantidadHostal.text = "x" + contHostal.ToString();
+        cantidadHostal.text = "x" + FormatoNum(contHostal);
 
         //Jetpack
-        costeActualJetPack.text = costeJetpack.ToString();
+        costeActualJetPack.text = FormatoNum(costeJetpack);
         costeActualJetPack.color = Color.red;
-        cantidadJetpack.text = "x" + contJetpack.ToString();
+        cantidadJetpack.text = "x" + FormatoNum(contJetpack);
 
         //Piojo Mazao
-        costeActualPMazao.text = costePMazao.ToString();
+        costeActualPMazao.text = FormatoNum(costePMazao);
         costeActualPMazao.color = Color.red;
-        cantidadPiojoMazao.text = "x" + contPiojoMazao.ToString();
+        cantidadPiojoMazao.text = "x" + FormatoNum(contPiojoMazao);
 
         //Caza Titanes
-        costeActualCazaTitanes.text = costeCTitanes.ToString();
+        costeActualCazaTitanes.text = FormatoNum(costeCTitanes);
         costeActualCazaTitanes.color = Color.red;
-        cantidadCazaTitanes.text = "x" + contCazaTitanes.ToString();
+        cantidadCazaTitanes.text = "x" + FormatoNum(contCazaTitanes);
 
         //Piojo Cañón
-        costeActualPCanon.text = costePCanon.ToString();
+        costeActualPCanon.text = FormatoNum(costePCanon);
         costeActualPCanon.color = Color.red;
-        cantidadPCanon.text = "x" + contPCanon.ToString();
+        cantidadPCanon.text = "x" + FormatoNum(contPCanon);
 
         //Piojo Man
-        costeActualPMan.text = costePMan.ToString();
+        costeActualPMan.text = FormatoNum(costePMan);
         costeActualPMan.color = Color.red;
-        cantidadPiojoMan.text = "x" + contPiojoMan.ToString();
+        cantidadPiojoMan.text = "x" + FormatoNum(contPiojoMan);
 
         //Jefe Equipo
-        costeActualJefe.text = costeJefe.ToString();
+        costeActualJefe.text = FormatoNum(costeJefe);
         costeActualJefe.color = Color.red;
-        cantidadJefe.text = "x" + contJefe.ToString();
+        cantidadJefe.text = "x" + FormatoNum(contJefe);
 
         //Líder Motivador
-        costeActualLiderM.text = costeLiderM.ToString();
+        costeActualLiderM.text = FormatoNum(costeLiderM);
         costeActualLiderM.color = Color.red;
-        cantidadLiderM.text = "x" + contLiderM.ToString();
+        cantidadLiderM.text = "x" + FormatoNum(contLiderM);
 
         //Piojo Estratega
-        costeActualPEstratega.text = costePEstratega.ToString();
+        costeActualPEstratega.text = FormatoNum(costePEstratega);
         costeActualPEstratega.color = Color.red;
-        cantidadPEstratega.text = "x" + contPEstratega.ToString();
+        cantidadPEstratega.text = "x" + FormatoNum(contPEstratega);
 
         //Piojo Kasparov
-        costeActualPKasparov.text = costePKasparov.ToString();
+        costeActualPKasparov.text = FormatoNum(costePKasparov);
         costeActualPKasparov.color = Color.red;
-        cantidadPKasparov.text = "x" + contPKasparov.ToString();
+        cantidadPKasparov.text = "x" + FormatoNum(contPKasparov);
 
         //Enfermera Piojo
-        costeActualEnfermera.text = costeEnfermera.ToString();
+        costeActualEnfermera.text = FormatoNum(costeEnfermera);
         costeActualEnfermera.color = Color.red;
-        cantidadEnfermera.text = "x" + contEnfermera.ToString();
+        cantidadEnfermera.text = "x" + FormatoNum(contEnfermera);
 
         //Piojo Bien Pagado
-        costeActualPPagado.text = costePPagado.ToString();
+        costeActualPPagado.text = FormatoNum(costePPagado);
         costeActualPPagado.color = Color.red;
-        cantidadPPagado.text = "x" + contPPagado.ToString();
+        cantidadPPagado.text = "x" + FormatoNum(contPPagado);
 
         //Piojo Cafeina
-        costeActualPCafeina.text = costePCafeina.ToString();
+        costeActualPCafeina.text = FormatoNum(costePCafeina);
         costeActualPCafeina.color = Color.red;
-        cantidadPCafeina.text = "x" + contPCafeina.ToString();
+        cantidadPCafeina.text = "x" + FormatoNum(contPCafeina);
 
         //Piojo Speedrunner
-        costeActualPSpeed.text = costePSpeed.ToString();
+        costeActualPSpeed.text = FormatoNum(costePSpeed);
         costeActualPSpeed.color = Color.red;
-        cantidadPSpeed.text = "x" + contPSpeed.ToString();
+        cantidadPSpeed.text = "x" + FormatoNum(contPSpeed);
 
         //Piojos Mellizos
-        costeActualPMellizos.text = costePMellizos.ToString();
+        costeActualPMellizos.text = FormatoNum(costePMellizos);
         costeActualPMellizos.color = Color.red;
-        cantidadPMellizos.text = "x" + contPMellizos.ToString();
+        cantidadPMellizos.text = "x" + FormatoNum(contPMellizos);
 
         //Piojo Quintillizos
-        costeActualPQuinti.text = costePQuinti.ToString();
+        costeActualPQuinti.text = FormatoNum(costePQuinti);
         costeActualPQuinti.color = Color.red;
-        cantidadPQuinti.text = "x" + contPQuinti.ToString();
+        cantidadPQuinti.text = "x" + FormatoNum(contPQuinti);
 
         //Piojo Decallizos
-        costeActualPDeca.text = costePDeca.ToString();
+        costeActualPDeca.text = FormatoNum(costePDeca);
         costeActualPDeca.color = Color.red;
-        cantidadPDeca.text = "x" + contPDeca.ToString();
+        cantidadPDeca.text = "x" + FormatoNum(contPDeca);
 
         //Piojo Hectallizos
-        costeActualPHecta.text = costePHecta.ToString();
+        costeActualPHecta.text = FormatoNum(costePHecta);
         costeActualPHecta.color = Color.red;
-        cantidadPHecta.text = "x" + contPHecta.ToString();
+        cantidadPHecta.text = "x" + FormatoNum(contPHecta);
 
         //Casco
-        costeActualCasco.text = costeCasco.ToString();
+        costeActualCasco.text = FormatoNum(costeCasco);
         costeActualCasco.color = Color.red;
-        cantidadCasco.text = "x" + contCasco.ToString();
+        cantidadCasco.text = "x" + FormatoNum(contCasco);
 
         //Chaleco
-        costeActualChaleco.text = costeChaleco.ToString();
+        costeActualChaleco.text = FormatoNum(costeChaleco);
         costeActualChaleco.color = Color.red;
-        cantidadChaleco.text = "x" + contChaleco.ToString();
+        cantidadChaleco.text = "x" + FormatoNum(contChaleco);
 
         //Mascara
-        costeActualMascara.text = costeMascara.ToString();
+        costeActualMascara.text = FormatoNum(costeMascara);
         costeActualMascara.color = Color.red;
-        cantidadMascara.text = "x" + contMascara.ToString();
+        cantidadMascara.text = "x" + FormatoNum(contMascara);
 
         //Pulsera
-        costeActualPulsera.text = costePulsera.ToString();
+        costeActualPulsera.text = FormatoNum(costePulsera);
         costeActualPulsera.color = Color.red;
-        cantidadPulsera.text = "x" + contPulsera.ToString();
+        cantidadPulsera.text = "x" + FormatoNum(contPulsera);
 
 
         //Clona Piojos
@@ -708,7 +716,7 @@ public class ManagerJuego : MonoBehaviour
             else
             {
                 numPiojos += (2 * aux);
-                StartCoroutine(Sumador("+" + (2 * aux).ToString()));
+                StartCoroutine(Sumador("+" + FormatoNum(2 * aux)));
             }
 
         }
@@ -722,12 +730,12 @@ public class ManagerJuego : MonoBehaviour
             else if (aux == 0)
             {
                 numPiojos *= 2;
-                StartCoroutine(Sumador("+" + (numPiojos *= 2).ToString()));
+                StartCoroutine(Sumador("+" + FormatoNum(numPiojos *= 2)));
             }
             else
             {
                 numPiojos += (aux * 20);
-                StartCoroutine(Sumador("+" + (aux * 20).ToString()));
+                StartCoroutine(Sumador("+" + FormatoNum(aux * 20)));
             }
         }
         else
@@ -740,10 +748,10 @@ public class ManagerJuego : MonoBehaviour
             else
             {
                 numPiojos += aux;
-                StartCoroutine(Sumador("+" + aux.ToString()));
+                StartCoroutine(Sumador("+" + FormatoNum(aux)));
             }
         }
-        contador.text = numPiojos.ToString();
+        contador.text = FormatoNum(numPiojos);
     }
 
     //Mejoras de Combate
@@ -776,15 +784,15 @@ public class ManagerJuego : MonoBehaviour
                     StartCoroutine(Restador("-" + numPiojos.ToString()));
                     listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - numPiojos);
                     numPiojos = 0;
-                    contador.text = numPiojos.ToString();
+                    contador.text = FormatoNum(numPiojos);
                     codigoVida();
                 }
                 else
                 {
                     numPiojos = (numPiojos - aux);
                     setPiojos(numPiojos);
-                    StartCoroutine(Restador("-" + aux.ToString()));
-                    contador.text = numPiojos.ToString();
+                    StartCoroutine(Restador("-" + FormatoNum(aux)));
+                    contador.text = FormatoNum(numPiojos);
                     listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - aux);
                     codigoVida();
                 }
@@ -798,13 +806,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePMadre)
         {
             contPiojoMadre++;
-            cantidadPmadre.text = "x" + contPiojoMadre.ToString();
+            cantidadPmadre.text = "x" + FormatoNum(contPiojoMadre);
             numPiojos = getPiojos();
             numPiojos -= costePMadre;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePMadre = Mathf.RoundToInt(costePMadre * 1.5f);
-            costeActualPMadre.text = costePMadre.ToString();
+            costeActualPMadre.text = FormatoNum(costePMadre);
             StartCoroutine(Gen1PiojoSeg());
         }
     }
@@ -815,7 +823,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos = getPiojos();
             numPiojos = numPiojos + contPiojoMadre;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             yield return new WaitForSeconds(1);
         }
     }
@@ -826,13 +834,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeCabezaN)
         {
             contCabezaN++;
-            cantidadCabezaN.text = "x" + contCabezaN.ToString();
+            cantidadCabezaN.text = "x" + FormatoNum(contCabezaN);
             numPiojos = getPiojos();
             numPiojos -= costeCabezaN;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costeCabezaN = Mathf.RoundToInt(costeCabezaN * 1.5f);
-            costeActualCabezaN.text = costeCabezaN.ToString();
+            costeActualCabezaN.text = FormatoNum(costeCabezaN);
             StartCoroutine(Gen5Piojos());
         }
     }
@@ -843,7 +851,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos = getPiojos();
             numPiojos = numPiojos + (contCabezaN * 5);
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             yield return new WaitForSeconds(1);
         }
 
@@ -855,13 +863,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeClaseInfantil && enemDerrotados > 0)
         {
             contClaseInfantil++;
-            cantidadClaseInfantil.text = "x" + contClaseInfantil.ToString();
+            cantidadClaseInfantil.text = "x" + FormatoNum(contClaseInfantil);
             numPiojos = getPiojos();
             numPiojos -= costeClaseInfantil;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costeClaseInfantil = Mathf.RoundToInt(costeClaseInfantil * 1.5f);
-            costeActualClaseInfantil.text = costeClaseInfantil.ToString();
+            costeActualClaseInfantil.text = FormatoNum(costeClaseInfantil);
             StartCoroutine(Gen10Piojos());
         }
     }
@@ -872,7 +880,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos = getPiojos();
             numPiojos = numPiojos + (contClaseInfantil * 10);
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             yield return new WaitForSeconds(1);
         }
 
@@ -884,13 +892,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePatioEscuela && enemDerrotados > 0)
         {
             contPatioEscuela++;
-            cantidadPatioEscuela.text = "x" + contPatioEscuela.ToString();
+            cantidadPatioEscuela.text = "x" + FormatoNum(contPatioEscuela);
             numPiojos = getPiojos();
             numPiojos -= costePatioEscuela;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePatioEscuela = Mathf.RoundToInt(costePatioEscuela * 1.5f);
-            costeActualPatioEscuela.text = costePatioEscuela.ToString();
+            costeActualPatioEscuela.text = FormatoNum(costePatioEscuela);
             StartCoroutine(Gen20PiojoSeg());
         }
     }
@@ -901,7 +909,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos = getPiojos();
             numPiojos = numPiojos + (contPatioEscuela * 20);
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             yield return new WaitForSeconds(1);
         }
     }
@@ -912,13 +920,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeEscuela && enemDerrotados > 1)
         {
             contEscuela++;
-            cantidadEscuela.text = "x" + contEscuela.ToString();
+            cantidadEscuela.text = "x" + FormatoNum(contEscuela);
             numPiojos = getPiojos();
             numPiojos -= costeEscuela;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costeEscuela = Mathf.RoundToInt(costeEscuela * 1.5f);
-            costeActualEscuela.text = costeEscuela.ToString();
+            costeActualEscuela.text = FormatoNum(costeEscuela);
             StartCoroutine(Gen50PiojoSeg());
         }
     }
@@ -929,7 +937,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos = getPiojos();
             numPiojos = numPiojos + (contEscuela * 50);
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             yield return new WaitForSeconds(1);
         }
     }
@@ -940,13 +948,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeCPerros && enemDerrotados > 1)
         {
             contCPerros++;
-            cantidadCPerros.text = "x" + contCPerros.ToString();
+            cantidadCPerros.text = "x" + FormatoNum(contCPerros);
             numPiojos = getPiojos();
             numPiojos -= costeCPerros;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costeCPerros = Mathf.RoundToInt(costeCPerros * 1.5f);
-            costeActualCPerros.text = costeCPerros.ToString();
+            costeActualCPerros.text = FormatoNum(costeCPerros);
             StartCoroutine(Gen100PiojoSeg());
         }
     }
@@ -957,7 +965,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos = getPiojos();
             numPiojos = numPiojos + (contCPerros * 100);
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             yield return new WaitForSeconds(1);
         }
     }
@@ -968,13 +976,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeHostal && enemDerrotados > 2)
         {
             contHostal++;
-            cantidadHostal.text = "x" + contHostal.ToString();
+            cantidadHostal.text = "x" + FormatoNum(contHostal);
             numPiojos = getPiojos();
             numPiojos -= costeHostal;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costeHostal = Mathf.RoundToInt(costeHostal * 1.5f);
-            costeActualHostal.text = costeHostal.ToString();
+            costeActualHostal.text = FormatoNum(costeHostal);
             StartCoroutine(Gen500PiojoSeg());
         }
     }
@@ -985,7 +993,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos = getPiojos();
             numPiojos = numPiojos + (contHostal * 500);
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             yield return new WaitForSeconds(1);
         }
     }
@@ -996,13 +1004,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeJetpack && enemDerrotados > 2)
         {
             contJetpack++;
-            cantidadJetpack.text = "x" + contJetpack.ToString();
+            cantidadJetpack.text = "x" + FormatoNum(contJetpack);
             numPiojos = getPiojos();
             numPiojos -= costeJetpack;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costeJetpack = Mathf.RoundToInt(costeJetpack * 1.5f);
-            costeActualJetPack.text = costeJetpack.ToString();
+            costeActualJetPack.text = FormatoNum(costeJetpack);
             StartCoroutine(Gen1000Piojos());
         }
     }
@@ -1013,7 +1021,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos = getPiojos();
             numPiojos = numPiojos + (contJetpack * 1000);
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             yield return new WaitForSeconds(1);
         }
     }
@@ -1024,13 +1032,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePMazao)
         {
             contPiojoMazao++;
-            cantidadPiojoMazao.text = "x" + contPiojoMazao.ToString();
+            cantidadPiojoMazao.text = "x" + FormatoNum(contPiojoMazao);
             numPiojos = getPiojos();
             numPiojos -= costePMazao;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePMazao = Mathf.RoundToInt(costePMazao * 1.5f);
-            costeActualPMazao.text = costePMazao.ToString();
+            costeActualPMazao.text = FormatoNum(costePMazao);
         }
     }
 
@@ -1040,13 +1048,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeCTitanes && enemDerrotados > 0)
         {
             contCazaTitanes++;
-            cantidadCazaTitanes.text = "x" + contCazaTitanes.ToString();
+            cantidadCazaTitanes.text = "x" + FormatoNum(contCazaTitanes);
             numPiojos = getPiojos();
             numPiojos -= costeCTitanes;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costeCTitanes = Mathf.RoundToInt(costeCTitanes * 1.5f);
-            costeActualCazaTitanes.text = costeCTitanes.ToString();
+            costeActualCazaTitanes.text = FormatoNum(costeCTitanes);
         }
     }
 
@@ -1056,13 +1064,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePCanon && enemDerrotados > 1)
         {
             contPCanon++;
-            cantidadPCanon.text = "x" + contPCanon.ToString();
+            cantidadPCanon.text = "x" + FormatoNum(contPCanon);
             numPiojos = getPiojos();
             numPiojos -= costePCanon;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePCanon = Mathf.RoundToInt(costePCanon * 1.5f);
-            costeActualPCanon.text = costePCanon.ToString();
+            costeActualPCanon.text = FormatoNum(costePCanon);
         }
     }
 
@@ -1072,13 +1080,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePMan && enemDerrotados > 2)
         {
             contPiojoMan++;
-            cantidadPiojoMan.text = "x" + contPiojoMan.ToString();
+            cantidadPiojoMan.text = "x" + FormatoNum(contPiojoMan);
             numPiojos = getPiojos();
             numPiojos -= costePMan;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePMan = Mathf.RoundToInt(costePMan * 1.5f);
-            costeActualPMan.text = costePMan.ToString();
+            costeActualPMan.text = FormatoNum(costePMan);
         }
     }
 
@@ -1088,13 +1096,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeJefe)
         {
             contJefe++;
-            cantidadJefe.text = "x" + contJefe.ToString();
+            cantidadJefe.text = "x" + FormatoNum(contJefe);
             numPiojos = getPiojos();
             numPiojos -= costeJefe;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costeJefe = Mathf.RoundToInt(costeJefe * 1.5f);
-            costeActualJefe.text = costeJefe.ToString();
+            costeActualJefe.text = FormatoNum(costeJefe);
             StartCoroutine(attack1s());
         }
     }
@@ -1106,7 +1114,7 @@ public class ManagerJuego : MonoBehaviour
             {
                 numPiojos--;
                 setPiojos(numPiojos);
-                contador.text = numPiojos.ToString();
+                contador.text = FormatoNum(numPiojos);
                 listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - 1);
                 codigoVida();
             }
@@ -1120,13 +1128,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeLiderM && enemDerrotados > 0)
         {
             contLiderM++;
-            cantidadLiderM.text = "x" + contLiderM.ToString();
+            cantidadLiderM.text = "x" + FormatoNum(contLiderM);
             numPiojos = getPiojos();
             numPiojos -= costeLiderM;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costeLiderM = Mathf.RoundToInt(costeLiderM * 1.5f);
-            costeActualLiderM.text = costeLiderM.ToString();
+            costeActualLiderM.text = FormatoNum(costeLiderM);
             StartCoroutine(attack10s());
         }
     }
@@ -1138,7 +1146,7 @@ public class ManagerJuego : MonoBehaviour
             {
                 numPiojos -= 10;
                 setPiojos(numPiojos);
-                contador.text = numPiojos.ToString();
+                contador.text = FormatoNum(numPiojos);
                 listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - 10);
                 codigoVida();
             }
@@ -1152,13 +1160,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePEstratega && enemDerrotados > 1)
         {
             contPEstratega++;
-            cantidadPEstratega.text = "x" + contPEstratega.ToString();
+            cantidadPEstratega.text = "x" + FormatoNum(contPEstratega);
             numPiojos = getPiojos();
             numPiojos -= costePEstratega;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePEstratega = Mathf.RoundToInt(costePEstratega * 1.5f);
-            costeActualPEstratega.text = costePEstratega.ToString();
+            costeActualPEstratega.text = FormatoNum(costePEstratega);
             StartCoroutine(attack50s());
         }
     }
@@ -1170,7 +1178,7 @@ public class ManagerJuego : MonoBehaviour
             {
                 numPiojos -= 50;
                 setPiojos(numPiojos);
-                contador.text = numPiojos.ToString();
+                contador.text = FormatoNum(numPiojos);
                 listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - 50);
                 codigoVida();
             }
@@ -1184,13 +1192,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePKasparov && enemDerrotados > 2)
         {
             contPKasparov++;
-            cantidadPKasparov.text = "x" + contPKasparov.ToString();
+            cantidadPKasparov.text = "x" + FormatoNum(contPKasparov);
             numPiojos = getPiojos();
             numPiojos -= costePKasparov;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePKasparov = Mathf.RoundToInt(costePKasparov * 1.5f);
-            costeActualPKasparov.text = costePKasparov.ToString();
+            costeActualPKasparov.text = FormatoNum(costePKasparov);
             StartCoroutine(attack100s());
         }
     }
@@ -1202,7 +1210,7 @@ public class ManagerJuego : MonoBehaviour
             {
                 numPiojos -= 100;
                 setPiojos(numPiojos);
-                contador.text = numPiojos.ToString();
+                contador.text = FormatoNum(numPiojos);
                 listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() - 100);
                 codigoVida();
             }
@@ -1216,13 +1224,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeEnfermera)
         {
             contEnfermera++;
-            cantidadEnfermera.text = "x" + contEnfermera.ToString();
+            cantidadEnfermera.text = "x" + FormatoNum(contEnfermera);
             numPiojos = getPiojos();
             numPiojos -= costeEnfermera;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costeEnfermera = Mathf.RoundToInt(costeEnfermera * 1.5f);
-            costeActualEnfermera.text = costeEnfermera.ToString();
+            costeActualEnfermera.text = FormatoNum(costeEnfermera);
             StartCoroutine(click20s());
         }
     }
@@ -1243,13 +1251,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePPagado && enemDerrotados > 0)
         {
             contPPagado++;
-            cantidadPPagado.text = "x" + contPPagado.ToString();
+            cantidadPPagado.text = "x" + FormatoNum(contPPagado);
             numPiojos = getPiojos();
             numPiojos -= costePPagado;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePPagado = Mathf.RoundToInt(costePPagado * 1.5f);
-            costeActualPPagado.text = costePPagado.ToString();
+            costeActualPPagado.text = FormatoNum(costePPagado);
             StartCoroutine(click10s());
         }
     }
@@ -1270,13 +1278,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePCafeina && enemDerrotados > 1)
         {
             contPCafeina++;
-            cantidadPCafeina.text = "x" + contPCafeina.ToString();
+            cantidadPCafeina.text = "x" + FormatoNum(contPCafeina);
             numPiojos = getPiojos();
             numPiojos -= costePCafeina;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePCafeina = Mathf.RoundToInt(costePCafeina * 1.5f);
-            costeActualPCafeina.text = costePCafeina.ToString();
+            costeActualPCafeina.text = FormatoNum(costePCafeina);
             StartCoroutine(click5s());
         }
     }
@@ -1297,13 +1305,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePSpeed && enemDerrotados > 2)
         {
             contPSpeed++;
-            cantidadPSpeed.text = "x" + contPSpeed.ToString();
+            cantidadPSpeed.text = "x" + FormatoNum(contPSpeed);
             numPiojos = getPiojos();
             numPiojos -= costePSpeed;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePSpeed = Mathf.RoundToInt(costePSpeed * 1.5f);
-            costeActualPSpeed.text = costePSpeed.ToString();
+            costeActualPSpeed.text = FormatoNum(costePSpeed);
             StartCoroutine(click2s());
         }
     }
@@ -1324,13 +1332,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePMellizos)
         {
             contPMellizos++;
-            cantidadPMellizos.text = "x" + contPMellizos.ToString();
+            cantidadPMellizos.text = "x" + FormatoNum(contPMellizos);
             numPiojos = getPiojos();
             numPiojos -= costePMellizos;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePMellizos = Mathf.RoundToInt(costePMellizos * 1.5f);
-            costeActualPMellizos.text = costePMellizos.ToString();
+            costeActualPMellizos.text = FormatoNum(costePMellizos);
         }
     }
 
@@ -1340,13 +1348,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePQuinti && enemDerrotados > 0)
         {
             contPQuinti++;
-            cantidadPQuinti.text = "x" + contPQuinti.ToString();
+            cantidadPQuinti.text = "x" + FormatoNum(contPQuinti);
             numPiojos = getPiojos();
             numPiojos -= costePQuinti;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePQuinti = Mathf.RoundToInt(costePQuinti * 1.5f);
-            costeActualPQuinti.text = costePQuinti.ToString();
+            costeActualPQuinti.text = FormatoNum(costePQuinti);
         }
     }
 
@@ -1356,13 +1364,13 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePDeca && enemDerrotados > 1)
         {
             contPDeca++;
-            cantidadPDeca.text = "x" + contPDeca.ToString();
+            cantidadPDeca.text = "x" + FormatoNum(contPDeca);
             numPiojos = getPiojos();
             numPiojos -= costePDeca;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePDeca = Mathf.RoundToInt(costePDeca * 1.5f);
-            costeActualPDeca.text = costePDeca.ToString();
+            costeActualPDeca.text = FormatoNum(costePDeca);
         }
     }
 
@@ -1372,27 +1380,33 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePHecta && enemDerrotados > 2)
         {
             contPHecta++;
-            cantidadPHecta.text = "x" + contPHecta.ToString();
+            cantidadPHecta.text = "x" + FormatoNum(contPHecta);
             numPiojos = getPiojos();
             numPiojos -= costePHecta;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePHecta = Mathf.RoundToInt(costePHecta * 1.5f);
-            costeActualPHecta.text = costePHecta.ToString();
+            costeActualPHecta.text = FormatoNum(costePHecta);
         }
     }
 
     //Enemigos
     private void inicializarEnemigos()
     {
-        Enemigo e1 = new Enemigo(5, tipoEnemigo.Pulga, barreras.SinProtecciones);
-        Enemigo e2 = new Enemigo(5, tipoEnemigo.Salamandra, barreras.Casco);
-        Enemigo e3 = new Enemigo(5, tipoEnemigo.HumanoConRepelente, barreras.Chaleco);
+
+        Random.InitState((int)Time.realtimeSinceStartup);
+        int num = Random.Range(0, 7);
+        Enemigo e1 = new Enemigo(vidaBase, (tipoEnemigo)num, barreras.SinProtecciones);
+        num = Random.Range(0, 7);
+        Enemigo e2 = new Enemigo((vidaBase * (enemDerrotados + 1) + e1.GetVidaMax() * factor), (tipoEnemigo)num, barreras.Casco);
+        num = Random.Range(0, 7);
+        Enemigo e3 = new Enemigo((vidaBase * (enemDerrotados + 1) + e2.GetVidaMax() * factor), (tipoEnemigo)num, barreras.Chaleco);
         listaEnemigos.Add(e1);
         listaEnemigos.Add(e2);
         listaEnemigos.Add(e3);
         barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
-        vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
+        barraVida.setVida(listaEnemigos[0].GetVidaActual());
+        vidaEnemigo.text = FormatoNum(listaEnemigos[0].GetVidaActual()) + "/" + FormatoNum(listaEnemigos[0].GetVidaMax());
     }
 
     private void recuperaVida()
@@ -1402,8 +1416,8 @@ public class ManagerJuego : MonoBehaviour
         if (listaEnemigos[0].GetVidaActual() <= listaEnemigos[0].GetVidaMax() / 2 && num > 8)
         {
             barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
-            listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaMax());
-            vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
+            listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() + listaEnemigos[0].GetVidaMax() / 10);
+            vidaEnemigo.text = FormatoNum(listaEnemigos[0].GetVidaActual()) + "/" + FormatoNum(listaEnemigos[0].GetVidaMax());
         }
     }
 
@@ -1518,13 +1532,13 @@ public class ManagerJuego : MonoBehaviour
         {
             casco.gameObject.SetActive(false);
             contCasco++;
-            cantidadCasco.text = "x" + contCasco.ToString();
+            cantidadCasco.text = "x" + FormatoNum(contCasco);
             numPiojos = getPiojos();
             numPiojos -= costeCasco;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costeCasco = Mathf.RoundToInt(costeCasco * 1.5f);
-            costeActualCasco.text = costeCasco.ToString();
+            costeActualCasco.text = FormatoNum(costeCasco);
         }
     }
 
@@ -1535,13 +1549,13 @@ public class ManagerJuego : MonoBehaviour
         {
             chaleco.gameObject.SetActive(false);
             contChaleco++;
-            cantidadChaleco.text = "x" + contChaleco.ToString();
+            cantidadChaleco.text = "x" + FormatoNum(contChaleco);
             numPiojos = getPiojos();
             numPiojos -= costeChaleco;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costeChaleco = Mathf.RoundToInt(costeChaleco * 1.5f);
-            costeActualChaleco.text = costeChaleco.ToString();
+            costeActualChaleco.text = FormatoNum(costeChaleco);
         }
     }
 
@@ -1552,13 +1566,13 @@ public class ManagerJuego : MonoBehaviour
         {
             mascara.gameObject.SetActive(false);
             contMascara++;
-            cantidadMascara.text = "x" + contMascara.ToString();
+            cantidadMascara.text = "x" + FormatoNum(contMascara);
             numPiojos = getPiojos();
             numPiojos -= costeMascara;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costeMascara = Mathf.RoundToInt(costeMascara * 1.5f);
-            costeActualMascara.text = costeMascara.ToString();
+            costeActualMascara.text = FormatoNum(costeMascara);
         }
     }
 
@@ -1569,13 +1583,13 @@ public class ManagerJuego : MonoBehaviour
         {
             pulsera.gameObject.SetActive(false);
             contPulsera++;
-            cantidadPulsera.text = "x" + contPulsera.ToString();
+            cantidadPulsera.text = "x" + FormatoNum(contPulsera);
             numPiojos = getPiojos();
             numPiojos -= costePulsera;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             costePulsera = Mathf.RoundToInt(costePulsera * 1.5f);
-            costeActualPulsera.text = costePulsera.ToString();
+            costeActualPulsera.text = FormatoNum(costePulsera);
         }
     }
 
@@ -1587,7 +1601,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos = getPiojos();
             numPiojos -= costeClonaP;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             StartCoroutine(active30s());
         }
     }
@@ -1608,7 +1622,7 @@ public class ManagerJuego : MonoBehaviour
             numPiojos = getPiojos();
             numPiojos -= costeMultiC;
             setPiojos(numPiojos);
-            contador.text = numPiojos.ToString();
+            contador.text = FormatoNum(numPiojos);
             StartCoroutine(clicx2());
         }
     }
@@ -1641,7 +1655,7 @@ public class ManagerJuego : MonoBehaviour
     private void codigoVida()
     {
         barraVida.setVida(listaEnemigos[0].GetVidaActual());
-        vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
+        vidaEnemigo.text = FormatoNum(listaEnemigos[0].GetVidaActual()) + "/" + FormatoNum(listaEnemigos[0].GetVidaMax());
         recuperaVida();
         if (listaEnemigos[0].GetVidaActual() <= 0)
         {
@@ -1650,7 +1664,7 @@ public class ManagerJuego : MonoBehaviour
                 Random.InitState((int)Time.realtimeSinceStartup);
                 int r = Random.Range(0, 7);
                 int barrier = Random.Range(0, 5);
-                Enemigo e = new Enemigo(listaEnemigos[0].GetVidaMax() * 2, (tipoEnemigo)r, (barreras)barrier);
+                Enemigo e = new Enemigo((listaEnemigos[0].GetVidaMax() + vidaBase * (enemDerrotados + 1)) * factor, (tipoEnemigo)r, (barreras)barrier);
                 inicializarBarreras(e);
                 listaEnemigos.Add(e);
             }
@@ -1661,7 +1675,7 @@ public class ManagerJuego : MonoBehaviour
             nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
             barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
             barraVida.setVida(listaEnemigos[0].GetVidaActual());
-            vidaEnemigo.text = listaEnemigos[0].GetVidaActual().ToString() + "/" + listaEnemigos[0].GetVidaMax().ToString();
+            vidaEnemigo.text = FormatoNum(listaEnemigos[0].GetVidaActual()) + "/" + FormatoNum(listaEnemigos[0].GetVidaMax());
         }
     }
 
@@ -1874,63 +1888,63 @@ public class ManagerJuego : MonoBehaviour
     private void actualizarTextos()
     {
         this.contador.text = this.numPiojos.ToString();
-        this.vidaEnemigo.text = this.listaEnemigos[0].GetVidaActual().ToString();
-        this.costeActualPMadre.text = this.costePMadre.ToString();
-        this.cantidadPmadre.text = "x" + this.contPiojoMadre.ToString();
-        this.costeActualCabezaN.text = this.costeCabezaN.ToString();
-        this.cantidadCabezaN.text = "x" + this.contCabezaN.ToString();
-        this.costeActualClaseInfantil.text = this.costeClaseInfantil.ToString();
-        this.cantidadClaseInfantil.text = "x" + this.contClaseInfantil.ToString();
-        this.costeActualPatioEscuela.text = this.costePatioEscuela.ToString();
-        this.cantidadPatioEscuela.text = "x" + this.contPatioEscuela.ToString();
-        this.costeActualEscuela.text = this.costeEscuela.ToString();
-        this.cantidadEscuela.text = "x" + this.contEscuela.ToString();
-        this.costeActualCPerros.text = this.costeCPerros.ToString();
-        this.cantidadCPerros.text = "x" + this.contCPerros.ToString();
-        this.costeActualHostal.text = this.costeHostal.ToString();
-        this.cantidadHostal.text = "x" + this.contHostal.ToString();
-        this.costeActualJetPack.text = this.costeJetpack.ToString();
-        this.cantidadJetpack.text = "x" + this.contJetpack.ToString();
+        this.vidaEnemigo.text = FormatoNum(this.listaEnemigos[0].GetVidaActual());
+        this.costeActualPMadre.text = FormatoNum(this.costePMadre);
+        this.cantidadPmadre.text = "x" + FormatoNum(this.contPiojoMadre);
+        this.costeActualCabezaN.text = FormatoNum(this.costeCabezaN);
+        this.cantidadCabezaN.text = "x" + FormatoNum(this.contCabezaN);
+        this.costeActualClaseInfantil.text = FormatoNum(this.costeClaseInfantil);
+        this.cantidadClaseInfantil.text = "x" + FormatoNum(this.contClaseInfantil);
+        this.costeActualPatioEscuela.text = FormatoNum(this.costePatioEscuela);
+        this.cantidadPatioEscuela.text = "x" + FormatoNum(this.contPatioEscuela);
+        this.costeActualEscuela.text = FormatoNum(this.costeEscuela);
+        this.cantidadEscuela.text = "x" + FormatoNum(this.contEscuela);
+        this.costeActualCPerros.text = FormatoNum(this.costeCPerros);
+        this.cantidadCPerros.text = "x" + FormatoNum(this.contCPerros);
+        this.costeActualHostal.text = FormatoNum(this.costeHostal);
+        this.cantidadHostal.text = "x" + FormatoNum(this.contHostal);
+        this.costeActualJetPack.text = FormatoNum(this.costeJetpack);
+        this.cantidadJetpack.text = "x" + FormatoNum(this.contJetpack);
 
-        this.costeActualPMazao.text = this.costePMazao.ToString();
-        this.cantidadPiojoMazao.text = "x" + this.contPiojoMazao.ToString();
-        this.costeActualCazaTitanes.text = this.costeCTitanes.ToString();
-        this.cantidadCazaTitanes.text = "x" + this.contCazaTitanes.ToString();
-        this.costeActualPCanon.text = this.costePCanon.ToString();
-        this.cantidadPCanon.text = "x" + this.contPCanon.ToString();
-        this.costeActualPMan.text = this.costePMan.ToString();
-        this.cantidadPiojoMan.text = "x" + this.contPiojoMan.ToString();
-        this.costeActualJefe.text = this.costeJefe.ToString();
-        this.cantidadJefe.text = "x" + this.contJefe.ToString();
-        this.costeActualLiderM.text = this.costeLiderM.ToString();
-        this.cantidadLiderM.text = "x" + this.contLiderM.ToString();
-        this.costeActualPEstratega.text = this.costePEstratega.ToString();
-        this.cantidadPEstratega.text = "x" + this.contPEstratega.ToString();
-        this.costeActualPKasparov.text = this.costePKasparov.ToString();
-        this.cantidadPKasparov.text = "x" + this.contPKasparov.ToString();
-        this.costeActualEnfermera.text = this.costeEnfermera.ToString();
-        this.cantidadEnfermera.text = "x" + this.contEnfermera.ToString();
-        this.costeActualPPagado.text = this.costePPagado.ToString();
-        this.cantidadPPagado.text = "x" + this.contPPagado.ToString();
-        this.costeActualPCafeina.text = this.costePCafeina.ToString();
-        this.cantidadPCafeina.text = "x" + this.contPCafeina.ToString();
-        this.costeActualPSpeed.text = this.costePSpeed.ToString();
-        this.cantidadPSpeed.text = "x" + this.contPSpeed.ToString();
-        this.costeActualPMellizos.text = this.costePMellizos.ToString();
-        this.cantidadPMellizos.text = "x" + this.contPMellizos.ToString();
-        this.costeActualPQuinti.text = this.costePQuinti.ToString();
-        this.cantidadPQuinti.text = "x" + this.contPQuinti.ToString();
-        this.costeActualPDeca.text = this.costePDeca.ToString();
-        this.cantidadPDeca.text = "x" + this.contPDeca.ToString();
-        this.costeActualPHecta.text = this.costePHecta.ToString();
-        this.cantidadPHecta.text = "x" + this.contPHecta.ToString();
+        this.costeActualPMazao.text = FormatoNum(this.costePMazao);
+        this.cantidadPiojoMazao.text = "x" + FormatoNum(this.contPiojoMazao);
+        this.costeActualCazaTitanes.text = FormatoNum(this.costeCTitanes);
+        this.cantidadCazaTitanes.text = "x" + FormatoNum(this.contCazaTitanes);
+        this.costeActualPCanon.text = FormatoNum(this.costePCanon);
+        this.cantidadPCanon.text = "x" + FormatoNum(this.contPCanon);
+        this.costeActualPMan.text = FormatoNum(this.costePMan);
+        this.cantidadPiojoMan.text = "x" + FormatoNum(this.contPiojoMan);
+        this.costeActualJefe.text = FormatoNum(this.costeJefe);
+        this.cantidadJefe.text = "x" + FormatoNum(this.contJefe);
+        this.costeActualLiderM.text = FormatoNum(this.costeLiderM);
+        this.cantidadLiderM.text = "x" + FormatoNum(this.contLiderM);
+        this.costeActualPEstratega.text = FormatoNum(this.costePEstratega);
+        this.cantidadPEstratega.text = "x" + FormatoNum(this.contPEstratega);
+        this.costeActualPKasparov.text = FormatoNum(this.costePKasparov);
+        this.cantidadPKasparov.text = "x" + FormatoNum(this.contPKasparov);
+        this.costeActualEnfermera.text = FormatoNum(this.costeEnfermera);
+        this.cantidadEnfermera.text = "x" + FormatoNum(this.contEnfermera);
+        this.costeActualPPagado.text = FormatoNum(this.costePPagado);
+        this.cantidadPPagado.text = "x" + FormatoNum(this.contPPagado);
+        this.costeActualPCafeina.text = FormatoNum(this.costePCafeina);
+        this.cantidadPCafeina.text = "x" + FormatoNum(this.contPCafeina);
+        this.costeActualPSpeed.text = FormatoNum(this.costePSpeed);
+        this.cantidadPSpeed.text = "x" + FormatoNum(this.contPSpeed);
+        this.costeActualPMellizos.text = FormatoNum(this.costePMellizos);
+        this.cantidadPMellizos.text = "x" + FormatoNum(this.contPMellizos);
+        this.costeActualPQuinti.text = FormatoNum(this.costePQuinti);
+        this.cantidadPQuinti.text = "x" + FormatoNum(this.contPQuinti);
+        this.costeActualPDeca.text = FormatoNum(this.costePDeca);
+        this.cantidadPDeca.text = "x" + FormatoNum(this.contPDeca);
+        this.costeActualPHecta.text = FormatoNum(this.costePHecta);
+        this.cantidadPHecta.text = "x" + FormatoNum(this.contPHecta);
 
-        this.cantidadCasco.text = "x" + this.contCasco.ToString();
-        this.costeActualClonaP.text = this.costeClonaP.ToString();
-        this.costeActualMultiC.text = this.costeMultiC.ToString();
+        this.cantidadCasco.text = "x" + FormatoNum(this.contCasco);
+        this.costeActualClonaP.text = FormatoNum(this.costeClonaP);
+        this.costeActualMultiC.text = FormatoNum(this.costeMultiC);
 
         this.nombreEnemigo.text = this.listaEnemigos[0].tipo.ToString();
-        this.vidaEnemigo.text = this.listaEnemigos[0].GetVidaActual().ToString() + "/" + this.listaEnemigos[0].GetVidaMax().ToString();
+        this.vidaEnemigo.text = FormatoNum(this.listaEnemigos[0].GetVidaActual()) + "/" + FormatoNum(this.listaEnemigos[0].GetVidaMax());
     }
 
 
@@ -2002,7 +2016,28 @@ public class ManagerJuego : MonoBehaviour
         }
     }
 
+    private string FormatoNum(int num)
+    {
+        string s = "";
+        if (num >= 1000000)
+        {
+            double d = num / 1000000.0;
+            s = d.ToString("0.0", c) + " M";
+            return s;
+        }
+        if (num >= 10000)
+        {
+            float f = num / 1000;
+            s = f.ToString("0", c) + " K";
+            return s;
+        }
+        else
+        {
+            s = num.ToString("##,#", c);
+            return s;
+        }
 
+    }
 
     [DllImport("__Internal")]
     private static extern void GuardarDatos(string d);

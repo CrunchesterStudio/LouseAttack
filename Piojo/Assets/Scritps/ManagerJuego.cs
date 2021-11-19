@@ -2033,7 +2033,15 @@ public class ManagerJuego : MonoBehaviour
         }
         else
         {
-            s = num.ToString("##,#", c);
+            if (num == 0)
+            {
+                s = "0";
+            }
+            else
+            {
+                s = num.ToString("##,#", c);
+            }
+            
             return s;
         }
 

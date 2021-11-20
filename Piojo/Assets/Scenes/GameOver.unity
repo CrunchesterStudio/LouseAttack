@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GO BACK
+  m_Text: Menu
 --- !u!222 &34504322
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -794,7 +794,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: REPLAY
+  m_Text: 'Volver al
+
+    juego'
 --- !u!222 &827609818
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -860,7 +862,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3d48bf2393a33134dbaf68ff614eb191, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d16fe696284b67488cb5994a2c8c033, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

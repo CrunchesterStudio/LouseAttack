@@ -1426,6 +1426,7 @@ public class ManagerJuego : MonoBehaviour
         {
             barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
             listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() + listaEnemigos[0].GetVidaMax() / 10);
+            barraVida.setVida(listaEnemigos[0].GetVidaActual());
             vidaEnemigo.text = FormatoNum(listaEnemigos[0].GetVidaActual()) + "/" + FormatoNum(listaEnemigos[0].GetVidaMax());
         }
     }

@@ -1705,6 +1705,7 @@ public class ManagerJuego : MonoBehaviour
         panel.gameObject.transform.GetChild(4).gameObject.SetActive(true);
         panel.gameObject.transform.GetChild(5).gameObject.SetActive(true);
         panel.gameObject.transform.GetChild(10).gameObject.SetActive(false);
+        panel.gameObject.transform.GetChild(11).gameObject.SetActive(true);
         btnTienda.gameObject.SetActive(true);
         btnGuardar.gameObject.SetActive(true);
         btnCargar.gameObject.SetActive(true);

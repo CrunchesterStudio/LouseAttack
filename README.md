@@ -1,7 +1,6 @@
 Este repositorio pertenece al estudio de desarrollo Crunchester Studio.   
 Equipo de desarrollo: María Hidalga de la Fuente, Diego Penedo Andrés, Juan Jesús Rodríguez Sánchez, Miguel Gálvez Lucena, Sara Fuente Águila.
-
-Versión Unity: 2020.3.19f1  
+ 
 Portfolio: https://crunchesterstudio.github.io/Portfolio/
 
 

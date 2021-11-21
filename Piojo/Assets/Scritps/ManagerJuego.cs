@@ -279,6 +279,7 @@ public class ManagerJuego : MonoBehaviour
     //Enemigos
     public Sprite[] spritesEnem;
     public Image BtnEnemigo;
+    public AudioClip[] soundEnem;
 
     // Start is called before the first frame update
     void Start()
@@ -1403,11 +1404,11 @@ public class ManagerJuego : MonoBehaviour
 
         Random.InitState((int)Time.realtimeSinceStartup);
         int num = Random.Range(0, 7);
-        Enemigo e1 = new Enemigo(vidaBase, (tipoEnemigo)num, barreras.SinProtecciones,spritesEnem[num]);
+        Enemigo e1 = new Enemigo(vidaBase, (tipoEnemigo)num, barreras.SinProtecciones,spritesEnem[num],soundEnem[num]);
         num = Random.Range(0, 7);
-        Enemigo e2 = new Enemigo((vidaBase * (enemDerrotados + 1) + e1.GetVidaMax() * factor), (tipoEnemigo)num, barreras.Casco, spritesEnem[num]);
+        Enemigo e2 = new Enemigo((vidaBase * (enemDerrotados + 1) + e1.GetVidaMax() * factor), (tipoEnemigo)num, barreras.Casco, spritesEnem[num], soundEnem[num]);
         num = Random.Range(0, 7);
-        Enemigo e3 = new Enemigo((vidaBase * (enemDerrotados + 1) + e2.GetVidaMax() * factor), (tipoEnemigo)num, barreras.Chaleco, spritesEnem[num]);
+        Enemigo e3 = new Enemigo((vidaBase * (enemDerrotados + 1) + e2.GetVidaMax() * factor), (tipoEnemigo)num, barreras.Chaleco, spritesEnem[num], soundEnem[num]);
         listaEnemigos.Add(e1);
         listaEnemigos.Add(e2);
         listaEnemigos.Add(e3);
@@ -1672,7 +1673,7 @@ public class ManagerJuego : MonoBehaviour
                 Random.InitState((int)Time.realtimeSinceStartup);
                 int r = Random.Range(0, 7);
                 int barrier = Random.Range(0, 5);
-                Enemigo e = new Enemigo((listaEnemigos[0].GetVidaMax() + vidaBase * (enemDerrotados + 1)) * factor, (tipoEnemigo)r, (barreras)barrier, spritesEnem[r]);
+                Enemigo e = new Enemigo((listaEnemigos[0].GetVidaMax() + vidaBase * (enemDerrotados + 1)) * factor, (tipoEnemigo)r, (barreras)barrier, spritesEnem[r],soundEnem[r]);
                 inicializarBarreras(e);
                 listaEnemigos.Add(e);
             }
@@ -1684,6 +1685,8 @@ public class ManagerJuego : MonoBehaviour
             barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
             barraVida.setVida(listaEnemigos[0].GetVidaActual());
             BtnEnemigo.sprite = listaEnemigos[0].imagen;
+            gameObject.AddComponent<AudioSource>();
+            GetComponent<AudioSource>().PlayOneShot(listaEnemigos[0].sonido);
             vidaEnemigo.text = FormatoNum(listaEnemigos[0].GetVidaActual()) + "/" + FormatoNum(listaEnemigos[0].GetVidaMax());
         }
     }

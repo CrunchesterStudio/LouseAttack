@@ -2052,4 +2052,5 @@ public class ManagerJuego : MonoBehaviour
 
     [DllImport("__Internal")]
     private static extern string CargarDatos();
+
 }

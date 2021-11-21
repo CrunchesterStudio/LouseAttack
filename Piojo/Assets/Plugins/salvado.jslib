@@ -18,6 +18,12 @@ mergeInto(LibraryManager.library, {
       return null;
     }
     
+  },
+
+BorrarDatos: function () {
+  
+    window.localStorage.clear();
+    
   }
 
 });

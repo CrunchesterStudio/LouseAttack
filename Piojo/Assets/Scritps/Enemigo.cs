@@ -33,14 +33,16 @@ public class Enemigo
     public tipoEnemigo tipo;
     public barreras barrier;
     public Sprite imagen;
+    public AudioClip sonido;
 
-    public Enemigo(int vidaMax, tipoEnemigo tipo, barreras barrier,Sprite imagen)
+    public Enemigo(int vidaMax, tipoEnemigo tipo, barreras barrier,Sprite imagen, AudioClip musica)
     {
         this.vidaMax = vidaMax;
         this.tipo = tipo;
         this.vidaActual = this.vidaMax;
         this.barrier = barrier;
         this.imagen = imagen;
+        this.sonido = musica;
     }
 
     public int GetVidaMax()

@@ -7109,6 +7109,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a68ccfca7669bc2439b0b42ed2efa5f2, type: 3}
   - {fileID: 21300000, guid: 6210fb57f2d8e5c409fc6ba535fdd0c9, type: 3}
   BtnEnemigo: {fileID: 2127728421}
+  soundEnem:
+  - {fileID: 8300000, guid: 12a3e636e1196ea4ba087dd653524c46, type: 3}
+  - {fileID: 8300000, guid: e601bd9161dcf2d4ea64060bb669f978, type: 3}
+  - {fileID: 8300000, guid: 0f3cbb68d9a6df64d94bf78972c33094, type: 3}
+  - {fileID: 8300000, guid: 084aa57162fe31240b54acf85cf8bd60, type: 3}
+  - {fileID: 8300000, guid: 471a8d584757d6f44bae7cf9823dabbc, type: 3}
+  - {fileID: 8300000, guid: 79c7711939db2db4abee4d8a84adf606, type: 3}
+  - {fileID: 8300000, guid: 7d572d9a415e5bc45a989499904c9bfb, type: 3}
+  - {fileID: 8300000, guid: fcbc1675cf9e456469929d690895e4ae, type: 3}
 --- !u!4 &633980882
 Transform:
   m_ObjectHideFlags: 0

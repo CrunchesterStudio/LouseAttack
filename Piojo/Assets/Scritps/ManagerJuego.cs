@@ -12,6 +12,7 @@ public class ManagerJuego : MonoBehaviour
     public Animator animator;
     public GameObject panel;
     public Button intro;
+    public Image titulo;
 
     private int mejoraActiva = 0;
 
@@ -490,7 +491,7 @@ public class ManagerJuego : MonoBehaviour
             btnCargar.gameObject.SetActive(true);
             btnAjustes.gameObject.SetActive(true);
             btnSalir.gameObject.SetActive(true);
-            
+            titulo.gameObject.SetActive(false);
             if (!cargado)
             {
                 textoGuardado.gameObject.SetActive(true);
@@ -1707,6 +1708,7 @@ public class ManagerJuego : MonoBehaviour
         btnAjustes.gameObject.SetActive(true);
         btnSalir.gameObject.SetActive(true);
         btnGen.gameObject.SetActive(true);
+        titulo.gameObject.SetActive(false);
 
         if (!cargado)
         {

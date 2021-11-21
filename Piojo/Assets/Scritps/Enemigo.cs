@@ -31,15 +31,16 @@ public class Enemigo
     [JsonProperty]
     private int vidaActual;
     public tipoEnemigo tipo;
-
     public barreras barrier;
+    public Sprite imagen;
 
-    public Enemigo(int vidaMax, tipoEnemigo tipo, barreras barrier)
+    public Enemigo(int vidaMax, tipoEnemigo tipo, barreras barrier,Sprite imagen)
     {
         this.vidaMax = vidaMax;
         this.tipo = tipo;
         this.vidaActual = this.vidaMax;
         this.barrier = barrier;
+        this.imagen = imagen;
     }
 
     public int GetVidaMax()

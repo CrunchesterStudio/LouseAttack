@@ -309,6 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &14042780
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1283,6 +1284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
+  esMejora: 0
 --- !u!114 &121247857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1642,6 +1644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &156808788
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1726,6 +1729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: f9e1b33d2ef89504f82bce4b2babf6b7, type: 3}
+  esMejora: 1
 --- !u!114 &158515036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2524,6 +2528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: d417bfb094947d74c9ef466bcc62d71f, type: 3}
+  esMejora: 1
 --- !u!1 &257842263
 GameObject:
   m_ObjectHideFlags: 0
@@ -3259,6 +3264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 86383a43ee614ab4d9fb07f91a35c2af, type: 3}
+  esMejora: 1
 --- !u!1 &320696615
 GameObject:
   m_ObjectHideFlags: 0
@@ -3840,6 +3846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &347739434
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4094,6 +4101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 86439b0c34932aa409b4356aaf1e0022, type: 3}
+  esMejora: 0
 --- !u!1 &376206141
 GameObject:
   m_ObjectHideFlags: 0
@@ -4421,6 +4429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 7a1dfeb9ff8241e47af7282237ec743a, type: 3}
+  esMejora: 0
 --- !u!1 &382668853
 GameObject:
   m_ObjectHideFlags: 0
@@ -5440,6 +5449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &463426813
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5774,6 +5784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 5d7fa43e9c112374d937083f1a986d07, type: 3}
+  esMejora: 1
 --- !u!1 &502856599
 GameObject:
   m_ObjectHideFlags: 0
@@ -8645,6 +8656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 99f3535968ccbb649b595ca0ae2c4700, type: 3}
+  esMejora: 1
 --- !u!1 &746727103
 GameObject:
   m_ObjectHideFlags: 0
@@ -9258,6 +9270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 24d4b28fdb58d2240a759bdf2b30d451, type: 3}
+  esMejora: 1
 --- !u!1 &767191778
 GameObject:
   m_ObjectHideFlags: 0
@@ -9488,6 +9501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9aae820a6fdb01440b255bd84ccf4207, type: 3}
+  esMejora: 1
 --- !u!1 &771034438
 GameObject:
   m_ObjectHideFlags: 0
@@ -10072,6 +10086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
+  esMejora: 0
 --- !u!1 &808097727
 GameObject:
   m_ObjectHideFlags: 0
@@ -10384,6 +10399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 29abefebc9bd60145b133d0b27b65e4c, type: 3}
+  esMejora: 1
 --- !u!1 &833655694
 GameObject:
   m_ObjectHideFlags: 0
@@ -10921,6 +10937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9f7e45b93208fc04d81734d00c50698c, type: 3}
+  esMejora: 1
 --- !u!1 &853400133
 GameObject:
   m_ObjectHideFlags: 0
@@ -11073,6 +11090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 6b9e69ec32efbec4da5fc35537bb659a, type: 3}
+  esMejora: 1
 --- !u!1 &855425403
 GameObject:
   m_ObjectHideFlags: 0
@@ -11451,6 +11469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: e12d02cf92e5e3549ab90d81173acba6, type: 3}
+  esMejora: 1
 --- !u!1 &882595864
 GameObject:
   m_ObjectHideFlags: 0
@@ -11842,6 +11861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: be69ffd8fc7f24b44aceb86e4294eff1, type: 3}
+  esMejora: 1
 --- !u!1 &894605327
 GameObject:
   m_ObjectHideFlags: 0
@@ -12466,6 +12486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
+  esMejora: 0
 --- !u!1 &927779470
 GameObject:
   m_ObjectHideFlags: 0
@@ -13162,6 +13183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
+  esMejora: 0
 --- !u!1 &955962674
 GameObject:
   m_ObjectHideFlags: 0
@@ -13702,6 +13724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 4a742a8429a550741992180dcd06efb7, type: 3}
+  esMejora: 1
 --- !u!1 &1039567268
 GameObject:
   m_ObjectHideFlags: 0
@@ -14002,6 +14025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 1e5d3c2036dbc2c4e941db8ae3f78b0e, type: 3}
+  esMejora: 0
 --- !u!1 &1061887180
 GameObject:
   m_ObjectHideFlags: 0
@@ -14929,6 +14953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 4f0b6e7edf614514198febb24c2795dc, type: 3}
+  esMejora: 1
 --- !u!1 &1122228770
 GameObject:
   m_ObjectHideFlags: 0
@@ -15372,6 +15397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 6c3d9ad0171586344b34bc54a8a81546, type: 3}
+  esMejora: 1
 --- !u!114 &1164011408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15573,6 +15599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &1173894984
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15708,6 +15735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &1179096822
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15888,6 +15916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: e0d6e205583f3d74ca4dc5fbb6c4062b, type: 3}
+  esMejora: 1
 --- !u!1 &1188845257
 GameObject:
   m_ObjectHideFlags: 0
@@ -16332,6 +16361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 2ba39c300e82bc7449bd8dfe08de7412, type: 3}
+  esMejora: 1
 --- !u!114 &1229942326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16656,6 +16686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 0a373be8d88f8fa418e6759f88657e84, type: 3}
+  esMejora: 1
 --- !u!1 &1262005794
 GameObject:
   m_ObjectHideFlags: 0
@@ -16925,6 +16956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &1265807694
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17733,6 +17765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 3d2b8aff05a59204fb7c0a9863cf8995, type: 3}
+  esMejora: 1
 --- !u!1 &1307576719
 GameObject:
   m_ObjectHideFlags: 0
@@ -18232,6 +18265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &1345094241
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18920,6 +18954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
+  esMejora: 0
 --- !u!1 &1398346299
 GameObject:
   m_ObjectHideFlags: 0
@@ -19260,6 +19295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &1429938912
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19553,6 +19589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &1454399418
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20204,6 +20241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 061dcef46d025f14f8554ce7f83c81dc, type: 3}
+  esMejora: 1
 --- !u!1 &1506318622
 GameObject:
   m_ObjectHideFlags: 0
@@ -20351,6 +20389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
+  esMejora: 0
 --- !u!1 &1507981089
 GameObject:
   m_ObjectHideFlags: 0
@@ -20771,6 +20810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &1517999613
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20946,6 +20986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 80b353915ea565b4399c48c790422efc, type: 3}
+  esMejora: 0
 --- !u!1 &1538680363
 GameObject:
   m_ObjectHideFlags: 0
@@ -21132,6 +21173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &1538991349
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22260,6 +22302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 3793591ea7d2ef94dbd0b72fa5acdcfb, type: 3}
+  esMejora: 1
 --- !u!1 &1674238784
 GameObject:
   m_ObjectHideFlags: 0
@@ -22367,6 +22410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &1674238788
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22699,6 +22743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: db1985eefa4881d41b17910bcbcc4be9, type: 3}
+  esMejora: 1
 --- !u!1 &1690045209
 GameObject:
   m_ObjectHideFlags: 0
@@ -22881,6 +22926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &1691592888
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23410,6 +23456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &1715591361
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23588,6 +23635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 65052406fc650e64099d8d4e71b372c3, type: 3}
+  esMejora: 1
 --- !u!1 &1720828470
 GameObject:
   m_ObjectHideFlags: 0
@@ -23969,6 +24017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: fd3a451f95e7818409a7bb1cdc63686c, type: 3}
+  esMejora: 1
 --- !u!1 &1730614732
 GameObject:
   m_ObjectHideFlags: 0
@@ -24438,6 +24487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 642caaad443a2b941af16d3ad315de8c, type: 3}
+  esMejora: 1
 --- !u!1 &1759872973
 GameObject:
   m_ObjectHideFlags: 0
@@ -24656,6 +24706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &1764443815
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25386,6 +25437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 86439b0c34932aa409b4356aaf1e0022, type: 3}
+  esMejora: 0
 --- !u!1 &1855529587
 GameObject:
   m_ObjectHideFlags: 0
@@ -25493,6 +25545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &1855529591
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26143,6 +26196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 28bcb245d821b1e4fad79f75ad6b33c4, type: 3}
+  esMejora: 1
 --- !u!1 &1917858682
 GameObject:
   m_ObjectHideFlags: 0
@@ -26917,6 +26971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: c6796a018b2ae564dad20ba314ee7595, type: 3}
+  esMejora: 1
 --- !u!1 &1965838029
 GameObject:
   m_ObjectHideFlags: 0
@@ -27901,6 +27956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 0ee2a8fb489dde54aab5487018f426ff, type: 3}
+  esMejora: 1
 --- !u!1 &2001585879
 GameObject:
   m_ObjectHideFlags: 0
@@ -28605,6 +28661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 6863e4c3df3c9c34687364653a9cd41e, type: 3}
+  esMejora: 1
 --- !u!1 &2055851067
 GameObject:
   m_ObjectHideFlags: 0
@@ -28870,6 +28927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 9de728e21cad99645baa22ff94be3cad, type: 3}
+  esMejora: 0
 --- !u!222 &2060867578
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29050,6 +29108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 8c9e206b9f5ee9d4288ac94b47455b57, type: 3}
+  esMejora: 1
 --- !u!1 &2070869454
 GameObject:
   m_ObjectHideFlags: 0
@@ -29900,6 +29959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 1e5d3c2036dbc2c4e941db8ae3f78b0e, type: 3}
+  esMejora: 0
 --- !u!95 &2127728424
 Animator:
   serializedVersion: 3

@@ -9,15 +9,15 @@ public class AudioManager : MonoBehaviour
     public AudioSource source { get { return GetComponent<AudioSource>(); } }
     public Button btn { get { return GetComponent<Button>(); } }
     public AudioClip clip;
-
+    public bool esMejora = false;
     // Start is called before the first frame update
     void Start()
     {
 
 
-        if (clip != null)
-        {
             gameObject.AddComponent<AudioSource>();
+        if (clip != null&&!esMejora)
+        {
             btn.onClick.AddListener(PlaySound);
         }
 
@@ -29,7 +29,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    void PlaySound()
+    public void PlaySound()
     {
         source.PlayOneShot(clip);
     }

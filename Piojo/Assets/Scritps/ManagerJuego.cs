@@ -822,6 +822,8 @@ public class ManagerJuego : MonoBehaviour
             costePMadre = Mathf.RoundToInt(costePMadre * 1.5f);
             costeActualPMadre.text = FormatoNum(costePMadre);
             StartCoroutine(Gen1PiojoSeg());
+            AudioManager audioManager = mejExpansion.gameObject.transform.GetChild(0).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
     IEnumerator Gen1PiojoSeg()
@@ -850,6 +852,8 @@ public class ManagerJuego : MonoBehaviour
             costeCabezaN = Mathf.RoundToInt(costeCabezaN * 1.5f);
             costeActualCabezaN.text = FormatoNum(costeCabezaN);
             StartCoroutine(Gen5Piojos());
+            AudioManager audioManager = mejExpansion.gameObject.transform.GetChild(1).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
     IEnumerator Gen5Piojos()
@@ -879,6 +883,8 @@ public class ManagerJuego : MonoBehaviour
             costeClaseInfantil = Mathf.RoundToInt(costeClaseInfantil * 1.5f);
             costeActualClaseInfantil.text = FormatoNum(costeClaseInfantil);
             StartCoroutine(Gen10Piojos());
+            AudioManager audioManager = mejExpansion.gameObject.transform.GetChild(2).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
     IEnumerator Gen10Piojos()
@@ -908,6 +914,8 @@ public class ManagerJuego : MonoBehaviour
             costePatioEscuela = Mathf.RoundToInt(costePatioEscuela * 1.5f);
             costeActualPatioEscuela.text = FormatoNum(costePatioEscuela);
             StartCoroutine(Gen20PiojoSeg());
+            AudioManager audioManager = mejExpansion.gameObject.transform.GetChild(3).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
     IEnumerator Gen20PiojoSeg()
@@ -936,6 +944,8 @@ public class ManagerJuego : MonoBehaviour
             costeEscuela = Mathf.RoundToInt(costeEscuela * 1.5f);
             costeActualEscuela.text = FormatoNum(costeEscuela);
             StartCoroutine(Gen50PiojoSeg());
+            AudioManager audioManager = mejExpansion.gameObject.transform.GetChild(4).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
     IEnumerator Gen50PiojoSeg()
@@ -964,6 +974,8 @@ public class ManagerJuego : MonoBehaviour
             costeCPerros = Mathf.RoundToInt(costeCPerros * 1.5f);
             costeActualCPerros.text = FormatoNum(costeCPerros);
             StartCoroutine(Gen100PiojoSeg());
+            AudioManager audioManager = mejExpansion.gameObject.transform.GetChild(5).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
     IEnumerator Gen100PiojoSeg()
@@ -992,6 +1004,8 @@ public class ManagerJuego : MonoBehaviour
             costeHostal = Mathf.RoundToInt(costeHostal * 1.5f);
             costeActualHostal.text = FormatoNum(costeHostal);
             StartCoroutine(Gen500PiojoSeg());
+            AudioManager audioManager = mejExpansion.gameObject.transform.GetChild(6).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
     IEnumerator Gen500PiojoSeg()
@@ -1020,6 +1034,8 @@ public class ManagerJuego : MonoBehaviour
             costeJetpack = Mathf.RoundToInt(costeJetpack * 1.5f);
             costeActualJetPack.text = FormatoNum(costeJetpack);
             StartCoroutine(Gen1000Piojos());
+            AudioManager audioManager = mejExpansion.gameObject.transform.GetChild(7).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
     IEnumerator Gen1000Piojos()
@@ -1047,6 +1063,8 @@ public class ManagerJuego : MonoBehaviour
             contador.text = FormatoNum(numPiojos);
             costePMazao = Mathf.RoundToInt(costePMazao * 1.5f);
             costeActualPMazao.text = FormatoNum(costePMazao);
+            AudioManager audioManager = mejCombate.gameObject.transform.GetChild(0).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1063,6 +1081,8 @@ public class ManagerJuego : MonoBehaviour
             contador.text = FormatoNum(numPiojos);
             costeCTitanes = Mathf.RoundToInt(costeCTitanes * 1.5f);
             costeActualCazaTitanes.text = FormatoNum(costeCTitanes);
+            AudioManager audioManager = mejCombate.gameObject.transform.GetChild(1).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1079,6 +1099,8 @@ public class ManagerJuego : MonoBehaviour
             contador.text = FormatoNum(numPiojos);
             costePCanon = Mathf.RoundToInt(costePCanon * 1.5f);
             costeActualPCanon.text = FormatoNum(costePCanon);
+            AudioManager audioManager = mejCombate.gameObject.transform.GetChild(2).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1095,6 +1117,8 @@ public class ManagerJuego : MonoBehaviour
             contador.text = FormatoNum(numPiojos);
             costePMan = Mathf.RoundToInt(costePMan * 1.5f);
             costeActualPMan.text = FormatoNum(costePMan);
+            AudioManager audioManager = mejCombate.gameObject.transform.GetChild(3).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1112,6 +1136,8 @@ public class ManagerJuego : MonoBehaviour
             costeJefe = Mathf.RoundToInt(costeJefe * 1.5f);
             costeActualJefe.text = FormatoNum(costeJefe);
             StartCoroutine(attack1s());
+            AudioManager audioManager = mejCombate.gameObject.transform.GetChild(4).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
     IEnumerator attack1s()
@@ -1144,6 +1170,8 @@ public class ManagerJuego : MonoBehaviour
             costeLiderM = Mathf.RoundToInt(costeLiderM * 1.5f);
             costeActualLiderM.text = FormatoNum(costeLiderM);
             StartCoroutine(attack10s());
+            AudioManager audioManager = mejCombate.gameObject.transform.GetChild(5).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
     IEnumerator attack10s()
@@ -1176,6 +1204,8 @@ public class ManagerJuego : MonoBehaviour
             costePEstratega = Mathf.RoundToInt(costePEstratega * 1.5f);
             costeActualPEstratega.text = FormatoNum(costePEstratega);
             StartCoroutine(attack50s());
+            AudioManager audioManager = mejCombate.gameObject.transform.GetChild(6).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
     IEnumerator attack50s()
@@ -1208,6 +1238,8 @@ public class ManagerJuego : MonoBehaviour
             costePKasparov = Mathf.RoundToInt(costePKasparov * 1.5f);
             costeActualPKasparov.text = FormatoNum(costePKasparov);
             StartCoroutine(attack100s());
+            AudioManager audioManager = mejCombate.gameObject.transform.GetChild(7).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
     IEnumerator attack100s()
@@ -1240,6 +1272,8 @@ public class ManagerJuego : MonoBehaviour
             costeEnfermera = Mathf.RoundToInt(costeEnfermera * 1.5f);
             costeActualEnfermera.text = FormatoNum(costeEnfermera);
             StartCoroutine(click20s());
+            AudioManager audioManager = mejGeneracion.gameObject.transform.GetChild(0).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1267,6 +1301,8 @@ public class ManagerJuego : MonoBehaviour
             costePPagado = Mathf.RoundToInt(costePPagado * 1.5f);
             costeActualPPagado.text = FormatoNum(costePPagado);
             StartCoroutine(click10s());
+            AudioManager audioManager = mejGeneracion.gameObject.transform.GetChild(1).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1294,6 +1330,8 @@ public class ManagerJuego : MonoBehaviour
             costePCafeina = Mathf.RoundToInt(costePCafeina * 1.5f);
             costeActualPCafeina.text = FormatoNum(costePCafeina);
             StartCoroutine(click5s());
+            AudioManager audioManager = mejGeneracion.gameObject.transform.GetChild(2).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1321,6 +1359,8 @@ public class ManagerJuego : MonoBehaviour
             costePSpeed = Mathf.RoundToInt(costePSpeed * 1.5f);
             costeActualPSpeed.text = FormatoNum(costePSpeed);
             StartCoroutine(click2s());
+            AudioManager audioManager = mejGeneracion.gameObject.transform.GetChild(3).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1347,6 +1387,8 @@ public class ManagerJuego : MonoBehaviour
             contador.text = FormatoNum(numPiojos);
             costePMellizos = Mathf.RoundToInt(costePMellizos * 1.5f);
             costeActualPMellizos.text = FormatoNum(costePMellizos);
+            AudioManager audioManager = mejGeneracion.gameObject.transform.GetChild(4).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1363,6 +1405,8 @@ public class ManagerJuego : MonoBehaviour
             contador.text = FormatoNum(numPiojos);
             costePQuinti = Mathf.RoundToInt(costePQuinti * 1.5f);
             costeActualPQuinti.text = FormatoNum(costePQuinti);
+            AudioManager audioManager = mejGeneracion.gameObject.transform.GetChild(5).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1379,6 +1423,8 @@ public class ManagerJuego : MonoBehaviour
             contador.text = FormatoNum(numPiojos);
             costePDeca = Mathf.RoundToInt(costePDeca * 1.5f);
             costeActualPDeca.text = FormatoNum(costePDeca);
+            AudioManager audioManager = mejGeneracion.gameObject.transform.GetChild(6).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1395,6 +1441,8 @@ public class ManagerJuego : MonoBehaviour
             contador.text = FormatoNum(numPiojos);
             costePHecta = Mathf.RoundToInt(costePHecta * 1.5f);
             costeActualPHecta.text = FormatoNum(costePHecta);
+            AudioManager audioManager = mejGeneracion.gameObject.transform.GetChild(7).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1549,6 +1597,8 @@ public class ManagerJuego : MonoBehaviour
             contador.text = FormatoNum(numPiojos);
             costeCasco = Mathf.RoundToInt(costeCasco * 1.5f);
             costeActualCasco.text = FormatoNum(costeCasco);
+            AudioManager audioManager = mejAntibarrera.gameObject.transform.GetChild(0).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1566,6 +1616,8 @@ public class ManagerJuego : MonoBehaviour
             contador.text = FormatoNum(numPiojos);
             costeChaleco = Mathf.RoundToInt(costeChaleco * 1.5f);
             costeActualChaleco.text = FormatoNum(costeChaleco);
+            AudioManager audioManager = mejAntibarrera.gameObject.transform.GetChild(1).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1583,6 +1635,8 @@ public class ManagerJuego : MonoBehaviour
             contador.text = FormatoNum(numPiojos);
             costeMascara = Mathf.RoundToInt(costeMascara * 1.5f);
             costeActualMascara.text = FormatoNum(costeMascara);
+            AudioManager audioManager = mejAntibarrera.gameObject.transform.GetChild(2).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1600,6 +1654,8 @@ public class ManagerJuego : MonoBehaviour
             contador.text = FormatoNum(numPiojos);
             costePulsera = Mathf.RoundToInt(costePulsera * 1.5f);
             costeActualPulsera.text = FormatoNum(costePulsera);
+            AudioManager audioManager = mejAntibarrera.gameObject.transform.GetChild(3).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1613,6 +1669,8 @@ public class ManagerJuego : MonoBehaviour
             setPiojos(numPiojos);
             contador.text = FormatoNum(numPiojos);
             StartCoroutine(active30s());
+            AudioManager audioManager = mejPago.gameObject.transform.GetChild(0).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1634,6 +1692,8 @@ public class ManagerJuego : MonoBehaviour
             setPiojos(numPiojos);
             contador.text = FormatoNum(numPiojos);
             StartCoroutine(clicx2());
+            AudioManager audioManager = mejPago.gameObject.transform.GetChild(1).GetComponent<AudioManager>();
+            audioManager.PlaySound();
         }
     }
 
@@ -1705,8 +1765,11 @@ public class ManagerJuego : MonoBehaviour
         panel.gameObject.transform.GetChild(3).gameObject.SetActive(true);
         panel.gameObject.transform.GetChild(4).gameObject.SetActive(true);
         panel.gameObject.transform.GetChild(5).gameObject.SetActive(true);
-        panel.gameObject.transform.GetChild(10).gameObject.SetActive(false);
-        panel.gameObject.transform.GetChild(11).gameObject.SetActive(true);
+        panel.gameObject.transform.GetChild(6).gameObject.SetActive(true);
+        panel.gameObject.transform.GetChild(7).gameObject.SetActive(true);
+        panel.gameObject.transform.GetChild(8).gameObject.SetActive(true);
+        panel.gameObject.transform.GetChild(9).gameObject.SetActive(true);
+        panel.gameObject.transform.GetChild(10).gameObject.SetActive(true);
         btnTienda.gameObject.SetActive(true);
         btnGuardar.gameObject.SetActive(true);
         btnCargar.gameObject.SetActive(true);

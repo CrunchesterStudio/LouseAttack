@@ -253,6 +253,12 @@ public class ManagerJuego : MonoBehaviour
     public Button MejComb7Candado;
     public Button MejComb8Candado;
 
+    //Candados bloqueados AntiBarrera
+    public Button CandadoCasco;
+    public Button CandadoChaleco;
+    public Button CandadoMascara;
+    public Button CandadoPulsera;
+
     //Bloqueos de los enemigos
     public Button casco;
     public Button chaleco;
@@ -267,7 +273,7 @@ public class ManagerJuego : MonoBehaviour
     public Button btnInfo;
     public Button btnSalir;
     public Button btnGen;
-    
+
     //Partida cargada por primera vez
     private bool cargado = false;
 
@@ -700,6 +706,19 @@ public class ManagerJuego : MonoBehaviour
             MejComb7Candado.gameObject.SetActive(false);
             MejComb8Candado.gameObject.SetActive(false);
         }
+
+        if (casco.gameObject.activeSelf)
+            CandadoCasco.gameObject.SetActive(false);
+
+        if (chaleco.gameObject.activeSelf)
+            CandadoChaleco.gameObject.SetActive(false);
+
+        if (mascara.gameObject.activeSelf)
+            CandadoMascara.gameObject.SetActive(false);
+
+        if (pulsera.gameObject.activeSelf)
+            CandadoPulsera.gameObject.SetActive(false);
+
     }
 
     //Botón Piojo
@@ -1493,7 +1512,7 @@ public class ManagerJuego : MonoBehaviour
 
         Random.InitState((int)Time.realtimeSinceStartup);
         int num = Random.Range(0, 7);
-        Enemigo e1 = new Enemigo(vidaBase, (tipoEnemigo)num, barreras.SinProtecciones,num,num);
+        Enemigo e1 = new Enemigo(vidaBase, (tipoEnemigo)num, barreras.SinProtecciones, num, num);
         num = Random.Range(0, 7);
         Enemigo e2 = new Enemigo((vidaBase * (enemDerrotados + 1) + e1.GetVidaMax() * factor), (tipoEnemigo)num, barreras.Casco, num, num);
         num = Random.Range(0, 7);
@@ -1503,7 +1522,7 @@ public class ManagerJuego : MonoBehaviour
         listaEnemigos.Add(e3);
         barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
         barraVida.setVida(listaEnemigos[0].GetVidaActual());
-        BtnEnemigo.sprite =spritesEnem[listaEnemigos[0].imagen];
+        BtnEnemigo.sprite = spritesEnem[listaEnemigos[0].imagen];
         vidaEnemigo.text = FormatoNum(listaEnemigos[0].GetVidaActual()) + "/" + FormatoNum(listaEnemigos[0].GetVidaMax());
     }
 
@@ -1630,6 +1649,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeCasco)
         {
             casco.gameObject.SetActive(false);
+            CandadoCasco.gameObject.SetActive(true);
             contCasco++;
             cantidadCasco.text = "x" + FormatoNum(contCasco);
             numPiojos = getPiojos();
@@ -1649,6 +1669,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeChaleco)
         {
             chaleco.gameObject.SetActive(false);
+            CandadoChaleco.gameObject.SetActive(true);
             contChaleco++;
             cantidadChaleco.text = "x" + FormatoNum(contChaleco);
             numPiojos = getPiojos();
@@ -1668,6 +1689,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costeMascara)
         {
             mascara.gameObject.SetActive(false);
+            CandadoMascara.gameObject.SetActive(true);
             contMascara++;
             cantidadMascara.text = "x" + FormatoNum(contMascara);
             numPiojos = getPiojos();
@@ -1687,6 +1709,7 @@ public class ManagerJuego : MonoBehaviour
         if (getPiojos() >= costePulsera)
         {
             pulsera.gameObject.SetActive(false);
+            CandadoPulsera.gameObject.SetActive(true);
             contPulsera++;
             cantidadPulsera.text = "x" + FormatoNum(contPulsera);
             numPiojos = getPiojos();
@@ -1775,7 +1798,7 @@ public class ManagerJuego : MonoBehaviour
                 Random.InitState((int)Time.realtimeSinceStartup);
                 int r = Random.Range(0, 7);
                 int barrier = Random.Range(0, 5);
-                Enemigo e = new Enemigo((listaEnemigos[0].GetVidaMax() + vidaBase * (enemDerrotados + 1)) * factor, (tipoEnemigo)r, (barreras)barrier, r,r);
+                Enemigo e = new Enemigo((listaEnemigos[0].GetVidaMax() + vidaBase * (enemDerrotados + 1)) * factor, (tipoEnemigo)r, (barreras)barrier, r, r);
                 inicializarBarreras(e);
                 listaEnemigos.Add(e);
             }
@@ -1786,7 +1809,7 @@ public class ManagerJuego : MonoBehaviour
             nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
             barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
             barraVida.setVida(listaEnemigos[0].GetVidaActual());
-            BtnEnemigo.sprite =spritesEnem[listaEnemigos[0].imagen];
+            BtnEnemigo.sprite = spritesEnem[listaEnemigos[0].imagen];
             gameObject.AddComponent<AudioSource>();
             GetComponent<AudioSource>().PlayOneShot(soundEnem[listaEnemigos[0].sonido]);
             vidaEnemigo.text = FormatoNum(listaEnemigos[0].GetVidaActual()) + "/" + FormatoNum(listaEnemigos[0].GetVidaMax());
@@ -2161,7 +2184,7 @@ public class ManagerJuego : MonoBehaviour
             {
                 s = num.ToString("##,#", c);
             }
-            
+
             return s;
         }
 

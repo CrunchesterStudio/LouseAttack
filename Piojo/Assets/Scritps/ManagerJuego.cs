@@ -208,12 +208,12 @@ public class ManagerJuego : MonoBehaviour
 
     //ClonaPiojos
     public Text costeActualClonaP;
-    private int costeClonaP = 2;
+    private int costeClonaP = 0;
     private bool activeClonaP = false;
 
     //Multi Clic
     public Text costeActualMultiC;
-    private int costeMultiC = 5;
+    private int costeMultiC = 0;
     private bool activeMultiC = false;
 
     //Suma y Resta Piojos
@@ -432,11 +432,11 @@ public class ManagerJuego : MonoBehaviour
 
 
         //Clona Piojos
-        costeActualClonaP.text = costeClonaP.ToString() + "€";
+        //costeActualClonaP.text = costeClonaP.ToString() + "€";
         costeActualClonaP.color = Color.green;
 
         //Multi Clic
-        costeActualMultiC.text = costeMultiC.ToString() + "€";
+        //costeActualMultiC.text = costeMultiC.ToString() + "€";
         costeActualMultiC.color = Color.green;
 
         //Suma y Resta Piojos
@@ -710,25 +710,44 @@ public class ManagerJuego : MonoBehaviour
         return 1 + (contPMellizos * 2 + contPQuinti * 10 + contPDeca * 50 + contPHecta * 100);
     }
 
-    public void GeneradorPiojos()
+    private void checkMejorasPago(int aux)
     {
-        int aux = checkGeneracion();
-        if (activeClonaP)
+        if (activeClonaP && activeMultiC)
+        {
+            if (getPiojos() == 0)
+            {
+                numPiojos++;
+                StartCoroutine(Sumador("+1"));
+            }
+
+            else if (aux == 0)
+            {
+                numPiojos = (numPiojos + 2) * 2;
+                StartCoroutine(Sumador("+" + FormatoNum((numPiojos + 2) * 2)));
+            }
+
+            else
+            {
+                numPiojos = numPiojos + (2 * aux) + (aux * 20);
+                StartCoroutine(Sumador("+" + FormatoNum(numPiojos + (2 * aux) + (aux * 20))));
+            }
+        }
+
+        if (activeClonaP && !activeMultiC)
         {
             if (aux == 0)
             {
                 numPiojos += 2;
                 StartCoroutine(Sumador("+2"));
             }
-
             else
             {
                 numPiojos += (2 * aux);
                 StartCoroutine(Sumador("+" + FormatoNum(2 * aux)));
             }
-
         }
-        else if (activeMultiC)
+
+        if (activeMultiC && !activeClonaP)
         {
             if (getPiojos() == 0)
             {
@@ -746,7 +765,8 @@ public class ManagerJuego : MonoBehaviour
                 StartCoroutine(Sumador("+" + FormatoNum(aux * 20)));
             }
         }
-        else
+
+        if (!activeClonaP && !activeMultiC)
         {
             if (aux == 0)
             {
@@ -759,6 +779,12 @@ public class ManagerJuego : MonoBehaviour
                 StartCoroutine(Sumador("+" + FormatoNum(aux)));
             }
         }
+    }
+
+    public void GeneradorPiojos()
+    {
+        int aux = checkGeneracion();
+        checkMejorasPago(aux);
         contador.text = FormatoNum(numPiojos);
     }
 

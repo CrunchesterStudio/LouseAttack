@@ -432,11 +432,11 @@ public class ManagerJuego : MonoBehaviour
 
 
         //Clona Piojos
-        //costeActualClonaP.text = costeClonaP.ToString() + "€";
+        costeActualClonaP.text = "5€";
         costeActualClonaP.color = Color.green;
 
         //Multi Clic
-        //costeActualMultiC.text = costeMultiC.ToString() + "€";
+        costeActualMultiC.text = "5€";
         costeActualMultiC.color = Color.green;
 
         //Suma y Resta Piojos
@@ -488,8 +488,8 @@ public class ManagerJuego : MonoBehaviour
         {
             intro.gameObject.SetActive(false);
             btnTienda.gameObject.SetActive(true);
-            btnGuardar.gameObject.SetActive(true);
-            btnCargar.gameObject.SetActive(true);
+            btnGuardar.gameObject.SetActive(false);
+            btnCargar.gameObject.SetActive(false);
             btnAjustes.gameObject.SetActive(true);
             btnSalir.gameObject.SetActive(true);
             titulo.gameObject.SetActive(false);
@@ -1797,8 +1797,8 @@ public class ManagerJuego : MonoBehaviour
         panel.gameObject.transform.GetChild(9).gameObject.SetActive(true);
         panel.gameObject.transform.GetChild(10).gameObject.SetActive(true);
         btnTienda.gameObject.SetActive(true);
-        btnGuardar.gameObject.SetActive(true);
-        btnCargar.gameObject.SetActive(true);
+        btnGuardar.gameObject.SetActive(false);
+        btnCargar.gameObject.SetActive(false);
         btnAjustes.gameObject.SetActive(true);
         btnSalir.gameObject.SetActive(true);
         btnGen.gameObject.SetActive(true);
@@ -1900,7 +1900,7 @@ public class ManagerJuego : MonoBehaviour
         }
         else
         {
-            textoGuardado.text = "NO HAY SALVADOS";
+            textoGuardado.text = "";
             yield return new WaitForSeconds(2);
             textoGuardado.text = "";
         }

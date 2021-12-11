@@ -216,6 +216,9 @@ public class ManagerJuego : MonoBehaviour
     private int costeMultiC = 0;
     private bool activeMultiC = false;
 
+    //Texto Barreras
+    public GameObject ayudaBarreras;
+
     //Suma y Resta Piojos
     public Text sumaPiojos;
     public Text restaPiojos;
@@ -265,7 +268,6 @@ public class ManagerJuego : MonoBehaviour
     public Button btnSalir;
     public Button btnGen;
     
-
     //Partida cargada por primera vez
     private bool cargado = false;
 
@@ -430,7 +432,6 @@ public class ManagerJuego : MonoBehaviour
         costeActualPulsera.color = Color.red;
         cantidadPulsera.text = "x" + FormatoNum(contPulsera);
 
-
         //Clona Piojos
         costeActualClonaP.text = "5€";
         costeActualClonaP.color = Color.green;
@@ -442,6 +443,7 @@ public class ManagerJuego : MonoBehaviour
         //Suma y Resta Piojos
         sumaPiojos.text = "";
         restaPiojos.text = "";
+
 
         //Mejoras
         mejExpansion.SetActive(false);
@@ -729,7 +731,7 @@ public class ManagerJuego : MonoBehaviour
             else
             {
                 numPiojos = numPiojos + (2 * aux) + (aux * 20);
-                StartCoroutine(Sumador("+" + FormatoNum(numPiojos + (2 * aux) + (aux * 20))));
+                StartCoroutine(Sumador("+" + FormatoNum((2 * aux) + (aux * 20))));
             }
         }
 
@@ -1470,6 +1472,19 @@ public class ManagerJuego : MonoBehaviour
             AudioManager audioManager = mejGeneracion.gameObject.transform.GetChild(7).GetComponent<AudioManager>();
             audioManager.PlaySound();
         }
+    }
+
+    public void muestraAyuda()
+    {
+        StartCoroutine(ayuda());
+    }
+
+    IEnumerator ayuda()
+    {
+        ayudaBarreras.SetActive(true);
+        yield return new WaitForSeconds(3);
+        ayudaBarreras.SetActive(false);
+        StopCoroutine(ayuda());
     }
 
     //Enemigos

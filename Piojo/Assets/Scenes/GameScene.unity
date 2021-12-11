@@ -3572,7 +3572,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Coste
+  m_Text: "5\u20AC"
 --- !u!222 &338217043
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14324,7 +14324,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Coste
+  m_Text: "5\u20AC"
 --- !u!222 &1081339673
 CanvasRenderer:
   m_ObjectHideFlags: 0

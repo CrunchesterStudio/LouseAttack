@@ -224,7 +224,7 @@ public class ManagerJuego : MonoBehaviour
     public Text restaPiojos;
 
     //Texto guardado
-    public Text textoGuardado;
+    public Image imgGuardado;
 
     //Contador de enemigos derrotados
     private int enemDerrotados = 0;
@@ -503,7 +503,7 @@ public class ManagerJuego : MonoBehaviour
             titulo.gameObject.SetActive(false);
             if (!cargado)
             {
-                textoGuardado.gameObject.SetActive(true);
+                //imgGuardado.gameObject.SetActive(true);
                 cargarPartida();
                 StartCoroutine(guardadoAutomatico());
                 cargado = true;
@@ -1535,8 +1535,22 @@ public class ManagerJuego : MonoBehaviour
             barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
             listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() + listaEnemigos[0].GetVidaMax() / 10);
             barraVida.setVida(listaEnemigos[0].GetVidaActual());
+            StartCoroutine(muestraCuracion());
+
+
             vidaEnemigo.text = FormatoNum(listaEnemigos[0].GetVidaActual()) + "/" + FormatoNum(listaEnemigos[0].GetVidaMax());
         }
+    }
+
+    IEnumerator muestraCuracion()
+    {
+        barraVida.relleno.color = new Color(0, 1, 0);
+        barraVida.corazon.sprite = barraVida.spritesCor[1];
+
+        yield return new WaitForSeconds(1);
+        barraVida.relleno.color = new Color(1, 0, 0);
+        barraVida.corazon.sprite = barraVida.spritesCor[0];
+        StopCoroutine(muestraCuracion());
     }
 
     //Tienda
@@ -1844,7 +1858,7 @@ public class ManagerJuego : MonoBehaviour
 
         if (!cargado)
         {
-            textoGuardado.gameObject.SetActive(true);
+            //imgGuardado.gameObject.SetActive(true);
             cargarPartida();
             StartCoroutine(guardadoAutomatico());
             cargado = true;
@@ -1924,27 +1938,28 @@ public class ManagerJuego : MonoBehaviour
     IEnumerator mostrarGuardado()
     {
 
-        textoGuardado.text = "PARTIDA GUARDADA";
+        imgGuardado.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
-        textoGuardado.text = "";
+        imgGuardado.gameObject.SetActive(false);
     }
+    /*
     IEnumerator mostrarCarga(string s)
     {
         if (s != null)
         {
-            textoGuardado.text = "PARTIDA CARGADA";
+            imgGuardado.text = "PARTIDA CARGADA";
             yield return new WaitForSeconds(2);
-            textoGuardado.text = "";
+            imgGuardado.text = "";
         }
         else
         {
-            textoGuardado.text = "";
+            imgGuardado.text = "";
             yield return new WaitForSeconds(2);
-            textoGuardado.text = "";
+            imgGuardado.text = "";
         }
 
     }
-
+    */
     IEnumerator guardadoAutomatico()
     {
         yield return new WaitForSeconds(60);
@@ -2024,7 +2039,7 @@ public class ManagerJuego : MonoBehaviour
             retomarCorutinas();
         }
 
-        StartCoroutine(mostrarCarga(datosPartida));
+        //StartCoroutine(mostrarCarga(datosPartida));
     }
 
 

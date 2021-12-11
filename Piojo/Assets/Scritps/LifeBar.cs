@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class LifeBar : MonoBehaviour
 {
     public Slider lifebar;
-
+    public Image relleno;
+    public Image corazon;
+    public Sprite[] spritesCor;
     public void setVida(int vida)
     {
         lifebar.value = vida;

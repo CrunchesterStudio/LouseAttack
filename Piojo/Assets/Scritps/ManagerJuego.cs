@@ -289,6 +289,11 @@ public class ManagerJuego : MonoBehaviour
     public Image BtnEnemigo;
     public AudioClip[] soundEnem;
 
+    //Timer
+    public Text timerText;
+    public GameObject temporizador;
+    int tiempoTimer = 30;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -1755,9 +1760,25 @@ public class ManagerJuego : MonoBehaviour
     IEnumerator active30s()
     {
         activeClonaP = true;
+        temporizador.SetActive(true);
+        StartCoroutine(timerMejora());
         yield return new WaitForSeconds(30);
+        temporizador.SetActive(false);
         activeClonaP = false;
         StopCoroutine(active30s());
+    }
+
+    IEnumerator timerMejora()
+    {
+        timerText.text = " " + tiempoTimer;
+        while (tiempoTimer >= 0)
+        {
+
+            timerText.text = " " + tiempoTimer;
+            yield return new WaitForSeconds(1);
+            tiempoTimer = tiempoTimer - 1;
+
+        }
     }
 
     //Clona Piojo

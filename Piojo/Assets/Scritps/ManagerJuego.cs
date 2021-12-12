@@ -1953,6 +1953,20 @@ public class ManagerJuego : MonoBehaviour
         p.costeMultiC = this.costeMultiC;
         p.activeMultiC = this.activeMultiC;
 
+        p.costeCasco = this.costeCasco;
+        p.costeMascara = this.costeMascara;
+        p.costeChaleco = this.costeChaleco;
+        p.costePulsera = this.costePulsera;
+
+        if (casco.gameObject.activeInHierarchy || mascara.gameObject.activeInHierarchy || chaleco.gameObject.activeInHierarchy || pulsera.gameObject.activeInHierarchy)
+        {
+            p.barrera = true;
+        }
+        else
+        {
+            p.barrera = false;
+        }
+
         string jsonString = JsonConvert.SerializeObject(p, Formatting.Indented);
 
         GuardarDatos(jsonString);
@@ -2005,6 +2019,7 @@ public class ManagerJuego : MonoBehaviour
             this.numPiojos = p.numPiojos;
             this.enemDerrotados = p.enemDerrotados;
             this.listaEnemigos = p.listaEnemigos;
+            BtnEnemigo.sprite = spritesEnem[this.listaEnemigos[0].imagen];
             this.costePMadre = p.costePMadre;
             this.contPiojoMadre = p.contPiojoMadre;
             this.costeCabezaN = p.costeCabezaN;
@@ -2058,9 +2073,35 @@ public class ManagerJuego : MonoBehaviour
             this.activeClonaP = p.activeClonaP;
             this.costeMultiC = p.costeMultiC;
             this.activeMultiC = p.activeMultiC;
+            this.costeCasco = p.costeCasco;
+            this.costeMascara = p.costeMascara;
+            this.costeChaleco = p.costeChaleco;
+            this.costePulsera = p.costePulsera;
             this.barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
             this.barraVida.setVida(listaEnemigos[0].GetVidaActual());
+            if (p.barrera)
+            {
+                inicializarBarreras(this.listaEnemigos[0]);
+                if (casco.gameObject.activeSelf)
+                    CandadoCasco.gameObject.SetActive(false);
 
+                if (chaleco.gameObject.activeSelf)
+                    CandadoChaleco.gameObject.SetActive(false);
+
+                if (mascara.gameObject.activeSelf)
+                    CandadoMascara.gameObject.SetActive(false);
+
+                if (pulsera.gameObject.activeSelf)
+                    CandadoPulsera.gameObject.SetActive(false);
+            }
+            else
+            {
+                    CandadoCasco.gameObject.SetActive(true);
+                    CandadoChaleco.gameObject.SetActive(true);
+                    CandadoMascara.gameObject.SetActive(true);
+                    CandadoPulsera.gameObject.SetActive(true);
+            }
+            
             actualizarTextos();
             retomarCorutinas();
         }
@@ -2123,9 +2164,14 @@ public class ManagerJuego : MonoBehaviour
         this.costeActualPHecta.text = FormatoNum(this.costePHecta);
         this.cantidadPHecta.text = "x" + FormatoNum(this.contPHecta);
 
-        this.cantidadCasco.text = "x" + FormatoNum(this.contCasco);
+        //this.cantidadCasco.text = "x" + FormatoNum(this.contCasco);
         this.costeActualClonaP.text = FormatoNum(this.costeClonaP);
         this.costeActualMultiC.text = FormatoNum(this.costeMultiC);
+
+        this.costeActualCasco.text = FormatoNum(this.costeCasco);
+        this.costeActualChaleco.text = FormatoNum(this.costeChaleco);
+        this.costeActualMascara.text = FormatoNum(this.costeMascara);
+        this.costeActualPulsera.text = FormatoNum(this.costePulsera);
 
         this.nombreEnemigo.text = this.listaEnemigos[0].tipo.ToString();
         this.vidaEnemigo.text = FormatoNum(this.listaEnemigos[0].GetVidaActual()) + "/" + FormatoNum(this.listaEnemigos[0].GetVidaMax());

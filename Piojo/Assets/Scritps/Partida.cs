@@ -61,4 +61,9 @@ public class Partida
     public int costeMultiC { get; set; }
     public bool activeMultiC { get; set; }
     
+    public int costeCasco { get; set; }
+    public int costeChaleco { get; set; }
+    public int costeMascara { get; set; }
+    public int costePulsera { get; set; }
+    public bool barrera { get; set; }
 }

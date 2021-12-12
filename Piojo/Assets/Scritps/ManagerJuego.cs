@@ -2207,8 +2207,8 @@ public class ManagerJuego : MonoBehaviour
         this.cantidadPHecta.text = "x" + FormatoNum(this.contPHecta);
 
         //this.cantidadCasco.text = "x" + FormatoNum(this.contCasco);
-        this.costeActualClonaP.text = FormatoNum(this.costeClonaP);
-        this.costeActualMultiC.text = FormatoNum(this.costeMultiC);
+        this.costeActualClonaP.text = "5€";
+        this.costeActualMultiC.text = "5€";
 
         this.costeActualCasco.text = FormatoNum(this.costeCasco);
         this.costeActualChaleco.text = FormatoNum(this.costeChaleco);

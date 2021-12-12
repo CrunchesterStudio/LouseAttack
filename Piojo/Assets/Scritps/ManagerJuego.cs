@@ -297,6 +297,9 @@ public class ManagerJuego : MonoBehaviour
     public Text timerText;
     public GameObject temporizador;
     int tiempoTimer = 30;
+    public Text timerText2;
+    public GameObject temporizador2;
+    int tiempoTimer2 = 30;
 
     // Start is called before the first frame update
     void Start()
@@ -1749,7 +1752,7 @@ public class ManagerJuego : MonoBehaviour
     //Clona Piojo
     public void añadeClonaP()
     {
-        if (getPiojos() >= costeClonaP)
+        if (getPiojos() >= costeClonaP && !activeClonaP)
         {
             numPiojos = getPiojos();
             numPiojos -= costeClonaP;
@@ -1765,30 +1768,24 @@ public class ManagerJuego : MonoBehaviour
     {
         activeClonaP = true;
         temporizador.SetActive(true);
-        StartCoroutine(timerMejora());
-        yield return new WaitForSeconds(30);
-        temporizador.SetActive(false);
-        activeClonaP = false;
-        StopCoroutine(active30s());
-    }
-
-    IEnumerator timerMejora()
-    {
-        timerText.text = " " + tiempoTimer;
+        timerText.text = tiempoTimer.ToString();
         while (tiempoTimer >= 0)
         {
-
-            timerText.text = " " + tiempoTimer;
+            timerText.text = tiempoTimer.ToString();
             yield return new WaitForSeconds(1);
-            tiempoTimer = tiempoTimer - 1;
-
+            tiempoTimer -= 1;
         }
+        temporizador.SetActive(false);
+        tiempoTimer = 30;
+        StopCoroutine(active30s());
+        activeClonaP = false;
     }
+
 
     //Clona Piojo
     public void añadeMultiC()
     {
-        if (getPiojos() >= costeMultiC)
+        if (getPiojos() >= costeMultiC && !activeMultiC)
         {
             numPiojos = getPiojos();
             numPiojos -= costeMultiC;
@@ -1803,9 +1800,18 @@ public class ManagerJuego : MonoBehaviour
     IEnumerator clicx2()
     {
         activeMultiC = true;
-        yield return new WaitForSeconds(5);
-        activeMultiC = false;
+        temporizador2.SetActive(true);
+        timerText2.text = tiempoTimer2.ToString();
+        while (tiempoTimer2 >= 0)
+        {
+            timerText2.text = tiempoTimer2.ToString();
+            yield return new WaitForSeconds(1);
+            tiempoTimer2 -= 1;
+        }
+        temporizador2.SetActive(false);
+        tiempoTimer2 = 30;
         StopCoroutine(clicx2());
+        activeMultiC = false;
     }
 
     //Sumador y Restador
@@ -2096,12 +2102,12 @@ public class ManagerJuego : MonoBehaviour
             }
             else
             {
-                    CandadoCasco.gameObject.SetActive(true);
-                    CandadoChaleco.gameObject.SetActive(true);
-                    CandadoMascara.gameObject.SetActive(true);
-                    CandadoPulsera.gameObject.SetActive(true);
+                CandadoCasco.gameObject.SetActive(true);
+                CandadoChaleco.gameObject.SetActive(true);
+                CandadoMascara.gameObject.SetActive(true);
+                CandadoPulsera.gameObject.SetActive(true);
             }
-            
+
             actualizarTextos();
             retomarCorutinas();
         }
@@ -2180,7 +2186,7 @@ public class ManagerJuego : MonoBehaviour
 
     public void animacionBanderas()
     {
-        if(enemDerrotados < 10)
+        if (enemDerrotados < 10)
         {
             banderas[auxBandera].SetActive(true);
             auxBandera++;

@@ -274,6 +274,10 @@ public class ManagerJuego : MonoBehaviour
     public Button btnSalir;
     public Button btnGen;
 
+    //Banderas fondo animacion
+    public GameObject[] banderas;
+    int auxBandera = 0;
+
     //Partida cargada por primera vez
     private bool cargado = false;
 
@@ -1840,6 +1844,7 @@ public class ManagerJuego : MonoBehaviour
             listaEnemigos.RemoveAt(0);
             inicializarBarreras(listaEnemigos[0]);
             enemDerrotados++;
+            animacionBanderas();
 
             nombreEnemigo.text = listaEnemigos[0].tipo.ToString();
             barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
@@ -2124,6 +2129,16 @@ public class ManagerJuego : MonoBehaviour
 
         this.nombreEnemigo.text = this.listaEnemigos[0].tipo.ToString();
         this.vidaEnemigo.text = FormatoNum(this.listaEnemigos[0].GetVidaActual()) + "/" + FormatoNum(this.listaEnemigos[0].GetVidaMax());
+    }
+
+
+    public void animacionBanderas()
+    {
+        if(enemDerrotados < 10)
+        {
+            banderas[auxBandera].SetActive(true);
+            auxBandera++;
+        }
     }
 
 

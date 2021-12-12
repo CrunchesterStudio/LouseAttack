@@ -218,6 +218,8 @@ public class ManagerJuego : MonoBehaviour
 
     //Texto Barreras
     public GameObject ayudaBarreras;
+    //Texto Cura
+    public GameObject ayudaCura;
 
     //Suma y Resta Piojos
     public Text sumaPiojos;
@@ -1518,6 +1520,19 @@ public class ManagerJuego : MonoBehaviour
         StopCoroutine(ayuda());
     }
 
+    public void muestraCura()
+    {
+        StartCoroutine(cura());
+    }
+
+    IEnumerator cura()
+    {
+        ayudaCura.SetActive(true);
+        yield return new WaitForSeconds(2.5f);
+        ayudaCura.SetActive(false);
+        StopCoroutine(cura());
+    }
+
 
     //Enemigos
     private void inicializarEnemigos()
@@ -1544,7 +1559,7 @@ public class ManagerJuego : MonoBehaviour
             listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() + (int)(listaEnemigos[0].GetVidaMax() / 10));
             barraVida.setVida(listaEnemigos[0].GetVidaActual());
             StartCoroutine(muestraCuracion());
-
+            muestraCura();
 
             vidaEnemigo.text = FormatoNum(listaEnemigos[0].GetVidaActual()) + "/" + FormatoNum(listaEnemigos[0].GetVidaMax());
 

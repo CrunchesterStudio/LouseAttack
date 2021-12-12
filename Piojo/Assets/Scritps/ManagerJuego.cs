@@ -1525,8 +1525,10 @@ public class ManagerJuego : MonoBehaviour
         Random.InitState((int)Time.realtimeSinceStartup);
         int num = Random.Range(0, 7);
         Enemigo e1 = new Enemigo(vidaBase, (tipoEnemigo)num, barreras.SinProtecciones, num, num);
+        Random.InitState((int)Time.realtimeSinceStartup);
         num = Random.Range(0, 7);
         Enemigo e2 = new Enemigo((vidaBase * (enemDerrotados + 1) + e1.GetVidaMax() * factor), (tipoEnemigo)num, barreras.Casco, num, num);
+        Random.InitState((int)Time.realtimeSinceStartup);
         num = Random.Range(0, 7);
         Enemigo e3 = new Enemigo((vidaBase * (enemDerrotados + 1) + e2.GetVidaMax() * factor), (tipoEnemigo)num, barreras.Chaleco, num, num);
         listaEnemigos.Add(e1);
@@ -1682,8 +1684,14 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costeCasco;
             setPiojos(numPiojos);
             contador.text = FormatoNum(numPiojos);
-            costeCasco = Mathf.RoundToInt(costeCasco * 1.5f);
+            costeCasco = Mathf.RoundToInt(costeCasco + costeCasco * enemDerrotados);
             costeActualCasco.text = FormatoNum(costeCasco);
+            costeChaleco = Mathf.RoundToInt(costeChaleco + costeChaleco * enemDerrotados);
+            costeActualChaleco.text = FormatoNum(costeChaleco);
+            costeMascara = Mathf.RoundToInt(costeMascara + costeMascara * enemDerrotados);
+            costeActualMascara.text = FormatoNum(costeMascara);
+            costePulsera = Mathf.RoundToInt(costePulsera + costePulsera * enemDerrotados);
+            costeActualPulsera.text = FormatoNum(costePulsera);
             AudioManager audioManager = mejAntibarrera.gameObject.transform.GetChild(0).GetComponent<AudioManager>();
             audioManager.PlaySound();
         }
@@ -1702,8 +1710,14 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costeChaleco;
             setPiojos(numPiojos);
             contador.text = FormatoNum(numPiojos);
-            costeChaleco = Mathf.RoundToInt(costeChaleco * 1.5f);
+            costeCasco = Mathf.RoundToInt(costeCasco + costeCasco * enemDerrotados);
+            costeActualCasco.text = FormatoNum(costeCasco);
+            costeChaleco = Mathf.RoundToInt(costeChaleco + costeChaleco * enemDerrotados);
             costeActualChaleco.text = FormatoNum(costeChaleco);
+            costeMascara = Mathf.RoundToInt(costeMascara + costeMascara * enemDerrotados);
+            costeActualMascara.text = FormatoNum(costeMascara);
+            costePulsera = Mathf.RoundToInt(costePulsera + costePulsera * enemDerrotados);
+            costeActualPulsera.text = FormatoNum(costePulsera);
             AudioManager audioManager = mejAntibarrera.gameObject.transform.GetChild(1).GetComponent<AudioManager>();
             audioManager.PlaySound();
         }
@@ -1722,8 +1736,14 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costeMascara;
             setPiojos(numPiojos);
             contador.text = FormatoNum(numPiojos);
-            costeMascara = Mathf.RoundToInt(costeMascara * 1.5f);
+            costeCasco = Mathf.RoundToInt(costeCasco + costeCasco * enemDerrotados);
+            costeActualCasco.text = FormatoNum(costeCasco);
+            costeChaleco = Mathf.RoundToInt(costeChaleco + costeChaleco * enemDerrotados);
+            costeActualChaleco.text = FormatoNum(costeChaleco);
+            costeMascara = Mathf.RoundToInt(costeMascara + costeMascara * enemDerrotados);
             costeActualMascara.text = FormatoNum(costeMascara);
+            costePulsera = Mathf.RoundToInt(costePulsera + costePulsera * enemDerrotados);
+            costeActualPulsera.text = FormatoNum(costePulsera);
             AudioManager audioManager = mejAntibarrera.gameObject.transform.GetChild(2).GetComponent<AudioManager>();
             audioManager.PlaySound();
         }
@@ -1742,7 +1762,13 @@ public class ManagerJuego : MonoBehaviour
             numPiojos -= costePulsera;
             setPiojos(numPiojos);
             contador.text = FormatoNum(numPiojos);
-            costePulsera = Mathf.RoundToInt(costePulsera * 1.5f);
+            costeCasco = Mathf.RoundToInt(costeCasco + costeCasco * enemDerrotados);
+            costeActualCasco.text = FormatoNum(costeCasco);
+            costeChaleco = Mathf.RoundToInt(costeChaleco + costeChaleco * enemDerrotados);
+            costeActualChaleco.text = FormatoNum(costeChaleco);
+            costeMascara = Mathf.RoundToInt(costeMascara + costeMascara * enemDerrotados);
+            costeActualMascara.text = FormatoNum(costeMascara);
+            costePulsera = Mathf.RoundToInt(costePulsera + costePulsera * enemDerrotados);
             costeActualPulsera.text = FormatoNum(costePulsera);
             AudioManager audioManager = mejAntibarrera.gameObject.transform.GetChild(3).GetComponent<AudioManager>();
             audioManager.PlaySound();

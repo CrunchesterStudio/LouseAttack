@@ -1552,8 +1552,8 @@ public class ManagerJuego : MonoBehaviour
     {
         Random.InitState(numPiojos);
 
-        int num = Random.Range(0, 10);
-        if (listaEnemigos[0].GetVidaActual() <= listaEnemigos[0].GetVidaMax() / 2 && num > 8)
+        int num = Random.Range(0, 30);
+        if (listaEnemigos[0].GetVidaActual() <= listaEnemigos[0].GetVidaMax() / 2 && num > 27)
         {
             barraVida.setVidaMaxima(listaEnemigos[0].GetVidaMax());
             listaEnemigos[0].SetVidaActual(listaEnemigos[0].GetVidaActual() + (int)(listaEnemigos[0].GetVidaMax() / 10));
@@ -1916,6 +1916,11 @@ public class ManagerJuego : MonoBehaviour
         panel.gameObject.transform.GetChild(8).gameObject.SetActive(true);
         panel.gameObject.transform.GetChild(9).gameObject.SetActive(true);
         panel.gameObject.transform.GetChild(10).gameObject.SetActive(true);
+        panel.gameObject.transform.GetChild(11).gameObject.SetActive(false);
+        panel.gameObject.transform.GetChild(12).gameObject.SetActive(false);
+        panel.gameObject.transform.GetChild(13).gameObject.SetActive(false);
+        panel.gameObject.transform.GetChild(14).gameObject.SetActive(false);
+        panel.gameObject.transform.GetChild(15).gameObject.SetActive(false);
         btnTienda.gameObject.SetActive(true);
         btnGuardar.gameObject.SetActive(false);
         btnCargar.gameObject.SetActive(false);
